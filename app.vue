@@ -70,7 +70,7 @@ const links = [
         </nav>
         <div class="flex-1 flex flex-col">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12 pb-16 md:pt-24 md:pb-28 place-items-center flex-1"
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12 lg:gap-24 pb-16 md:pt-20 md:pb-24 place-items-center flex-1"
           >
             <div class="flex flex-col gap-8">
               <h1 class="text-5xl/tight md:text-7xl/tight font-serif">
@@ -108,9 +108,8 @@ const links = [
                 </NuxtLink>
               </div>
             </div>
-            <div>
-              <Game />
-            </div>
+
+            <Game />
           </div>
         </div>
       </div>
