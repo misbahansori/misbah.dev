@@ -1,4 +1,10 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: "Misbah Ansori - Full Stack Developer",
+  description:
+    "I'm a full-stack developer with more that 4 years of experience in web development. I'm passionate about learning new technologies and building cool projects.",
+});
+
 const links = [
   {
     name: "Twitter",
@@ -21,10 +27,10 @@ const links = [
 
 <template>
   <div class="bg-gray-100 text-gray-900 font-sans">
-    <section class="min-h-screen flex">
+    <div class="min-h-screen">
       <aside
         style="writing-mode: vertical-lr"
-        class="bg-gray-950 w-16 md:w-24 flex-shrink-0 flex items-center gap-12 justify-start py-20 px-4 rotate-180"
+        class="bg-gray-950 w-16 md:w-24 absolute left-0 inset-y-0 flex-shrink-0 flex items-center gap-12 justify-start py-20 px-4 rotate-180"
       >
         <NuxtLink
           v-for="link in links"
@@ -34,13 +40,13 @@ const links = [
           {{ link.name }}
         </NuxtLink>
       </aside>
-      <div class="flex flex-col px-8 lg:px-24">
+      <div class="flex flex-col px-8 lg:px-24 ml-16 md:ml-24">
         <nav class="py-8 border-b border-gray-950/30 border-dashed">
           <div class="flex items-center justify-between">
             <NuxtLink to="/" class="text-3xl font-bold font-serif">
               ma.
             </NuxtLink>
-            <div class="flex items-center gap-12 font-serif">
+            <div class="md:items-center md:gap-12 font-serif hidden md:flex">
               <NuxtLink
                 to="/work"
                 class="font-medium tracking-wide uppercase text-gray-700 hover:text-gray-900"
@@ -64,14 +70,14 @@ const links = [
         </nav>
         <div class="flex-1 flex flex-col">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-20 pb-28 place-items-center flex-1"
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12 pb-16 md:pt-24 md:pb-28 place-items-center flex-1"
           >
             <div class="flex flex-col gap-8">
-              <h1 class="text-7xl/tight font-serif">
+              <h1 class="text-5xl/tight md:text-7xl/tight font-serif">
                 Hi I'm <br />
                 <span class="font-extrabold text-black">Misbah Ansori</span>
               </h1>
-              <p class="text-gray-600 leading-loose">
+              <p class="text-gray-600 leading-loose text-sm md:text-base">
                 I'm a full-stack developer with more that 4 years of experience
                 in web development. I'm passionate about learning new
                 technologies and building cool projects.
@@ -92,8 +98,9 @@ const links = [
                     ></span>
                     <span
                       class="relative text-sm uppercase font-bold tracking-wide"
-                      >View my profile</span
                     >
+                      View my profile
+                    </span>
                   </span>
                   <span
                     class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 group-hover:mb-0 group-hover:mr-0"
@@ -104,6 +111,6 @@ const links = [
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
