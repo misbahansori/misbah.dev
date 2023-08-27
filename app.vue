@@ -108,6 +108,9 @@ const links = [
                 </NuxtLink>
               </div>
             </div>
+            <div>
+              <Game />
+            </div>
           </div>
         </div>
       </div>
