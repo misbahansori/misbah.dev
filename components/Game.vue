@@ -11,6 +11,14 @@ const projectiles = ref<
     y: number;
   }[]
 >([]);
+
+const enemyProjectiles = ref<
+  {
+    x: number;
+    y: number;
+  }[]
+>([]);
+
 const { ready: readyToFire, start: startFiring } = useTimeout(500, {
   controls: true,
 });
@@ -31,8 +39,8 @@ const spawnEnemy = () => {
     enemies.value.some(
       (enemy) =>
         (enemy.x === newEnemy.x && enemy.y === newEnemy.y) ||
-        (enemy.x - 1 === newEnemy.x && enemy.y - 1 === newEnemy.y) ||
-        (enemy.x + 1 === newEnemy.x && enemy.y - 1 === newEnemy.y)
+        (enemy.x - 2 === newEnemy.x && enemy.y - 2 === newEnemy.y) ||
+        (enemy.x + 2 === newEnemy.x && enemy.y - 2 === newEnemy.y)
     )
   )
     return;
@@ -83,6 +91,13 @@ const fire = () => {
   });
 };
 
+const enemyFire = (enemy: { x: number; y: number }) => {
+  enemyProjectiles.value.push({
+    x: enemy.x,
+    y: enemy.y + 1,
+  });
+};
+
 const projectileHitsEnemy = (projectile: { x: number; y: number }): boolean => {
   return enemies.value.some(
     (enemy) =>
@@ -110,19 +125,49 @@ watch(readyToSpawnEnemy, (ready) => {
 });
 
 useIntervalFn(() => {
-  if (!projectiles.value.length) return;
+  if (projectiles.value.length) {
+    projectiles.value = projectiles.value.filter((projectile) => {
+      projectile.y--;
 
-  projectiles.value = projectiles.value.filter((projectile) => {
-    projectile.y--;
+      if (projectileHitsEnemy(projectile)) {
+        killEnemy(projectile);
+        return false;
+      }
 
-    if (projectileHitsEnemy(projectile)) {
-      killEnemy(projectile);
-      return false;
-    }
+      return projectile.y >= 0;
+    });
+  }
 
-    return projectile.y >= 0;
-  });
+  if (enemyProjectiles.value.length) {
+    enemyProjectiles.value = enemyProjectiles.value.filter((projectile) => {
+      projectile.y++;
+
+      if (
+        (projectile.x === character.value.x &&
+          projectile.y === character.value.y) ||
+        (projectile.x - 1 === character.value.x &&
+          projectile.y === character.value.y + 1) ||
+        (projectile.x + 1 === character.value.x &&
+          projectile.y === character.value.y + 1)
+      ) {
+        alert("Game over!");
+        location.reload();
+      }
+
+      return projectile.y <= BOARD_SIZE;
+    });
+  }
 }, 50);
+
+useIntervalFn(() => {
+  if (enemies.value.length) {
+    enemies.value.forEach((enemy) => {
+      if (Math.random() > 0.3) return;
+
+      enemyFire(enemy);
+    });
+  }
+}, 1000);
 </script>
 
 <template>
@@ -133,13 +178,19 @@ useIntervalFn(() => {
     <Character :x="character.x" :y="character.y" />
     <Enemy
       v-for="enemy in enemies"
-      :key="`${enemy.x}-${enemy.y}`"
+      :key="`enemy-${enemy.x}-${enemy.y}`"
       :x="enemy.x"
       :y="enemy.y"
     />
     <Projectile
       v-for="projectile in projectiles"
-      :key="`${projectile.x}-${projectile.y}`"
+      :key="`projectile-${projectile.x}-${projectile.y}`"
+      :x="projectile.x"
+      :y="projectile.y"
+    />
+    <Projectile
+      v-for="projectile in enemyProjectiles"
+      :key="`enemy-projectile-${projectile.x}-${projectile.y}`"
       :x="projectile.x"
       :y="projectile.y"
     />
