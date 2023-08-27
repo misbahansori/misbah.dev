@@ -15,6 +15,31 @@ const { ready: readyToFire, start: startFiring } = useTimeout(500, {
   controls: true,
 });
 
+const { ready: readyToSpawnEnemy, start: resetSpawnEnemy } = useTimeout(3000, {
+  controls: true,
+});
+
+const spawnEnemy = () => {
+  resetSpawnEnemy();
+
+  const newEnemy = {
+    x: Math.floor(Math.random() * (BOARD_SIZE - 2)) + 1,
+    y: Math.floor(Math.random() * 2) + 1,
+  };
+
+  if (
+    enemies.value.some(
+      (enemy) =>
+        (enemy.x === newEnemy.x && enemy.y === newEnemy.y) ||
+        (enemy.x - 1 === newEnemy.x && enemy.y - 1 === newEnemy.y) ||
+        (enemy.x + 1 === newEnemy.x && enemy.y - 1 === newEnemy.y)
+    )
+  )
+    return;
+
+  enemies.value.push(newEnemy);
+};
+
 onKeyStroke("ArrowDown", (e) => {
   e.preventDefault();
 
@@ -78,6 +103,12 @@ const killEnemy = (projectile: { x: number; y: number }) => {
   );
 };
 
+watch(readyToSpawnEnemy, (ready) => {
+  if (!ready) return;
+
+  spawnEnemy();
+});
+
 useIntervalFn(() => {
   if (!projectiles.value.length) return;
 
@@ -108,6 +139,7 @@ useIntervalFn(() => {
     />
     <Projectile
       v-for="projectile in projectiles"
+      :key="`${projectile.x}-${projectile.y}`"
       :x="projectile.x"
       :y="projectile.y"
     />
