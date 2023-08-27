@@ -1,4 +1,3 @@
-e
 <script setup lang="ts">
 const BOARD_SIZE = 24;
 const character = ref({ x: 1, y: 20 });
@@ -12,26 +11,35 @@ const projectiles = ref<
     y: number;
   }[]
 >([]);
+const { ready: readyToFire, start: startFiring } = useTimeout(500, {
+  controls: true,
+});
 
 onKeyStroke("ArrowDown", (e) => {
   e.preventDefault();
 
-  if (character.value.y >= BOARD_SIZE - 1) return;
+  if (character.value.y >= BOARD_SIZE - 2) return;
   character.value.y++;
 });
 
 onKeyStroke("ArrowUp", (e) => {
   e.preventDefault();
+
+  if (character.value.y <= 0) return;
   character.value.y--;
 });
 
 onKeyStroke("ArrowLeft", (e) => {
   e.preventDefault();
+
+  if (character.value.x <= 0 + 1) return;
   character.value.x--;
 });
 
 onKeyStroke("ArrowRight", (e) => {
   e.preventDefault();
+
+  if (character.value.x >= BOARD_SIZE - 2) return;
   character.value.x++;
 });
 
@@ -41,19 +49,49 @@ onKeyStroke(" ", (e) => {
 });
 
 const fire = () => {
+  if (!readyToFire.value) return;
+
+  startFiring();
   projectiles.value.push({
     x: character.value.x,
     y: character.value.y - 1,
   });
 };
 
+const projectileHitsEnemy = (projectile: { x: number; y: number }): boolean => {
+  return enemies.value.some(
+    (enemy) =>
+      (enemy.x === projectile.x && enemy.y === projectile.y) ||
+      (enemy.x - 1 === projectile.x && enemy.y - 1 === projectile.y) ||
+      (enemy.x + 1 === projectile.x && enemy.y - 1 === projectile.y)
+  );
+};
+
+const killEnemy = (projectile: { x: number; y: number }) => {
+  enemies.value = enemies.value.filter(
+    (enemy) =>
+      !(
+        (enemy.x === projectile.x && enemy.y === projectile.y) ||
+        (enemy.x - 1 === projectile.x && enemy.y - 1 === projectile.y) ||
+        (enemy.x + 1 === projectile.x && enemy.y - 1 === projectile.y)
+      )
+  );
+};
+
 useIntervalFn(() => {
+  if (!projectiles.value.length) return;
+
   projectiles.value = projectiles.value.filter((projectile) => {
     projectile.y--;
 
+    if (projectileHitsEnemy(projectile)) {
+      killEnemy(projectile);
+      return false;
+    }
+
     return projectile.y >= 0;
   });
-}, 100);
+}, 50);
 </script>
 
 <template>
@@ -62,7 +100,12 @@ useIntervalFn(() => {
     :viewbox="`0 0 ${BOARD_SIZE} ${BOARD_SIZE}`"
   >
     <Character :x="character.x" :y="character.y" />
-    <Enemy v-for="enemy in enemies" :x="enemy.x" :y="enemy.y" />
+    <Enemy
+      v-for="enemy in enemies"
+      :key="`${enemy.x}-${enemy.y}`"
+      :x="enemy.x"
+      :y="enemy.y"
+    />
     <Projectile
       v-for="projectile in projectiles"
       :x="projectile.x"
