@@ -29,7 +29,7 @@ const { ready: readyToFire, start: startFiring } = useTimeout(500, {
   controls: true,
 });
 
-const { ready: readyToSpawnEnemy, start: resetSpawnEnemy } = useTimeout(3000, {
+const { ready: readyToSpawnEnemy, start: resetSpawnEnemy } = useTimeout(2000, {
   controls: true,
 });
 
@@ -45,6 +45,8 @@ const reset = () => {
 };
 
 const spawnEnemy = () => {
+  if (enemies.value.length >= 10) return;
+
   resetSpawnEnemy();
 
   const newEnemy = {
