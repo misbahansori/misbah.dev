@@ -33,6 +33,17 @@ const { ready: readyToSpawnEnemy, start: resetSpawnEnemy } = useTimeout(3000, {
   controls: true,
 });
 
+const reset = () => {
+  state.value = "idle";
+  character.value = { x: 1, y: 20 };
+  enemies.value = [
+    { x: 8, y: 1 },
+    { x: 14, y: 1 },
+  ];
+  projectiles.value = [];
+  enemyProjectiles.value = [];
+};
+
 const spawnEnemy = () => {
   resetSpawnEnemy();
 
@@ -56,31 +67,48 @@ const spawnEnemy = () => {
 
 onKeyStroke("ArrowDown", (e) => {
   e.preventDefault();
-  if (state.value !== "playing") return;
-  if (character.value.y >= BOARD_SIZE - 2) return;
-  character.value.y++;
+
+  move("down");
 });
 
 onKeyStroke("ArrowUp", (e) => {
   e.preventDefault();
-  if (state.value !== "playing") return;
-  if (character.value.y <= 0) return;
-  character.value.y--;
+  move("up");
 });
 
 onKeyStroke("ArrowLeft", (e) => {
   e.preventDefault();
-  if (state.value !== "playing") return;
-  if (character.value.x <= 0 + 1) return;
-  character.value.x--;
+  move("left");
 });
 
 onKeyStroke("ArrowRight", (e) => {
   e.preventDefault();
-  if (state.value !== "playing") return;
-  if (character.value.x >= BOARD_SIZE - 2) return;
-  character.value.x++;
+  move("right");
 });
+
+const move = (direction: "left" | "right" | "up" | "down") => {
+  if (state.value !== "playing") return;
+
+  if (direction === "left") {
+    if (character.value.x <= 0 + 1) return;
+    character.value.x--;
+  }
+
+  if (direction === "right") {
+    if (character.value.x >= BOARD_SIZE - 2) return;
+    character.value.x++;
+  }
+
+  if (direction === "up") {
+    if (character.value.y <= 0) return;
+    character.value.y--;
+  }
+
+  if (direction === "down") {
+    if (character.value.y >= BOARD_SIZE - 2) return;
+    character.value.y++;
+  }
+};
 
 onKeyStroke(" ", (e) => {
   e.preventDefault();
@@ -196,14 +224,60 @@ useIntervalFn(() => {
         v-else-if="state === 'gameover'"
         class="flex flex-col items-center gap-2"
       >
-        <span class="text-gray-800">Game over!</span>
+        <div class="bg-gray-100 px-6 py-4">
+          <span class="text-gray-800">Game over!</span>
+        </div>
         <button
-          class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
-          @click="state = 'playing'"
+          class="relative z-10 block bg-gray-100 px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
+          @click="reset"
         >
-          Restart
+          Reset
         </button>
       </div>
+    </div>
+    <div
+      class="absolute inset-0 flex items-end justify-between md:hidden translate-y-6"
+    >
+      <button
+        @click="move('left')"
+        class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+          ></path>
+        </svg>
+      </button>
+      <button
+        @click="move('right')"
+        class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+          ></path>
+        </svg>
+      </button>
     </div>
     <svg
       class="w-full h-full aspect-square"

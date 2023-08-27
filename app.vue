@@ -30,7 +30,7 @@ const links = [
     <div class="min-h-screen">
       <aside
         style="writing-mode: vertical-lr"
-        class="bg-gray-950 w-16 md:w-24 absolute left-0 inset-y-0 flex-shrink-0 flex items-center gap-12 justify-start py-20 px-4 rotate-180"
+        class="bg-gray-950 w-16 md:w-24 fixed left-0 inset-y-0 flex-shrink-0 flex items-center gap-12 justify-start py-20 px-4 rotate-180"
       >
         <NuxtLink
           v-for="link in links"
