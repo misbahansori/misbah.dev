@@ -11,6 +11,38 @@
             voluptatum, quibusdam, quia, quod voluptates voluptatem quos
             exercitationem quas doloribus quidem voluptate.
           </p>
+          <div class="flex items-center gap-3">
+            <NuxtLink
+              to="https://vuejs.org/"
+              class="rounded-full p-2.5 hover:bg-black transition-colors duration-150 ease-in-out"
+            >
+              <Icon name="logos:vue" class="w-7 h-7" />
+            </NuxtLink>
+            <NuxtLink
+              to="https://nuxtjs.org/"
+              class="rounded-full p-2.5 hover:bg-black transition-colors duration-150 ease-in-out"
+            >
+              <Icon name="logos:nuxt-icon" class="w-7 h-7" />
+            </NuxtLink>
+            <NuxtLink
+              to="https://tailwindcss.com/"
+              class="rounded-full p-2.5 hover:bg-black transition-colors duration-150 ease-in-out"
+            >
+              <Icon name="logos:tailwindcss-icon" class="w-7 h-7" />
+            </NuxtLink>
+            <NuxtLink
+              to="https://www.typescriptlang.org/"
+              class="rounded-full p-2.5 hover:bg-black transition-colors duration-150 ease-in-out"
+            >
+              <Icon name="logos:typescript-icon" class="w-7 h-7" />
+            </NuxtLink>
+            <NuxtLink
+              to="https://laravel.com/"
+              class="rounded-full p-2.5 hover:bg-black transition-colors duration-150 ease-in-out"
+            >
+              <Icon name="logos:laravel" class="w-7 h-7" />
+            </NuxtLink>
+          </div>
         </div>
         <div>
           <img

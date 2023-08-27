@@ -1,16 +1,40 @@
+<script setup lang="ts">
+const { y } = useWindowScroll();
+</script>
 <template>
   <div class="bg-[#F3F3F3] text-gray-900 font-sans">
     <section class="min-h-screen flex flex-col">
-      <nav class="py-8 fixed top-0 inset-x-0 bg-white z-50">
+      <nav
+        class="py-8 fixed top-0 inset-x-0 z-50 transition-colors duration-200 ease-in-out"
+        :class="{
+          'bg-white': y > 0,
+          'bg-transparent': y === 0,
+        }"
+      >
         <div class="max-w-4xl mx-auto px-4">
           <div class="flex items-center justify-between">
             <NuxtLink to="/" class="text-2xl font-bold font-serif">
               ma.
             </NuxtLink>
-            <div class="flex items-center gap-4 font-serif">
-              <NuxtLink to="/work"> Work </NuxtLink>
-              <NuxtLink to="/work"> About </NuxtLink>
-              <NuxtLink to="/work"> Contact </NuxtLink>
+            <div class="flex items-center gap-12 font-serif">
+              <NuxtLink
+                to="/work"
+                class="font-medium tracking-wide uppercase text-gray-700 hover:text-gray-900"
+              >
+                Work
+              </NuxtLink>
+              <NuxtLink
+                to="/work"
+                class="font-medium tracking-wide uppercase text-gray-700 hover:text-gray-900"
+              >
+                About
+              </NuxtLink>
+              <NuxtLink
+                to="/work"
+                class="font-medium tracking-wide uppercase text-gray-700 hover:text-gray-900"
+              >
+                Contact
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -20,7 +44,7 @@
           class="grid grid-cols-1 md:grid-cols-2 gap-8 py-24 place-items-center flex-1"
         >
           <div class="flex flex-col gap-8">
-            <h1 class="text-6xl font-serif">
+            <h1 class="text-6xl/tight font-serif">
               Hi I'm <br />
               <span class="font-semibold text-black">Misbah Ansori</span>
             </h1>
