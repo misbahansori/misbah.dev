@@ -29,12 +29,13 @@ const { ready: readyToFire, start: startFiring } = useTimeout(500, {
   controls: true,
 });
 
-const { ready: readyToSpawnEnemy, start: resetSpawnEnemy } = useTimeout(2000, {
+const { ready: readyToSpawnEnemy, start: resetSpawnEnemy } = useTimeout(3000, {
   controls: true,
 });
 
 const reset = () => {
   state.value = "idle";
+  resetSpawnEnemy();
   character.value = { x: 1, y: 20 };
   enemies.value = [
     { x: 8, y: 1 },
@@ -49,22 +50,17 @@ const spawnEnemy = () => {
 
   resetSpawnEnemy();
 
-  const newEnemy = {
-    x: Math.floor(Math.random() * (BOARD_SIZE - 2)) + 1,
-    y: Math.floor(Math.random() * 2) + 1,
-  };
+  // find a random x position that is not occupied by an enemy
+  let x = Math.floor(Math.random() * BOARD_SIZE);
 
-  if (
-    enemies.value.some(
-      (enemy) =>
-        (enemy.x === newEnemy.x && enemy.y === newEnemy.y) ||
-        (enemy.x - 2 === newEnemy.x && enemy.y - 2 === newEnemy.y) ||
-        (enemy.x + 2 === newEnemy.x && enemy.y - 2 === newEnemy.y)
-    )
-  )
-    return;
+  while (enemies.value.some((enemy) => enemy.x <= x - 3 && enemy.x >= x + 3)) {
+    x = Math.floor(Math.random() * BOARD_SIZE);
+  }
 
-  enemies.value.push(newEnemy);
+  enemies.value.push({
+    x,
+    y: 1 + Math.floor(Math.random() * 5),
+  });
 };
 
 onKeyStroke("ArrowDown", (e) => {
@@ -161,6 +157,16 @@ watch(readyToSpawnEnemy, (ready) => {
   if (!ready) return;
 
   spawnEnemy();
+});
+
+watch(enemies, (enemies) => {
+  if (state.value !== "playing") return;
+
+  if (!enemies.length) {
+    nextTick(() => {
+      alert("You win!");
+    });
+  }
 });
 
 useIntervalFn(() => {
