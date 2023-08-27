@@ -2,7 +2,7 @@
 const { y } = useWindowScroll();
 </script>
 <template>
-  <div class="bg-[#F3F3F3] text-gray-900 font-sans">
+  <div class="bg-gray-100 text-gray-900 font-sans">
     <section class="min-h-screen flex flex-col">
       <nav
         class="py-8 fixed top-0 inset-x-0 z-50 transition-colors duration-200 ease-in-out"
@@ -46,30 +46,40 @@ const { y } = useWindowScroll();
           <div class="flex flex-col gap-8">
             <h1 class="text-6xl/tight font-serif">
               Hi I'm <br />
-              <span class="font-semibold text-black">Misbah Ansori</span>
+              <span class="font-bold text-black">Misbah Ansori</span>
             </h1>
             <p class="text-gray-600 leading-loose">
               I'm a full-stack developer with more that 4 years of experience in
               web development. I'm passionate about learning new technologies
               and building cool projects.
             </p>
-            <button class="">
-              <svg
-                class="w-8"
-                viewBox="0 0 34 39"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            <div>
+              <NuxtLink
+                to="https://github.com/misbahansori"
+                class="relative inline-block text-lg group"
               >
-                <path
-                  d="M19.2187 0.181824H14.4176V29.2102L3.31959 18.1122L0.0326538 21.4361L16.8182 38.2216L33.6406 21.4361L30.2798 18.1122L19.2187 29.2102V0.181824Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </button>
+                <span
+                  class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
+                >
+                  <span
+                    class="absolute inset-0 w-full h-full px-5 py-3 bg-gray-50"
+                  ></span>
+                  <span
+                    class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"
+                  ></span>
+                  <span
+                    class="relative text-sm uppercase font-bold tracking-wide"
+                    >View my profile</span
+                  >
+                </span>
+                <span
+                  class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 group-hover:mb-0 group-hover:mr-0"
+                ></span>
+              </NuxtLink>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <Project />
   </div>
 </template>
