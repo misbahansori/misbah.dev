@@ -236,11 +236,11 @@ useIntervalFn(() => {
       </div>
     </div>
     <div
-      class="absolute inset-0 flex items-end justify-between md:hidden translate-y-6"
+      class="absolute inset-0 flex items-end justify-between md:hidden translate-y-10"
     >
       <button
         @click="move('left')"
-        class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
+        class="relative z-10 block px-2 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
       >
         <svg
           class="w-6 h-6"
@@ -259,8 +259,28 @@ useIntervalFn(() => {
         </svg>
       </button>
       <button
+        @click="fire"
+        class="relative z-10 block px-2 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
+          ></path>
+        </svg>
+      </button>
+      <button
         @click="move('right')"
-        class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
+        class="relative z-10 block px-2 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
       >
         <svg
           class="w-6 h-6"

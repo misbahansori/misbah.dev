@@ -74,7 +74,8 @@ const links = [
           >
             <div class="flex flex-col gap-8">
               <h1 class="text-5xl/tight md:text-7xl/tight font-serif">
-                Hi I'm <br />
+                <span class="text-3xl md:text-7xl">Hi I'm</span>
+                <br />
                 <span class="font-extrabold text-black">Misbah Ansori</span>
               </h1>
               <p class="text-gray-600 leading-loose text-sm md:text-base">
