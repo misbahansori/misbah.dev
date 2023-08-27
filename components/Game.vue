@@ -2,18 +2,23 @@
 const state = ref<"idle" | "playing" | "gameover">("idle");
 const BOARD_SIZE = 24;
 const character = ref({ x: 1, y: 20 });
-const enemies = ref([
+const enemies = shallowRef<
+  {
+    x: number;
+    y: number;
+  }[]
+>([
   { x: 8, y: 1 },
   { x: 14, y: 1 },
 ]);
-const projectiles = ref<
+const projectiles = shallowRef<
   {
     x: number;
     y: number;
   }[]
 >([]);
 
-const enemyProjectiles = ref<
+const enemyProjectiles = shallowRef<
   {
     x: number;
     y: number;
