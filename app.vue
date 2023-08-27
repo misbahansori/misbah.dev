@@ -1,6 +1,24 @@
 <script setup lang="ts">
-const { y } = useWindowScroll();
+const links = [
+  {
+    name: "Twitter",
+    url: "https://twitter.com/misbahansori",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/misbahansori",
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/misbah-ansori-481993175/",
+  },
+  {
+    name: "Discord",
+    url: "https://discord.com/users/Ansori#7492",
+  },
+];
 </script>
+
 <template>
   <div class="bg-gray-100 text-gray-900 font-sans">
     <section class="min-h-screen flex">
@@ -9,27 +27,15 @@ const { y } = useWindowScroll();
         class="bg-gray-950 w-16 md:w-24 flex-shrink-0 flex items-center gap-12 justify-start py-20 px-4 rotate-180"
       >
         <NuxtLink
-          to="https://twitter.com/misbahansori"
+          v-for="link in links"
+          :to="link.url"
           class="inline-blocK text-white uppercase text-sm whitespace-nowrap"
         >
-          Twitter
-        </NuxtLink>
-        <!-- github -->
-        <NuxtLink
-          to="https://github.com/misbahansori"
-          class="inline-blocK text-white uppercase text-sm whitespace-nowrap"
-        >
-          Github
+          {{ link.name }}
         </NuxtLink>
       </aside>
       <div class="flex flex-col px-8 lg:px-24">
-        <nav
-          class="py-8"
-          :class="{
-            'bg-white': y > 0,
-            'bg-transparent': y === 0,
-          }"
-        >
+        <nav class="py-8 border-b border-gray-950/30 border-dashed">
           <div class="flex items-center justify-between">
             <NuxtLink to="/" class="text-3xl font-bold font-serif">
               ma.
@@ -58,12 +64,12 @@ const { y } = useWindowScroll();
         </nav>
         <div class="flex-1 flex flex-col">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-8 py-24 place-items-center flex-1"
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-20 pb-28 place-items-center flex-1"
           >
             <div class="flex flex-col gap-8">
-              <h1 class="text-6xl/tight font-serif">
+              <h1 class="text-7xl/tight font-serif">
                 Hi I'm <br />
-                <span class="font-bold text-black">Misbah Ansori</span>
+                <span class="font-extrabold text-black">Misbah Ansori</span>
               </h1>
               <p class="text-gray-600 leading-loose">
                 I'm a full-stack developer with more that 4 years of experience

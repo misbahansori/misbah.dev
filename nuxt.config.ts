@@ -12,8 +12,8 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      inter: [400, 500, 600, 700],
-      "Playfair Display": [400, 500, 600, 700],
+      "DM Sans": [400, 500, 600, 700],
+      "Playfair Display": [400, 500, 600, 700, 800],
     },
   },
 });
