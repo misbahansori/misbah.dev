@@ -75,7 +75,7 @@ const moveProjectiles = () => {
           (projectile.x + 1 === state.value.character.x &&
             projectile.y === state.value.character.y + 1)
         ) {
-          gameState.value = "gameover";
+          gameOver();
         }
 
         return projectile.y <= BOARD_SIZE;
@@ -84,9 +84,14 @@ const moveProjectiles = () => {
   }
 };
 
+const gameOver = () => {
+  gameState.value = "gameover";
+
+  pause();
+};
+
 const reset = () => {
   gameState.value = "idle";
-  reset();
   state.value.character = { x: 1, y: 20 };
   state.value.enemies = [
     { x: 8, y: 1 },
