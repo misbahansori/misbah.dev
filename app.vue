@@ -110,7 +110,7 @@ const links = [
               </div>
             </div>
 
-            <Game />
+            <SpaceGame />
           </div>
         </div>
       </div>
