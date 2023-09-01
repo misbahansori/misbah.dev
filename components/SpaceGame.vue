@@ -90,17 +90,6 @@ const gameOver = () => {
   pause();
 };
 
-const reset = () => {
-  gameState.value = "idle";
-  state.value.character = { x: 1, y: 20 };
-  state.value.enemies = [
-    { x: 8, y: 1 },
-    { x: 14, y: 1 },
-  ];
-  state.value.projectiles = [];
-  state.value.enemyProjectiles = [];
-};
-
 const spawnEnemy = () => {
   if (state.value.enemies.length >= 10) return;
 
@@ -164,11 +153,15 @@ const move = (direction: "left" | "right" | "up" | "down") => {
   }
 };
 
-onKeyStroke(" ", (e) => {
-  e.preventDefault();
-  gameState.value = "playing";
-  fire();
-});
+onKeyStroke(
+  " ",
+  (e) => {
+    e.preventDefault();
+    startGame();
+    fire();
+  },
+  { dedupe: false }
+);
 
 const fire = () => {
   state.value.projectiles.push({
