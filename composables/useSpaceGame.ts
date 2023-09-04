@@ -12,7 +12,7 @@ interface GameState {
 }
 
 export const useSpaceGame = ({ boardSize }: { boardSize: number }) => {
-  const gameState = ref<"idle" | "playing" | "gameover">("idle");
+  const playState = ref<"idle" | "playing" | "gameover">("idle");
 
   const intitialState: GameState = {
     renderCount: 0,
@@ -26,6 +26,8 @@ export const useSpaceGame = ({ boardSize }: { boardSize: number }) => {
   };
 
   const state = shallowRef<GameState>(intitialState);
+
+  const { cloned: clonedInitialState } = useCloned(state);
 
   const { resume, pause } = useRafFn(
     (time) => {
@@ -50,14 +52,14 @@ export const useSpaceGame = ({ boardSize }: { boardSize: number }) => {
   );
 
   const startGame = () => {
-    gameState.value = "playing";
-    state.value = intitialState;
+    playState.value = "playing";
+    state.value = clonedInitialState.value;
     resume();
   };
 
   const resetGame = () => {
-    gameState.value = "idle";
-    state.value = intitialState;
+    playState.value = "idle";
+    state.value = clonedInitialState.value;
   };
 
   const moveProjectiles = () => {
@@ -96,7 +98,7 @@ export const useSpaceGame = ({ boardSize }: { boardSize: number }) => {
   };
 
   const gameOver = () => {
-    gameState.value = "gameover";
+    playState.value = "gameover";
 
     pause();
   };
@@ -141,7 +143,7 @@ export const useSpaceGame = ({ boardSize }: { boardSize: number }) => {
   });
 
   const move = (direction: "left" | "right" | "up" | "down") => {
-    if (gameState.value !== "playing") return;
+    if (playState.value !== "playing") return;
 
     if (direction === "left") {
       if (state.value.character.x <= 0 + 1) return;
@@ -212,7 +214,7 @@ export const useSpaceGame = ({ boardSize }: { boardSize: number }) => {
   };
 
   return {
-    gameState,
+    playState,
     state,
     boardSize,
     startGame,
@@ -225,5 +227,6 @@ export const useSpaceGame = ({ boardSize }: { boardSize: number }) => {
     projectileHitsEnemy,
     killEnemy,
     resetGame,
+    intitialState,
   };
 };

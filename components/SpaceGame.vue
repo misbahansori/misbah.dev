@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const BOARD_SIZE = 48;
 
-const { gameState, state, startGame, resetGame } = useSpaceGame({
+const { playState, state, startGame, resetGame, intitialState } = useSpaceGame({
   boardSize: BOARD_SIZE,
 });
 </script>
@@ -10,14 +10,14 @@ const { gameState, state, startGame, resetGame } = useSpaceGame({
   <div class="h-full w-full relative">
     <div class="inset-0 absolute flex items-center justify-center">
       <button
-        v-if="gameState === 'idle'"
+        v-if="playState === 'idle'"
         class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 group-hover:text-white"
         @click="startGame"
       >
         Start
       </button>
       <div
-        v-else-if="gameState === 'gameover'"
+        v-else-if="playState === 'gameover'"
         class="flex flex-col items-center gap-2"
       >
         <div class="bg-gray-100 px-6 py-4">
