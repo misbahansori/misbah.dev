@@ -48,6 +48,7 @@ export const useSpaceGame = ({ boardSize }: { boardSize: number }) => {
 
   const startGame = () => {
     gameState.value = "playing";
+    state.value = intitialState;
     resume();
   };
 
