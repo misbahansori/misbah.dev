@@ -27,24 +27,27 @@ export const useSpaceGame = ({ boardSize }: { boardSize: number }) => {
 
   const state = shallowRef<GameState>(intitialState);
 
-  const { resume, pause } = useRafFn((time) => {
-    moveProjectiles();
+  const { resume, pause } = useRafFn(
+    (time) => {
+      moveProjectiles();
 
-    if (state.value.renderCount % 20 === 0) {
-      spawnEnemy();
+      if (state.value.renderCount % 20 === 0) {
+        spawnEnemy();
 
-      if (state.value.enemies.length) {
-        state.value.enemies.forEach((enemy) => {
-          if (Math.random() > 0.3) return;
+        if (state.value.enemies.length) {
+          state.value.enemies.forEach((enemy) => {
+            if (Math.random() > 0.3) return;
 
-          enemyFire(enemy);
-        });
+            enemyFire(enemy);
+          });
+        }
       }
-    }
 
-    state.value.renderCount++;
-    triggerRef(state);
-  });
+      state.value.renderCount++;
+      triggerRef(state);
+    },
+    { immediate: false }
+  );
 
   const startGame = () => {
     gameState.value = "playing";
