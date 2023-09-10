@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data } = useAsyncData(() => queryContent("/about").findOne());
+const { data } = await useAsyncData(() => queryContent("/about").findOne());
 </script>
 
 <template>
