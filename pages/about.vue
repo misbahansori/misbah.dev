@@ -10,7 +10,7 @@ const { data } = await useAsyncData(() => queryContent("/about").findOne());
           {{ data?.title }}
         </h1>
       </div>
-      <div class="prose prose-lg">
+      <div class="prose prose-lg prose-headings:font-serif">
         <ContentDoc />
       </div>
     </div>

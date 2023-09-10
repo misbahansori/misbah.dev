@@ -5,24 +5,16 @@ useSeoMeta({
     "I'm a full-stack developer with more that 4 years of experience in web development. I'm passionate about learning new technologies and building cool projects.",
 });
 
-const links = [
-  {
-    name: "Twitter",
-    url: "https://twitter.com/misbahansori",
-  },
-  {
-    name: "Github",
-    url: "https://github.com/misbahansori",
-  },
-  {
-    name: "Linkedin",
-    url: "https://www.linkedin.com/in/misbah-ansori-481993175/",
-  },
-  {
-    name: "Discord",
-    url: "https://discord.com/users/Ansori#7492",
-  },
-];
+const appConfig = useAppConfig();
+
+const socials = computed(() => {
+  return Object.entries(appConfig.socials)
+    .filter(([name, url]) => name !== "email")
+    .map(([name, url]) => ({
+      name,
+      url,
+    }));
+});
 </script>
 
 <template>
@@ -32,11 +24,11 @@ const links = [
       class="fixed inset-y-0 left-0 flex w-16 flex-shrink-0 rotate-180 items-center justify-start gap-12 bg-gray-950 px-4 py-20 md:w-24"
     >
       <NuxtLink
-        v-for="link in links"
-        :to="link.url"
+        v-for="{ name, url } in socials"
+        :to="url"
         class="inline-blocK whitespace-nowrap text-sm uppercase text-white"
       >
-        {{ link.name }}
+        {{ name }}
       </NuxtLink>
     </aside>
     <div class="ml-16 flex flex-col px-8 md:ml-24 lg:px-24">
@@ -69,7 +61,7 @@ const links = [
             </p>
             <div>
               <NuxtLink
-                to="https://github.com/misbahansori"
+                :to="appConfig.socials.github"
                 class="group relative inline-block text-lg"
               >
                 <span

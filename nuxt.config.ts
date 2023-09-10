@@ -19,4 +19,9 @@ export default defineNuxtConfig({
   vue: {
     propsDestructure: true,
   },
+  content: {
+    markdown: {
+      anchorLinks: false,
+    },
+  },
 });
