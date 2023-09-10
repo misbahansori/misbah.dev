@@ -47,24 +47,9 @@ const links = [
               ma.
             </NuxtLink>
             <div class="hidden font-serif md:flex md:items-center md:gap-12">
-              <NuxtLink
-                to="/"
-                class="font-medium uppercase tracking-wide text-gray-700 hover:text-gray-900"
-              >
-                Work
-              </NuxtLink>
-              <NuxtLink
-                to="/about"
-                class="font-medium uppercase tracking-wide text-gray-700 hover:text-gray-900"
-              >
-                About
-              </NuxtLink>
-              <NuxtLink
-                to="/"
-                class="font-medium uppercase tracking-wide text-gray-700 hover:text-gray-900"
-              >
-                Contact
-              </NuxtLink>
+              <NavItem path="/" label="Work" />
+              <NavItem path="/about" label="About" />
+              <NavItem path="/" label="Contact" />
             </div>
           </div>
         </nav>
@@ -104,7 +89,7 @@ const links = [
                     </span>
                   </span>
                   <span
-                    class="absolute bottom-0 right-0 -mb-1 -mr-1 h-12 w-full bg-gray-900 transition-all duration-200 ease-linear group-hover:mb-0 group-hover:mr-0"
+                    class="pointer-events-none absolute bottom-0 right-0 -mb-1 -mr-1 h-12 w-full bg-gray-900 transition-all duration-200 ease-linear group-hover:mb-0 group-hover:mr-0"
                   ></span>
                 </NuxtLink>
               </div>

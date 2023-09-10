@@ -11,4 +11,7 @@ export default defineNuxtConfig({
       "Playfair Display": [400, 500, 600, 700, 800],
     },
   },
+  vue: {
+    propsDestructure: true,
+  },
 });
