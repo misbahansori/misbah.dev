@@ -35,7 +35,7 @@ const socials = computed(() => {
       <nav class="border-b border-dashed border-gray-950/30 py-8">
         <div class="flex items-center justify-between">
           <NuxtLink to="/" class="font-serif text-3xl font-bold">
-            ma.
+            Ans
           </NuxtLink>
           <div class="hidden font-serif md:flex md:items-center md:gap-12">
             <NavItem path="/" label="Work" />
