@@ -5,6 +5,7 @@ import {
   MoonIcon,
   SunIcon,
 } from "@radix-icons/vue";
+import { buttonVariants } from "~/components/ui/button";
 const skills = [
   {
     name: "Laravel",
@@ -53,7 +54,9 @@ const colorMode = useColorMode();
             </p>
           </div>
           <div class="flex items-center gap-3">
-            <Button class="h-auto p-2">
+            <NuxtLink
+              :class="cn(buttonVariants({ variant: 'default' }), 'h-auto p-2')"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -66,7 +69,7 @@ const colorMode = useColorMode();
                   d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"
                 />
               </svg>
-            </Button>
+            </NuxtLink>
             <Button class="flex gap-3">
               <EnvelopeOpenIcon class="h-4 w-4" />
               <span>Get in touch </span>
