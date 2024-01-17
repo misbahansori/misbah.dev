@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
     "shadcn-nuxt",
+    "@nuxtjs/color-mode",
   ],
   tailwindcss: {
     viewer: false,
@@ -22,5 +23,8 @@ export default defineNuxtConfig({
   shadcn: {
     prefix: "",
     componentDir: "./components/ui",
+  },
+  colorMode: {
+    classSuffix: "",
   },
 });
