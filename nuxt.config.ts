@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
-    "@nuxt/content",
+    "shadcn-nuxt",
   ],
   tailwindcss: {
     viewer: false,
@@ -19,9 +19,8 @@ export default defineNuxtConfig({
   vue: {
     propsDestructure: true,
   },
-  content: {
-    markdown: {
-      anchorLinks: false,
-    },
+  shadcn: {
+    prefix: "",
+    componentDir: "./components/ui",
   },
 });
