@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
     "nuxt-og-image",
+    "@nuxt/content",
   ],
   tailwindcss: {
     viewer: false,
@@ -43,5 +44,10 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: "",
+  },
+  content: {
+    highlight: {
+      theme: "github-light",
+    },
   },
 });
