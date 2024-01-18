@@ -72,10 +72,20 @@ const colorMode = useColorMode();
 
     <section class="mx-auto max-w-3xl px-4">
       <nav class="flex items-center justify-end gap-8 py-4">
-        <ul class="flex items-center gap-8">
-          <li><a href="#" class="text-sm text-muted-foreground">Blog</a></li>
-          <li><a href="#" class="text-sm text-muted-foreground">About</a></li>
-        </ul>
+        <div class="flex items-center gap-2">
+          <a
+            href="#"
+            class="rounded-md px-4 py-2 text-sm text-muted-foreground hover:bg-accent"
+          >
+            Blog
+          </a>
+          <a
+            href="#"
+            class="rounded-md px-4 py-2 text-sm text-muted-foreground hover:bg-accent"
+          >
+            About
+          </a>
+        </div>
         <Button
           v-if="colorMode.value === 'dark'"
           variant="ghost"
@@ -97,7 +107,7 @@ const colorMode = useColorMode();
     <section class="mx-auto max-w-3xl px-4">
       <div class="flex flex-col gap-4 py-6 lg:py-8">
         <img src="/img/misbah.jpg" alt="" class="h-20 w-20 rounded-full" />
-        <span class="text-base font-medium"> Hi, I'm Misbah Ansori </span>
+        <span class="text-base font-medium">Hi, I'm Misbah Ansori</span>
         <div class="flex items-center justify-between">
           <div>
             <h1 class="text-2xl font-bold">Fullstack Developer</h1>
@@ -126,7 +136,7 @@ const colorMode = useColorMode();
             </NuxtLink>
             <Button class="flex gap-3">
               <EnvelopeOpenIcon class="h-4 w-4" />
-              <span>Get in touch </span>
+              <span>Get in touch</span>
             </Button>
           </div>
         </div>
@@ -141,7 +151,7 @@ const colorMode = useColorMode();
             Vue.js
           </p>
         </div>
-        <div class="grid grid-cols-3 gap-4 pt-6">
+        <div class="grid grid-cols-2 gap-4 pt-6 md:grid-cols-3">
           <SkillCard v-for="skill in skills" :skill="skill" :key="skill.name" />
         </div>
       </div>
