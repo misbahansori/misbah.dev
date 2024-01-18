@@ -43,11 +43,15 @@ export default defineNuxtConfig({
     componentDir: "./components/ui",
   },
   colorMode: {
+    preference: "dark",
     classSuffix: "",
   },
   content: {
     highlight: {
-      theme: "github-light",
+      theme: {
+        default: "github-light",
+        dark: "github-dark",
+      },
     },
   },
 });
