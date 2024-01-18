@@ -24,12 +24,10 @@ useSeoMeta({
   ogTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
   ogDescription:
     "I love to build something that can help people and make life easier",
-  ogImage: "/img/misbah.jpg",
   ogUrl: "https://misbah.dev",
   twitterTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
   twitterDescription:
     "I love to build something that can help people and make life easier",
-  twitterImage: "/img/misbah.jpg",
   twitterCard: "summary_large_image",
   twitterSite: "@MisbahAnsori24",
   twitterCreator: "@MisbahAnsori24",
