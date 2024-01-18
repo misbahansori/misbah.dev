@@ -2,6 +2,14 @@
 import { EnvelopeOpenIcon, MoonIcon, SunIcon } from "@radix-icons/vue";
 import { buttonVariants } from "~/components/ui/button";
 
+defineOgImageComponent("HomePage", {
+  title: "Hi, I'm Misbah Ansori",
+  headline: "Fullstack Developer",
+  description:
+    "I love to build something that can help people and make life easier",
+  image: "/img/misbah.jpg",
+});
+
 useHead({
   title: "Hi, I'm Misbah Ansori - Fullstack Developer",
   htmlAttrs: {

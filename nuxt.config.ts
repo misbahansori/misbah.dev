@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  site: {
+    url: "https://misbah.dev",
+  },
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
@@ -7,6 +10,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
+    "nuxt-og-image",
   ],
   tailwindcss: {
     viewer: false,
