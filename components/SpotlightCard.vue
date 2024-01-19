@@ -17,7 +17,9 @@ const { elementX: x, elementY: y } = useMouseInElement(el);
       '--y': y + 'px',
     }"
   >
-    <div class="absolute inset-px rounded-[calc(var(--radius)-1px)] bg-card" />
+    <div
+      class="absolute inset-px rounded-[calc(var(--radius)-1px)] bg-card/95 backdrop-blur-md"
+    />
     <slot />
   </div>
 </template>

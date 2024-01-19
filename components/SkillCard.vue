@@ -11,7 +11,7 @@ const { skill } = defineProps<{
 </script>
 
 <template>
-  <SpotlightCard>
+  <SpotlightCard class="transition hover:-translate-y-px hover:shadow-sm">
     <NuxtLink
       :to="skill.url"
       target="_blank"
