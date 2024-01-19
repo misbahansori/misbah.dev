@@ -55,9 +55,9 @@ const skills = [
     url: "https://filamentphp.com",
   },
   {
-    name: "Livewire",
-    description: "A full-stack framework for Laravel",
-    url: "https://laravel-livewire.com",
+    name: "Nuxt JS",
+    description: "A full-stack framework for Vue.js",
+    url: "https://nuxt.com",
   },
 ];
 
@@ -67,7 +67,13 @@ const experiences = [
     endDate: "Present",
     title: "Fullstack Developer",
     company: "Gilgamesh Pte. Ltd, Singapore",
-    techStack: ["Laravel", "Vue.js", "Tailwind CSS", "Laravel Filament"],
+    techStack: [
+      "Laravel",
+      "Vue.js",
+      "Tailwind CSS",
+      "Laravel Filament",
+      "Nuxt JS",
+    ],
   },
   {
     startDate: "Nov 2021",
@@ -89,14 +95,17 @@ const experiences = [
   <section class="mx-auto max-w-3xl px-4">
     <div class="flex flex-col gap-4 py-6 lg:py-8">
       <!-- <img src="/img/misbah.jpg" alt="" class="h-20 w-20 rounded-full" /> -->
-      <span class="text-base font-medium">Hi, I'm Misbah Ansori</span>
+
       <div
-        class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center"
+        class="flex flex-col justify-between gap-8 sm:flex-row sm:items-start"
       >
         <div>
-          <h1 class="text-2xl font-bold">Fullstack Developer</h1>
-          <p class="text-muted-foreground">
-            I love to build something that can help people and make life easier
+          <h1 class="text-2xl font-bold">Hi, I'm Misbah Ansori</h1>
+          <span class="text-base font-medium">Fullstack Developer</span>
+          <p class="pt-2.5 text-muted-foreground">
+            A passionate developer who has a strong interest in web development
+            and technology. Proficient and experienced in both frontend and
+            backend.
           </p>
         </div>
         <div class="flex items-center gap-3">
@@ -152,10 +161,11 @@ const experiences = [
           v-for="experience in experiences"
           class="flex flex-col items-baseline gap-6 md:flex-row md:gap-12"
         >
-          <div class="flex w-32 flex-wrap items-center gap-1">
-            <span class="text-sm">{{ experience.startDate }}</span>
-            <span class="text-sm">-</span>
-            <span class="text-sm">{{ experience.endDate }}</span>
+          <div
+            class="flex w-32 flex-wrap items-center gap-1 pt-4 text-sm font-medium text-muted-foreground sm:pt-0"
+          >
+            {{ experience.startDate }} -
+            {{ experience.endDate }}
           </div>
           <div>
             <div class="relative flex pb-8 last:pb-0">
@@ -185,7 +195,7 @@ const experiences = [
                   <path d="M12 5v14"></path>
                 </svg>
               </div>
-              <div class="flex-grow pb-12 pl-8">
+              <div class="flex-grow pb-8 pl-8 sm:pb-12">
                 <div class="word-break-word flex flex-col gap-2">
                   <span class="font-semibold tracking-tight">
                     {{ experience.title }}
