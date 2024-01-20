@@ -2,17 +2,17 @@
 const skills = [
   {
     name: "Laravel",
-    description: "Backend Framework",
+    description: "The full-stack PHP Framework",
     url: "https://laravel.com",
   },
   {
     name: "Vue.js",
-    description: "Frontend Framework",
+    description: "The Progressive JavaScript Framework",
     url: "https://vuejs.org",
   },
   {
     name: "Tailwind CSS",
-    description: "CSS Framework",
+    description: "A utility-first CSS Framework",
     url: "https://tailwindcss.com",
   },
   {
