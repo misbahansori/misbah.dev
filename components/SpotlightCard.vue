@@ -13,8 +13,8 @@ const { elementX: x, elementY: y } = useMouseInElement(el);
       --spotlight-size: 100px;
     "
     :style="{
-      '--x': x + 'px',
-      '--y': y + 'px',
+      '--x': x ? `${x}px` : '-100%',
+      '--y': y ? `${y}px` : '-100%',
     }"
   >
     <div
