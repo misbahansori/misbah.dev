@@ -5,8 +5,10 @@ import { buttonVariants } from "~/components/ui/button";
 
 <template>
   <section class="mx-auto max-w-3xl px-4">
-    <div class="flex flex-col gap-4 py-6 lg:py-8">
-      <!-- <img src="/img/misbah.jpg" alt="" class="h-20 w-20 rounded-full" /> -->
+    <div class="flex flex-col gap-8 py-6 lg:py-8">
+      <div>
+        <img src="/img/misbah.jpg" alt="" class="h-24 w-24 rounded-full" />
+      </div>
 
       <div
         class="flex flex-col justify-between gap-8 sm:flex-row sm:items-start"

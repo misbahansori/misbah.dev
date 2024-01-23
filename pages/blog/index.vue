@@ -1,10 +1,31 @@
+<script setup lang="ts">
+useHead({
+  title: "My Blog",
+});
+useSeoMeta({
+  title: "My Blog",
+  description:
+    "Just some random thoughts of mine. A place where I share my thoughts and experiences",
+  ogTitle: "My Blog",
+  ogDescription:
+    "Just some random thoughts of mine. A place where I share my thoughts and experiences",
+});
+</script>
+
 <template>
   <section class="mx-auto max-w-3xl px-4">
     <div class="flex flex-col gap-4 py-6 lg:py-8">
       <h1 class="text-xl font-bold">My Blog</h1>
-      <p class="text-muted-foreground">Just some random thoughts of mine</p>
-      <div class="pt-12">
-        <ContentList path="/blog" v-slot="{ list }">
+      <p class="text-muted-foreground">
+        A place where I share my thoughts and experiences
+      </p>
+      <div class="pt-8">
+        <div
+          class="flex items-center justify-center text-center italic text-muted-foreground"
+        >
+          Just an empty page for now. Hopefully I can write something here soon.
+        </div>
+        <!-- <ContentList path="/blog" v-slot="{ list }">
           <div v-for="article in list" :key="article._path">
             <article class="group relative">
               <div
@@ -34,7 +55,7 @@
               </NuxtLink>
             </article>
           </div>
-        </ContentList>
+        </ContentList> -->
       </div>
     </div>
   </section>

@@ -34,8 +34,8 @@ const skills = [
       <div>
         <h2 class="text-xl font-bold">My Skills</h2>
         <p class="text-muted-foreground">
-          I have experience in building web applications using Laravel and
-          Vue.js
+          I have a strong experience in building web applications using these
+          technologies
         </p>
       </div>
       <div class="grid grid-cols-2 gap-4 pt-6 md:grid-cols-3">
