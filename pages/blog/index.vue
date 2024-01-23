@@ -1,3 +1,16 @@
+<script setup lang="ts">
+useHead({
+  title: "My Blog",
+});
+useSeoMeta({
+  title: "My Blog",
+  description: "Just some random thoughts of mine",
+  ogTitle: "My Blog",
+  ogDescription: "Just some random thoughts of mine",
+  ogImage: "/images/og/blog.png",
+});
+</script>
+
 <template>
   <section class="mx-auto max-w-3xl px-4">
     <div class="flex flex-col gap-4 py-6 lg:py-8">
