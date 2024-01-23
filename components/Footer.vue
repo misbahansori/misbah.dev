@@ -25,7 +25,7 @@ const links = [
 
 <template>
   <section class="mx-auto max-w-3xl px-4">
-    <footer class="flex items-center justify-between gap-8 py-4">
+    <footer class="flex items-center justify-between gap-8 py-4 md:py-8">
       <div class="flex items-center gap-2">
         <NuxtLink
           v-for="link in links"
