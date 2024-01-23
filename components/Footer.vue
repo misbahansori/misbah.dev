@@ -28,7 +28,7 @@ const links = [
     <footer
       class="flex flex-col items-center justify-between gap-8 py-4 sm:flex-row md:py-8"
     >
-      <div class="flex flex-col items-center gap-2 sm:flex-row">
+      <div class="flex flex-wrap items-center gap-2">
         <NuxtLink
           v-for="link in links"
           :key="link.name"

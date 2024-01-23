@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { DrawingPinIcon } from "@radix-icons/vue";
+
 const experiences = [
   {
     startDate: "Jul 2022",
     endDate: "Present",
     title: "Fullstack Developer",
     company: "Gilgamesh Pte. Ltd, Singapore",
+    location: "Remote",
     techStack: [
       "Laravel",
       "Vue.js",
@@ -18,6 +21,7 @@ const experiences = [
     endDate: "Jun 2022",
     title: "Back End Developer",
     company: "Avana Indonesia",
+    location: "Remote",
     techStack: ["Laravel"],
   },
   {
@@ -25,6 +29,7 @@ const experiences = [
     endDate: "Oct 2021",
     title: "Full Stack Developer",
     company: "PT. Winosa Mitra Bharatadjaya",
+    location: "Bandar Lampung, Indonesia",
     techStack: ["Laravel", "Vue.js"],
   },
 ];
@@ -86,6 +91,12 @@ const experiences = [
                   <span class="text-sm text-muted-foreground">
                     {{ experience.company }}
                   </span>
+                  <div class="flex items-center gap-1">
+                    <DrawingPinIcon class="inline-block h-4 w-4" />
+                    <span class="text-sm text-muted-foreground">
+                      {{ experience.location }}
+                    </span>
+                  </div>
                 </div>
                 <div class="flex flex-wrap gap-2 pt-3">
                   <Badge

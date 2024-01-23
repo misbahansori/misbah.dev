@@ -16,7 +16,7 @@ const { skill } = defineProps<{
       :to="skill.url"
       target="_blank"
       :key="skill.name"
-      class="group relative flex flex-col gap-1 rounded-[calc(var(--radius)-1px)] px-6 py-4 transition duration-200 ease-in-out"
+      class="group relative flex flex-col gap-1 rounded-[calc(var(--radius)-1px)] px-4 py-4 transition duration-200 ease-in-out sm:px-6"
     >
       <span class="text-sm font-medium">{{ skill.name }}</span>
       <p class="text-sm text-muted-foreground">

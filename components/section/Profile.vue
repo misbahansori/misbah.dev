@@ -7,7 +7,11 @@ import { buttonVariants } from "~/components/ui/button";
   <section class="mx-auto max-w-3xl px-4">
     <div class="flex flex-col gap-8 py-6 lg:py-8">
       <div>
-        <img src="/img/misbah.jpg" alt="" class="h-24 w-24 rounded-full" />
+        <img
+          src="/img/misbah.jpg"
+          alt=""
+          class="h-20 w-20 rounded-full border-2 border-white shadow-lg md:h-24 md:w-24"
+        />
       </div>
 
       <div

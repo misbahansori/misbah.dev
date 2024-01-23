@@ -38,7 +38,7 @@ const skills = [
           technologies
         </p>
       </div>
-      <div class="grid grid-cols-2 gap-4 pt-6 md:grid-cols-3">
+      <div class="grid grid-cols-1 gap-4 pt-6 sm:grid-cols-2 md:grid-cols-3">
         <SkillCard v-for="skill in skills" :skill="skill" :key="skill.name" />
       </div>
     </div>

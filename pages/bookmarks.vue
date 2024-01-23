@@ -23,7 +23,7 @@ const bookmarks = [
         Useful links that I often visit and use
       </p>
     </div>
-    <div class="grid grid-cols-3 pt-8">
+    <div class="grid grid-cols-1 gap-3 pt-8 sm:grid-cols-2 md:grid-cols-3">
       <NuxtLink
         v-for="bookmark in bookmarks"
         :key="bookmark.url"
