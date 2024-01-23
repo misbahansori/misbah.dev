@@ -16,17 +16,19 @@ const links = [
     name: "Bookmarks",
     path: "/bookmarks",
   },
-  {
-    name: "About",
-    path: "/about",
-  },
+  // {
+  //   name: "About",
+  //   path: "/about",
+  // },
 ];
 </script>
 
 <template>
   <section class="mx-auto max-w-3xl px-4">
-    <footer class="flex items-center justify-between gap-8 py-4 md:py-8">
-      <div class="flex items-center gap-2">
+    <footer
+      class="flex flex-col items-center justify-between gap-8 py-4 sm:flex-row md:py-8"
+    >
+      <div class="flex flex-col items-center gap-2 sm:flex-row">
         <NuxtLink
           v-for="link in links"
           :key="link.name"

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { buttonVariants } from "~/components/ui/button";
 
-const colorMode = useColorMode();
-
 const navigations = [
   {
     name: "Blog",
@@ -12,10 +10,10 @@ const navigations = [
     name: "Bookmarks",
     path: "/bookmarks",
   },
-  {
-    name: "About me",
-    path: "/about",
-  },
+  // {
+  //   name: "About me",
+  //   path: "/about",
+  // },
 ];
 </script>
 
@@ -33,7 +31,7 @@ const navigations = [
       >
         <span class="font-bold">./</span>
       </NuxtLink>
-      <div class="-mr-4 flex items-center gap-2">
+      <div class="hidden md:-mr-4 md:flex md:items-center md:gap-2">
         <NuxtLink
           v-for="nav in navigations"
           :key="nav.name"

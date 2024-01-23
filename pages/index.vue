@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 defineOgImageComponent("HomePage", {
   title: "Hi, I'm Misbah Ansori",
   headline: "Fullstack Developer",

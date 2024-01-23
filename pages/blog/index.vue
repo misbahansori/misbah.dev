@@ -4,10 +4,11 @@ useHead({
 });
 useSeoMeta({
   title: "My Blog",
-  description: "Just some random thoughts of mine",
+  description:
+    "Just some random thoughts of mine. A place where I share my thoughts and experiences",
   ogTitle: "My Blog",
-  ogDescription: "Just some random thoughts of mine",
-  ogImage: "/images/og/blog.png",
+  ogDescription:
+    "Just some random thoughts of mine. A place where I share my thoughts and experiences",
 });
 </script>
 
