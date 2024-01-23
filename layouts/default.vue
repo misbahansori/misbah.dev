@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
+
+useHead({
+  meta: [{ name: "theme-color", content: "#020817" }],
+});
 </script>
 
 <template>
