@@ -2,7 +2,12 @@
 const colorMode = useColorMode();
 
 useHead({
-  meta: [{ name: "theme-color", content: "#020817" }],
+  meta: [
+    {
+      name: "theme-color",
+      content: colorMode.value === "dark" ? "#020817" : "#ffffff",
+    },
+  ],
 });
 </script>
 
