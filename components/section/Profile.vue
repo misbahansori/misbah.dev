@@ -1,17 +1,65 @@
 <script setup lang="ts">
 import { EnvelopeOpenIcon } from "@radix-icons/vue";
+import {
+  TooltipContent,
+  TooltipPortal,
+  TooltipProvider,
+  TooltipRoot,
+  TooltipTrigger,
+} from "radix-vue";
 import { buttonVariants } from "~/components/ui/button";
 </script>
 
 <template>
   <section class="mx-auto max-w-3xl px-4">
     <div class="flex flex-col gap-8 py-6 lg:py-8">
-      <div>
-        <img
-          src="/img/misbah.jpg"
-          alt=""
-          class="h-20 w-20 rounded-full border-2 border-white shadow-lg md:h-24 md:w-24"
-        />
+      <div class="flex">
+        <div class="relative">
+          <TooltipProvider :delayDuration="0">
+            <TooltipRoot>
+              <TooltipTrigger>
+                <img
+                  src="/img/misbah.jpg"
+                  alt=""
+                  class="h-20 w-20 rounded-full border-2 border-white shadow-lg md:h-24 md:w-24"
+                />
+              </TooltipTrigger>
+              <TooltipPortal>
+                <TooltipContent>
+                  <div
+                    v-motion="{
+                      initial: { opacity: 0, y: 20, scale: 0.6, rotate: -10 },
+                      enter: {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        rotate: 0,
+                        transition: {
+                          duration: 0.9,
+                          type: 'spring',
+                          stiffness: 260,
+                          damping: 10,
+                        },
+                      },
+                      exit: {
+                        opacity: 0,
+                        transition: { duration: 0.1 },
+                      },
+                    }"
+                    class="pointer-events-none absolute flex flex-col items-center justify-center rounded-2xl bg-background px-6 py-2 shadow-xl"
+                  >
+                    <span class="whitespace-nowrap font-semibold">
+                      Misbah Ansori
+                    </span>
+                    <span class="whitespace-nowrap text-sm">
+                      Fullstack Developer
+                    </span>
+                  </div>
+                </TooltipContent>
+              </TooltipPortal>
+            </TooltipRoot>
+          </TooltipProvider>
+        </div>
       </div>
 
       <div

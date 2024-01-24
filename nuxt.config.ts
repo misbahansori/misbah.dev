@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "nuxt-og-image",
     "@nuxt/content",
+    "@vueuse/motion/nuxt",
   ],
   tailwindcss: {
     viewer: false,
