@@ -8,16 +8,24 @@ import {
   TooltipTrigger,
 } from "radix-vue";
 import { buttonVariants } from "~/components/ui/button";
+
+const { sourceType } = useMouse();
+const showTooltip = ref(false);
 </script>
 
 <template>
   <section class="mx-auto max-w-3xl px-4">
     <div class="flex flex-col gap-8 py-6 lg:py-8">
-      <div class="flex">
+      <div class="flex justify-center sm:justify-start">
         <div class="relative">
           <TooltipProvider :delayDuration="0">
-            <TooltipRoot>
-              <TooltipTrigger>
+            <TooltipRoot :open="showTooltip">
+              <TooltipTrigger
+                @mouseover="showTooltip = true"
+                @mouseleave="sourceType === 'mouse' && (showTooltip = false)"
+                @click="showTooltip = !showTooltip"
+                as-child
+              >
                 <img
                   src="/img/misbah.jpg"
                   alt=""
@@ -43,7 +51,15 @@ import { buttonVariants } from "~/components/ui/button";
                       },
                       exit: {
                         opacity: 0,
-                        transition: { duration: 0.1 },
+                        y: 20,
+                        scale: 0.6,
+                        rotate: 20,
+                        transition: {
+                          duration: 0.9,
+                          type: 'spring',
+                          stiffness: 260,
+                          damping: 10,
+                        },
                       },
                     }"
                     class="pointer-events-none absolute -translate-x-1/2 -translate-y-full"
@@ -94,7 +110,7 @@ import { buttonVariants } from "~/components/ui/button";
       </div>
 
       <div
-        class="flex flex-col justify-between gap-8 sm:flex-row sm:items-start"
+        class="flex flex-col justify-between gap-8 text-center sm:flex-row sm:items-start sm:text-left"
       >
         <div>
           <h1 class="text-2xl font-bold">Hi, I'm Misbah Ansori</h1>
@@ -105,7 +121,7 @@ import { buttonVariants } from "~/components/ui/button";
             backend.
           </p>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center justify-center gap-3 sm:justify-start">
           <NuxtLink
             to="https://twitter.com/MisbahAnsori24"
             :class="cn(buttonVariants({ variant: 'default' }), 'h-auto p-2')"
