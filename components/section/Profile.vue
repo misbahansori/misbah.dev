@@ -55,7 +55,9 @@ import { buttonVariants } from "~/components/ui/button";
                         <span class="whitespace-nowrap font-semibold">
                           Misbah Ansori
                         </span>
-                        <span class="whitespace-nowrap text-sm">
+                        <span
+                          class="whitespace-nowrap text-sm text-muted-foreground"
+                        >
                           Fullstack Developer
                         </span>
                       </div>
@@ -92,6 +94,15 @@ import { buttonVariants } from "~/components/ui/button";
       <div
         class="flex flex-col justify-between gap-8 sm:flex-row sm:items-start"
       >
+        <div>
+          <h1 class="text-2xl font-bold">Hi, I'm Misbah Ansori</h1>
+          <span class="text-base font-medium">Fullstack Developer</span>
+          <p class="pt-2.5 text-muted-foreground">
+            A passionate developer who has a strong interest in web development
+            and technology. Proficient and experienced in both frontend and
+            backend.
+          </p>
+        </div>
         <div class="flex items-center gap-3">
           <NuxtLink
             to="https://twitter.com/MisbahAnsori24"
