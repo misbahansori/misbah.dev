@@ -61,7 +61,9 @@ import { buttonVariants } from "~/components/ui/button";
                           Fullstack Developer
                         </span>
                       </div>
-                      <div class="relative h-5 w-full overflow-hidden">
+                      <div
+                        class="relative hidden h-5 w-full overflow-hidden dark:block"
+                      >
                         <div
                           class="absolute inset-x-1/2 top-0 h-[2px] w-full -translate-x-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm"
                         ></div>
@@ -79,7 +81,7 @@ import { buttonVariants } from "~/components/ui/button";
                           style="opacity: 1"
                         ></div>
                         <div
-                          class="absolute inset-0 h-full w-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"
+                          class="absolute inset-0 h-full w-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"
                         ></div>
                       </div>
                     </div>
