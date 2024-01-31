@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   app: {
     head: {
+      title: "Misbah Ansori - Fullstack Developer",
       htmlAttrs: {
         lang: "en",
       },

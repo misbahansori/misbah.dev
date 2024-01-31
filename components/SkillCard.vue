@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowTopRightIcon } from "@radix-icons/vue";
+import { ExternalLinkIcon } from "@radix-icons/vue";
 
 const { skill } = defineProps<{
   skill: {
@@ -22,7 +22,7 @@ const { skill } = defineProps<{
       <p class="text-sm text-muted-foreground">
         {{ skill.description }}
       </p>
-      <ArrowTopRightIcon
+      <ExternalLinkIcon
         class="absolute right-4 top-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
       />
     </NuxtLink>
