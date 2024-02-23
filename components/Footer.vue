@@ -16,6 +16,10 @@ const links = [
     name: "Bookmarks",
     path: "/bookmarks",
   },
+  {
+    name: "Portfolios",
+    path: "/portfolios",
+  },
   // {
   //   name: "About",
   //   path: "/about",
