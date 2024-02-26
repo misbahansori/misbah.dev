@@ -124,6 +124,7 @@ const showTooltip = ref(false);
         <div class="flex items-center justify-center gap-3 sm:justify-start">
           <NuxtLink
             to="https://twitter.com/MisbahAnsori24"
+            target="_blank"
             :class="cn(buttonVariants({ variant: 'default' }), 'h-auto p-2')"
           >
             <svg
@@ -139,10 +140,13 @@ const showTooltip = ref(false);
               />
             </svg>
           </NuxtLink>
-          <Button class="flex gap-3">
+          <NuxtLink
+            to="mailto:misbah.ansori24@gmail.com"
+            :class="cn(buttonVariants(), 'flex gap-3')"
+          >
             <EnvelopeOpenIcon class="h-5 w-5" />
             <span>Get in touch</span>
-          </Button>
+          </NuxtLink>
         </div>
       </div>
     </div>
