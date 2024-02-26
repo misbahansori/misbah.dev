@@ -1,6 +1,9 @@
 <script setup lang="ts">
-const { links } = defineProps<{
+import type { HTMLAttributes } from "vue";
+
+const props = defineProps<{
   links: { name: string; path: string }[];
+  class?: HTMLAttributes["class"];
 }>();
 
 const size = ref(60);
@@ -19,7 +22,7 @@ const toggleMenu = (e: any) => {
 </script>
 
 <template>
-  <div class="group relative hidden md:-mr-4 md:flex md:items-center md:gap-2">
+  <div :class="cn('group relative flex items-center gap-2', props.class)">
     <span
       :style="{
         '--size': size + 'px',
@@ -29,7 +32,7 @@ const toggleMenu = (e: any) => {
     ></span>
     <NuxtLink
       @mouseover="toggleMenu"
-      v-for="link in links"
+      v-for="link in props.links"
       :key="link.name"
       :to="link.path"
       class="group relative inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"

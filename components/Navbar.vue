@@ -13,16 +13,16 @@ const { links } = useNavigation();
         :class="
           cn(
             buttonVariants({ variant: 'outline' }),
-            'h-10 w-10 bg-background shadow-none',
+            'h-8 w-8 bg-background shadow-none sm:h-10 sm:w-10',
           )
         "
       >
         <span class="font-bold">./</span>
       </NuxtLink>
-      <AnimatedTabs :links="links" />
+      <AnimatedTabs :links="links" class="hidden sm:flex" />
       <Sheet>
         <SheetTrigger as-child>
-          <Button variant="ghost" class="p-2">
+          <Button variant="ghost" class="flex p-2 sm:hidden">
             <HamburgerMenuIcon class="h-5 w-5" />
           </Button>
         </SheetTrigger>
