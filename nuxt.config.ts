@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     "nuxt-og-image",
     "@nuxt/content",
     "@vueuse/motion/nuxt",
+    "nuxt-svgo",
   ],
   tailwindcss: {
     viewer: false,
@@ -55,5 +56,8 @@ export default defineNuxtConfig({
         dark: "github-dark",
       },
     },
+  },
+  svgo: {
+    fontControlled: false,
   },
 });

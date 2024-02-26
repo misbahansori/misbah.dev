@@ -127,18 +127,7 @@ const showTooltip = ref(false);
             target="_blank"
             :class="cn(buttonVariants({ variant: 'default' }), 'h-auto p-2')"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              class="h-5 w-5"
-            >
-              <path
-                fill="currentColor"
-                d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"
-              />
-            </svg>
+            <SvgoX name="twitter" class="h-5 w-5" :font-controlled="false" />
           </NuxtLink>
           <NuxtLink
             to="mailto:misbah.ansori24@gmail.com"
