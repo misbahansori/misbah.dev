@@ -29,6 +29,8 @@ const bookmarks = [
   {
     url: "https://uicolors.app",
     name: "Tailwind CSS Color Generator",
+    description:
+      "Generate beautiful color combinations for your Tailwind CSS projects",
   },
   {
     url: "https://ksassnowski.github.io/vueclid-docs",
