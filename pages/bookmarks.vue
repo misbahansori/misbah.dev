@@ -54,7 +54,7 @@ const bookmarks = [
         :key="bookmark.url"
         :to="bookmark.url"
         target="_blank"
-        class="group group relative flex flex-col items-start justify-center gap-2 rounded-lg px-4 py-3 shadow-md transition hover:bg-accent hover:shadow-lg"
+        class="group group relative flex flex-col items-start justify-center gap-2 rounded-lg bg-background px-4 py-3 shadow-md transition hover:bg-accent hover:shadow-lg"
       >
         <span class="text-base font-bold">{{ bookmark.name }}</span>
         <p class="text-sm text-muted-foreground">
