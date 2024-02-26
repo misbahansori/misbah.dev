@@ -1,30 +1,10 @@
 <script setup lang="ts">
 import { MoonIcon, SunIcon } from "@radix-icons/vue";
-import { buttonVariants } from "~/components/ui/button";
 
 const colorMode = useColorMode();
-const links = [
-  {
-    name: "Home",
-    path: "/",
-  },
-  {
-    name: "Blog",
-    path: "/blog",
-  },
-  {
-    name: "Bookmarks",
-    path: "/bookmarks",
-  },
-  {
-    name: "Portfolios",
-    path: "/portfolios",
-  },
-  // {
-  //   name: "About",
-  //   path: "/about",
-  // },
-];
+const { links } = useNavigation();
+
+links.unshift({ name: "Home", path: "/" });
 </script>
 
 <template>
@@ -32,16 +12,7 @@ const links = [
     <footer
       class="flex flex-col items-center justify-between gap-8 py-4 sm:flex-row md:py-8"
     >
-      <div class="flex flex-wrap items-center gap-2">
-        <NuxtLink
-          v-for="link in links"
-          :key="link.name"
-          :to="link.path"
-          :class="cn(buttonVariants({ variant: 'ghost' }))"
-        >
-          {{ link.name }}
-        </NuxtLink>
-      </div>
+      <AnimatedTabs :links="links" />
       <div>
         <Button
           v-if="colorMode.value === 'dark'"
