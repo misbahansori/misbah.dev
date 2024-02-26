@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { HamburgerMenuIcon } from "@radix-icons/vue";
 import { buttonVariants } from "~/components/ui/button";
 
 const { links } = useNavigation();
@@ -19,6 +20,33 @@ const { links } = useNavigation();
         <span class="font-bold">./</span>
       </NuxtLink>
       <AnimatedTabs :links="links" />
+      <Sheet>
+        <SheetTrigger as-child>
+          <Button variant="ghost" class="p-2">
+            <HamburgerMenuIcon class="h-5 w-5" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent class="p-4">
+          <SheetHeader>
+            <SheetTitle class="text-base">Misbah.dev</SheetTitle>
+            <SheetDescription class="sr-only">
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </SheetDescription>
+          </SheetHeader>
+          <div class="flex flex-col gap-4 py-8">
+            <Button
+              v-for="link in links"
+              :key="link.name"
+              :to="link.path"
+              variant="ghost"
+              class="text-right"
+            >
+              {{ link.name }}
+            </Button>
+          </div>
+        </SheetContent>
+      </Sheet>
     </nav>
   </section>
 </template>
