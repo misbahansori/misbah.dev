@@ -75,6 +75,14 @@ module.exports = {
           from: { height: "var(--radix-collapsible-content-height)" },
           to: { height: 0 },
         },
+        hover: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-7px)" },
+        },
+        "hover-shadow": {
+          "0%, 100%": { transform: "scaleX(1)" },
+          "50%": { transform: "scaleX(1.1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -82,6 +90,8 @@ module.exports = {
         "collapsible-down": "collapsible-down 0.2s ease-in-out",
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
         "spin-slow": "spin 3s linear infinite",
+        hover: "hover 2s ease-in-out infinite",
+        "hover-shadow": "hover-shadow 2s ease-in-out infinite",
       },
     },
   },

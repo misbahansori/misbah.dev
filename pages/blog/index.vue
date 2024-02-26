@@ -20,10 +20,22 @@ useSeoMeta({
         A place where I share my thoughts and experiences
       </p>
       <div class="pt-8">
-        <div
-          class="flex items-center justify-center text-center italic text-muted-foreground"
-        >
-          Just an empty page for now. Hopefully I can write something here soon.
+        <div class="flex flex-col items-center justify-center gap-4">
+          <div>
+            <SvgoBlogEmpty
+              class="animate-hover mx-auto mt-8 w-40 text-muted-foreground"
+              :font-controlled="false"
+            />
+            <SvgoEmptyShadow
+              class="animate-hover-shadow mx-auto w-40 text-muted-foreground"
+              :font-controlled="false"
+            />
+          </div>
+
+          <p class="max-w-sm text-center italic leading-loose">
+            Just an empty page for now. Hopefully I can write something here
+            soon.
+          </p>
         </div>
         <!-- <ContentList path="/blog" v-slot="{ list }">
           <div v-for="article in list" :key="article._path">
