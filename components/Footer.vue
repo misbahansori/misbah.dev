@@ -4,7 +4,7 @@ import { MoonIcon, SunIcon } from "@radix-icons/vue";
 const colorMode = useColorMode();
 const { links } = useNavigation();
 
-links.unshift({ name: "Home", path: "/" });
+const footerLinks = computed(() => [{ name: "Home", path: "/" }, ...links]);
 </script>
 
 <template>
@@ -12,7 +12,7 @@ links.unshift({ name: "Home", path: "/" });
     <footer
       class="flex flex-col items-center justify-between gap-8 py-4 sm:flex-row md:py-8"
     >
-      <AnimatedTabs :links="links" />
+      <AnimatedTabs :links="footerLinks" />
       <div>
         <Button
           v-if="colorMode.value === 'dark'"

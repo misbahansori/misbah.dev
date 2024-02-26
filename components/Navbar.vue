@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { HamburgerMenuIcon } from "@radix-icons/vue";
+import { DialogClose } from "radix-vue";
 import { buttonVariants } from "~/components/ui/button";
 
 const { links } = useNavigation();
@@ -28,22 +29,25 @@ const { links } = useNavigation();
         </SheetTrigger>
         <SheetContent class="p-4">
           <SheetHeader>
-            <SheetTitle class="text-base">Misbah.dev</SheetTitle>
+            <SheetTitle class="text-base">
+              <DialogClose as-child>
+                <NuxtLink to="/">Misbah.dev</NuxtLink>
+              </DialogClose>
+            </SheetTitle>
             <SheetDescription class="sr-only">
               This action cannot be undone. This will permanently delete your
               account and remove your data from our servers.
             </SheetDescription>
           </SheetHeader>
           <div class="flex flex-col gap-4 py-8">
-            <Button
-              v-for="link in links"
-              :key="link.name"
-              :to="link.path"
-              variant="ghost"
-              class="text-right"
-            >
-              {{ link.name }}
-            </Button>
+            <DialogClose as-child v-for="link in links" :key="link.name">
+              <NuxtLink
+                :to="link.path"
+                :class="buttonVariants({ variant: 'ghost' })"
+              >
+                {{ link.name }}
+              </NuxtLink>
+            </DialogClose>
           </div>
         </SheetContent>
       </Sheet>
