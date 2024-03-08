@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   site: {
     url: "https://misbah.dev",
   },
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@vueuse/motion/nuxt",
     "nuxt-svgo",
+    "@nuxthq/studio",
   ],
   tailwindcss: {
     viewer: false,
