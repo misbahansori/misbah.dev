@@ -28,7 +28,7 @@ useSeoMeta({
           }"
         >
           <template #default="{ list }">
-            <div v-for="article in list" :key="article._path" class="py-6">
+            <div v-for="article in list" :key="article._path" class="md:py-6">
               <ArticleItem :article="article" />
             </div>
           </template>

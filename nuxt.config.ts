@@ -54,10 +54,11 @@ export default defineNuxtConfig({
     highlight: {
       langs: ["php"],
       theme: {
-        default: "night-owl",
-        dark: "night-owl",
+        default: "github-light",
+        dark: "github-dark",
       },
     },
+    documentDriven: true,
   },
   svgo: {
     fontControlled: false,
