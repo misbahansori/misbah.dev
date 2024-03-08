@@ -52,9 +52,10 @@ export default defineNuxtConfig({
   },
   content: {
     highlight: {
+      langs: ["php"],
       theme: {
-        default: "github-light",
-        dark: "github-dark",
+        default: "night-owl",
+        dark: "night-owl",
       },
     },
   },
