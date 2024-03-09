@@ -1,4 +1,6 @@
 const animate = require("tailwindcss-animate");
+const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -92,6 +94,38 @@ module.exports = {
         "spin-slow": "spin 3s linear infinite",
         hover: "hover 2s ease-in-out infinite",
         "hover-shadow": "hover-shadow 2s ease-in-out infinite",
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            "h1, h2, h3, h4, h5, h6": {
+              "a:not([href^=http])": {
+                color: colors.inherit,
+                "font-weight": defaultTheme.fontWeight.bold,
+                "text-decoration": "none",
+                "&::before": {
+                  content: '"# "',
+                  "font-weight": defaultTheme.fontWeight.normal,
+                  opacity: defaultTheme.opacity[50],
+                },
+              },
+            },
+            a: {
+              "font-weight": "inherit",
+              color: colors.indigo[600],
+            },
+            'iframe[src^="https://www.youtube.com"]': {
+              width: "100% !important",
+              height: "auto !important",
+              "aspect-ratio": defaultTheme.aspectRatio.video,
+              "border-radius": defaultTheme.borderRadius.md,
+              "box-shadow": defaultTheme.boxShadow.lg,
+            },
+            pre: {
+              padding: 0,
+            },
+          },
+        },
       },
     },
   },
