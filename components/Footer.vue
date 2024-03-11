@@ -15,20 +15,18 @@ const footerLinks = computed(() => [{ name: "Home", path: "/" }, ...links]);
       <AnimatedTabs :links="footerLinks" />
       <div>
         <Button
-          v-if="colorMode.value === 'dark'"
           variant="ghost"
-          @click="colorMode.value = 'light'"
+          @click="
+            colorMode.preference =
+              colorMode.preference === 'dark' ? 'light' : 'dark'
+          "
           class="h-auto p-2"
         >
-          <SunIcon class="h-5 w-5" />
-        </Button>
-        <Button
-          v-else
-          variant="ghost"
-          @click="colorMode.value = 'dark'"
-          class="h-auto p-2"
-        >
-          <MoonIcon class="h-5 w-5" />
+          <ColorScheme>
+            <SunIcon v-if="colorMode.preference === 'dark'" class="h-5 w-5" />
+
+            <MoonIcon v-else class="h-5 w-5" />
+          </ColorScheme>
         </Button>
       </div>
     </footer>
