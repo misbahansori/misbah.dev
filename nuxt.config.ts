@@ -52,7 +52,15 @@ export default defineNuxtConfig({
   },
   content: {
     highlight: {
-      langs: ["php"],
+      langs: [
+        "php",
+        "html",
+        "vue",
+        "vue-html",
+        "javascript",
+        "typescript",
+        "bash",
+      ],
       theme: {
         default: "github-light",
         dark: "github-dark",

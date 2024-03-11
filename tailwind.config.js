@@ -95,6 +95,9 @@ module.exports = {
         hover: "hover 2s ease-in-out infinite",
         "hover-shadow": "hover-shadow 2s ease-in-out infinite",
       },
+      colorMode: {
+        classSuffix: "",
+      },
       typography: {
         DEFAULT: {
           css: {
