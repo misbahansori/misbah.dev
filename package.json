@@ -21,7 +21,7 @@
     "@vueuse/nuxt": "^10.4.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "nuxt": "^3.10.3",
+    "nuxt": "^3.11.0",
     "nuxt-icon": "^0.5.0",
     "nuxt-og-image": "3.0.0-rc.27",
     "nuxt-svgo": "^4.0.0",

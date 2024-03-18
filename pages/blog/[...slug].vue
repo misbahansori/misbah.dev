@@ -4,7 +4,7 @@ const { toc } = useContent();
 <template>
   <section class="mx-auto max-w-3xl px-4">
     <div class="flex flex-col gap-4 py-6 lg:py-8">
-      <div class="prose dark:prose-invert prose-pre:bg-muted prose-pre:py-6">
+      <div class="prose dark:prose-invert prose-pre:bg-muted prose-pre:p-4">
         <ContentDoc />
       </div>
     </div>
