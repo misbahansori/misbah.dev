@@ -51,7 +51,7 @@ export default defineNuxtConfig({
 
   shadcn: {
     prefix: "",
-    componentDir: "./components/ui",
+    componentDir: "./app/components/ui",
   },
 
   colorMode: {
@@ -88,7 +88,7 @@ export default defineNuxtConfig({
     customCollections: [
       {
         prefix: "my-icon",
-        dir: "./assets/icons",
+        dir: "./app/assets/icons",
       },
     ],
   },
