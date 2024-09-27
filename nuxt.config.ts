@@ -14,10 +14,13 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   site: {
     url: "https://misbah.dev",
   },
+
   devtools: { enabled: true },
+
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
@@ -27,29 +30,35 @@ export default defineNuxtConfig({
     "nuxt-og-image",
     "@nuxt/content",
     "@vueuse/motion/nuxt",
-    "nuxt-svgo",
     "@nuxthq/studio",
+    "@nuxt/icon",
   ],
+
   tailwindcss: {
     viewer: false,
   },
+
   googleFonts: {
     families: {
       "DM Sans": [400, 500, 600, 700],
       "Playfair Display": [400, 500, 600, 700, 800],
     },
   },
+
   vue: {
     propsDestructure: true,
   },
+
   shadcn: {
     prefix: "",
     componentDir: "./components/ui",
   },
+
   colorMode: {
     preference: "dark",
     classSuffix: "",
   },
+
   content: {
     highlight: {
       langs: [
@@ -70,7 +79,19 @@ export default defineNuxtConfig({
     },
     documentDriven: true,
   },
-  svgo: {
-    fontControlled: false,
+
+  future: {
+    compatibilityVersion: 4,
   },
+
+  icon: {
+    customCollections: [
+      {
+        prefix: "my-icon",
+        dir: "./assets/icons",
+      },
+    ],
+  },
+
+  compatibilityDate: "2024-09-27",
 });

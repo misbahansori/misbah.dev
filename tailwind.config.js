@@ -83,7 +83,7 @@ module.exports = {
         },
         "hover-shadow": {
           "0%, 100%": { transform: "scaleX(1)" },
-          "50%": { transform: "scaleX(1.1)" },
+          "50%": { transform: "scaleX(1.2)" },
         },
       },
       animation: {

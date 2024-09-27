@@ -127,7 +127,7 @@ const showTooltip = ref(false);
             target="_blank"
             :class="cn(buttonVariants({ variant: 'default' }), 'h-auto p-2')"
           >
-            <SvgoX name="twitter" class="h-5 w-5" :font-controlled="false" />
+            <Icon name="my-icon:x" class="h-5 w-5" :font-controlled="false" />
           </NuxtLink>
           <NuxtLink
             to="mailto:misbah.ansori24@gmail.com"

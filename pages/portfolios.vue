@@ -18,12 +18,17 @@ useSeoMeta({
       <div class="pt-8">
         <div class="flex flex-col items-center justify-center gap-4">
           <div>
-            <SvgoTaskEmpty
-              class="animate-hover mx-auto mt-8 w-40 text-muted-foreground"
+            <Icon
+              name="my-icon:task-empty"
+              mode="svg"
+              class="mx-auto mt-8 size-40 animate-hover text-muted-foreground"
               :font-controlled="false"
             />
-            <SvgoEmptyShadow
-              class="animate-hover-shadow mx-auto w-40 text-muted-foreground"
+
+            <Icon
+              name="my-icon:empty-shadow"
+              mode="svg"
+              class="mx-auto h-12 w-40 animate-hover-shadow text-muted-foreground"
               :font-controlled="false"
             />
           </div>
