@@ -14,9 +14,11 @@ useSeoMeta({
 const portfolios = ref([
   {
     title: "ShareShooter",
-    imageUrl: {
-      light: "/img/shareshooter-light.jpeg",
-      dark: "/img/shareshooter-dark.jpeg",
+    image: {
+      light: "/img/shareshooter-light.webp",
+      dark: "/img/shareshooter-dark.webp",
+      width: 914,
+      height: 839,
     },
     description: "Easily share screenshots with your friends",
     link: "https://www.shareshooter.com",
@@ -44,17 +46,19 @@ watch(colorMode, () => {
           <div>
             <img
               :src="
-                portfolio.imageUrl[
-                  colorMode.value === 'dark' ? 'dark' : 'light'
-                ]
+                portfolio.image[colorMode.value === 'dark' ? 'dark' : 'light']
               "
+              :width="portfolio.image.width"
+              :height="portfolio.image.height"
               alt="Portfolio image"
-              class="w-full rounded-lg"
+              class="aspect-video w-full rounded-lg object-cover object-top"
             />
           </div>
           <div class="relative flex flex-col gap-1">
-            <h2 class="text-xl font-bold">{{ portfolio.title }}</h2>
-            <p class="text-muted-foreground">{{ portfolio.description }}</p>
+            <h2 class="text-lg font-bold">{{ portfolio.title }}</h2>
+            <p class="text-sm text-muted-foreground">
+              {{ portfolio.description }}
+            </p>
             <NuxtLink
               :href="portfolio.link"
               target="_blank"
