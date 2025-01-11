@@ -71,7 +71,6 @@ export default defineNuxtConfig({
         dark: "github-dark",
       },
     },
-    documentDriven: true,
   },
 
   future: {
