@@ -29,7 +29,7 @@ const showTooltip = ref(false);
                 <img
                   src="/img/misbah.jpg"
                   alt=""
-                  class="h-20 w-20 rounded-3xl border-2 border-white shadow-lg md:h-24 md:w-24"
+                  class="h-24 w-24 rounded-3xl border-2 border-white shadow-lg"
                 />
               </TooltipTrigger>
               <TooltipPortal>
