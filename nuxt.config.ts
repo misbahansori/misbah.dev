@@ -23,7 +23,6 @@ export default defineNuxtConfig({
 
   modules: [
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
@@ -32,17 +31,11 @@ export default defineNuxtConfig({
     "@vueuse/motion/nuxt",
     "@nuxthq/studio",
     "@nuxt/icon",
+    "@nuxt/fonts",
   ],
 
   tailwindcss: {
     viewer: false,
-  },
-
-  googleFonts: {
-    families: {
-      "DM Sans": [400, 500, 600, 700],
-      "Playfair Display": [400, 500, 600, 700, 800],
-    },
   },
 
   vue: {
@@ -91,6 +84,12 @@ export default defineNuxtConfig({
         dir: "./app/assets/icons",
       },
     ],
+  },
+
+  fonts: {
+    defaults: {
+      weights: [400, 500, 600, 700, 800],
+    },
   },
 
   compatibilityDate: "2024-09-27",

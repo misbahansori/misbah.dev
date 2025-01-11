@@ -29,7 +29,7 @@ const showTooltip = ref(false);
                 <img
                   src="/img/misbah.jpg"
                   alt=""
-                  class="h-20 w-20 rounded-full border-2 border-white shadow-lg md:h-24 md:w-24"
+                  class="h-20 w-20 rounded-3xl border-2 border-white shadow-lg md:h-24 md:w-24"
                 />
               </TooltipTrigger>
               <TooltipPortal>
@@ -113,12 +113,12 @@ const showTooltip = ref(false);
         class="flex flex-col justify-between gap-8 text-center sm:flex-row sm:items-start sm:text-left"
       >
         <div>
-          <h1 class="text-2xl font-bold">Hi, I'm Misbah Ansori</h1>
+          <h1 class="text-3xl font-bold">Hi, I'm Misbah Ansori</h1>
           <span class="text-base font-medium">Fullstack Developer</span>
           <p class="pt-2.5 text-muted-foreground">
             A passionate developer who has a strong interest in web development
-            and technology. Proficient and experienced in both frontend and
-            backend.
+            and other technologies. Proficient and experienced in both frontend
+            and backend.
           </p>
         </div>
         <div class="flex items-center justify-center gap-3 sm:justify-start">

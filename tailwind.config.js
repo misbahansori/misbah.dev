@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans", "sans-serif"],
+        sans: ["Satoshi", "sans-serif"],
         serif: ["Playfair Display", "serif"],
       },
       colors: {
