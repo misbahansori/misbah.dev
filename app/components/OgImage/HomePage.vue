@@ -9,6 +9,10 @@ const { title, description, image } = defineProps<{
 
 <template>
   <div class="flex h-full w-full flex-col justify-center bg-[#020420]">
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#ffffff40_1px,transparent_1px),linear-gradient(to_bottom,#ffffff40_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,white_15%,transparent_50%)]"
+    />
     <svg
       class="absolute right-0 top-0"
       width="629"
@@ -64,12 +68,16 @@ const { title, description, image } = defineProps<{
         {{ description?.slice(0, 200) }}
       </p>
     </div>
-    <img
+    <div
       v-if="image"
-      :src="image"
-      class="absolute right-[90px] top-[160px] h-64 w-64 rounded-full"
-      width="559"
-      height="559"
-    />
+      class="absolute right-[90px] top-[160px] rounded-[2rem] bg-white p-2"
+    >
+      <img
+        :src="image"
+        class="h-64 w-64 rounded-3xl"
+        width="559"
+        height="559"
+      />
+    </div>
   </div>
 </template>
