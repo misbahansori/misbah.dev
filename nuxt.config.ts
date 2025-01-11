@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
     "@nuxt/icon",
     "@nuxt/fonts",
+    "@nuxt/image",
   ],
 
   tailwindcss: {
