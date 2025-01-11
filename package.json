@@ -31,5 +31,8 @@
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@formkit/tempo": "^0.1.2"
   }
 }

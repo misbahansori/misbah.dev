@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { diffMonths, format } from "@formkit/tempo";
 import { DrawingPinIcon } from "@radix-icons/vue";
 
 const experiences = [
   {
-    startDate: "Jul 2022",
-    endDate: "Present",
+    startDate: "2022-07-01",
+    endDate: null,
     title: "Fullstack Developer",
     company: "Gilgamesh Pte. Ltd, Singapore",
     location: "Remote",
@@ -17,22 +18,37 @@ const experiences = [
     ],
   },
   {
-    startDate: "Nov 2021",
-    endDate: "Jun 2022",
+    startDate: "2021-11-01",
+    endDate: "2022-07-01",
     title: "Back End Developer",
     company: "Avana Indonesia",
     location: "Remote",
     techStack: ["Laravel"],
   },
   {
-    startDate: "March 2020",
-    endDate: "Oct 2021",
+    startDate: "2020-03-01",
+    endDate: "2021-10-01",
     title: "Full Stack Developer",
     company: "PT. Winosa Mitra Bharatadjaya",
     location: "Bandar Lampung, Indonesia",
     techStack: ["Laravel", "Vue.js"],
   },
 ];
+
+const diffForHumans = (startDate: string, endDate: string) => {
+  const diff = Math.abs(diffMonths(startDate, endDate));
+  const months = Math.abs(diff % 12);
+  const years = Math.floor(diff / 12);
+
+  let text = "";
+  if (years > 0) {
+    text += `${years} year${years > 1 ? "s" : ""}`;
+  }
+  if (months > 0) {
+    text += `${years > 0 ? " and " : ""}${months} month${months > 1 ? "s" : ""}`;
+  }
+  return text;
+};
 </script>
 
 <template>
@@ -49,11 +65,25 @@ const experiences = [
           v-for="experience in experiences"
           class="flex flex-col items-baseline gap-6 md:flex-row md:gap-12"
         >
-          <div
-            class="flex w-32 flex-wrap items-center gap-1 pt-4 text-sm font-medium text-muted-foreground sm:pt-0"
-          >
-            {{ experience.startDate }} -
-            {{ experience.endDate }}
+          <div class="flex w-40 flex-wrap items-center gap-1 pt-4 sm:pt-0">
+            <div class="flex flex-col gap-1" data-allow-mismatch>
+              <span class="text-sm font-medium text-foreground">
+                {{ format(experience.startDate, "MMM YYYY") }} -
+                {{
+                  experience.endDate
+                    ? format(experience.endDate, "MMM YYYY")
+                    : "Present"
+                }}
+              </span>
+              <span class="text-sm text-muted-foreground">
+                {{
+                  diffForHumans(
+                    experience.startDate,
+                    experience.endDate || new Date().toISOString(),
+                  )
+                }}
+              </span>
+            </div>
           </div>
           <div>
             <div class="relative flex pb-8 last:pb-0">

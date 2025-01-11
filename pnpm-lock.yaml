@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@formkit/tempo':
+        specifier: ^0.1.2
+        version: 0.1.2
     devDependencies:
       '@nuxt/content':
         specifier: ^2.8.2
@@ -749,6 +753,9 @@ packages:
 
   '@floating-ui/vue@1.1.5':
     resolution: {integrity: sha512-ynL1p5Z+woPVSwgMGqeDrx6HrJfGIDzFyESFkyqJKilGW1+h/8yVY29Khn0LaU6wHBRwZ13ntG6reiHWK6jyzw==}
+
+  '@formkit/tempo@0.1.2':
+    resolution: {integrity: sha512-jNPPbjL8oj7hK3eHX++CwbR6X4GKQt+x00/q4yeXkwynXHGKL27dylYhpEgwrmediPP4y7s0XtN1if/M/JYujg==}
 
   '@iconify-json/noto@1.2.0':
     resolution: {integrity: sha512-mbXlvTtZobBNK/8HSI4gyh8RsxRP2ll/NW65HgM9876m6J7/mLKhlBisVxStyv0leH+hInkBNyGLOcmXpLf0+g==}
@@ -5094,6 +5101,8 @@ snapshots:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  '@formkit/tempo@0.1.2': {}
 
   '@iconify-json/noto@1.2.0':
     dependencies:
