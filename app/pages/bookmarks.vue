@@ -37,6 +37,31 @@ const bookmarks = [
     name: "Vueclid",
     description: "Delightfully simple math diagrams for Vuejs",
   },
+  {
+    url: "https://logosystem.co",
+    name: "Logo System",
+    description: "The biggest logo design library",
+  },
+  {
+    url: "https://fontjoy.com",
+    name: "Fontjoy",
+    description: "Generate font combinations with deep learning",
+  },
+  {
+    url: "https://svgl.app",
+    name: "SVGL",
+    description: "A beautiful library with SVG logos",
+  },
+  {
+    url: "https://www.logoipsum.com",
+    name: "Logoipsum",
+    description: "Free SVG placeholder logos",
+  },
+  {
+    url: "https://typefaces.today",
+    name: "Typefaces Today",
+    description: "A collection of free fonts",
+  },
 ];
 </script>
 
@@ -50,11 +75,11 @@ const bookmarks = [
     </div>
     <div class="grid grid-cols-1 gap-4 pt-8 sm:grid-cols-2 md:grid-cols-3">
       <NuxtLink
-        v-for="bookmark in bookmarks"
+        v-for="bookmark in bookmarks.reverse()"
         :key="bookmark.url"
         :to="bookmark.url"
         target="_blank"
-        class="group group relative flex flex-col items-start justify-center gap-2 rounded-lg bg-background px-4 py-3 shadow-md transition hover:bg-accent hover:shadow-lg"
+        class="group relative flex flex-col items-start justify-center gap-2 rounded-lg bg-background px-4 py-3 shadow-md transition hover:bg-accent hover:shadow-lg"
       >
         <span class="text-base font-bold">{{ bookmark.name }}</span>
         <p class="text-sm text-muted-foreground">
