@@ -62,6 +62,16 @@ const bookmarks = [
     name: "Typefaces Today",
     description: "A collection of free fonts",
   },
+  {
+    url: "https://www.isocons.app",
+    name: "Isocons",
+    description: "Isometric icons for your products",
+  },
+  {
+    url: "https://www.unsection.com",
+    name: "Unsection",
+    description: "Curated website section design library",
+  },
 ];
 </script>
 
