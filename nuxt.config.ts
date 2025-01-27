@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     "nuxt-og-image",
     "@nuxt/content",
     "@vueuse/motion/nuxt",
-    "@nuxthq/studio",
     "@nuxt/icon",
     "@nuxt/fonts",
     "@nuxt/image",
