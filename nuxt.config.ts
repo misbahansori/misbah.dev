@@ -101,7 +101,6 @@ export default defineNuxtConfig({
       host: "https://cloud.umami.is",
       id: "e4e76e7e-3f0f-4d3d-82dd-c9177d7a907b",
       autoTrack: true,
-      proxy: "cloak",
     },
   },
 
