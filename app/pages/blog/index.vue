@@ -10,6 +10,10 @@ useSeoMeta({
   ogDescription:
     "Just some random thoughts of mine. A place where I share my thoughts and experiences",
 });
+
+const { data: blog } = await useAsyncData("blog", () =>
+  queryCollection("blog").all(),
+);
 </script>
 
 <template>
@@ -21,42 +25,37 @@ useSeoMeta({
       </p>
 
       <div class="pt-8">
-        <ContentList
-          path="/blog"
-          :query="{
-            order: '-createdAt',
-          }"
+        <div
+          v-if="blog?.length"
+          v-for="article in blog"
+          :key="article.path"
+          class="md:py-6"
         >
-          <template #default="{ list }">
-            <div v-for="article in list" :key="article._path" class="md:py-6">
-              <ArticleItem :article="article" />
-            </div>
-          </template>
-          <template #not-found>
-            <div class="flex flex-col items-center justify-center gap-4">
-              <div>
-                <Icon
-                  name="my-icon:task-empty"
-                  mode="svg"
-                  class="mx-auto mt-8 size-40 animate-hover text-muted-foreground"
-                  :font-controlled="false"
-                />
+          <ArticleItem :article="article" />
+        </div>
 
-                <Icon
-                  name="my-icon:empty-shadow"
-                  mode="svg"
-                  class="mx-auto h-12 w-40 animate-hover-shadow text-muted-foreground"
-                  :font-controlled="false"
-                />
-              </div>
+        <div v-else class="flex flex-col items-center justify-center gap-4">
+          <div>
+            <Icon
+              name="my-icon:task-empty"
+              mode="svg"
+              class="mx-auto mt-8 size-40 animate-hover text-muted-foreground"
+              :font-controlled="false"
+            />
 
-              <p class="max-w-sm text-center italic leading-loose">
-                Just an empty page for now. Hopefully I can write something here
-                soon.
-              </p>
-            </div>
-          </template>
-        </ContentList>
+            <Icon
+              name="my-icon:empty-shadow"
+              mode="svg"
+              class="mx-auto h-12 w-40 animate-hover-shadow text-muted-foreground"
+              :font-controlled="false"
+            />
+          </div>
+
+          <p class="max-w-sm text-center italic leading-loose">
+            Just an empty page for now. Hopefully I can write something here
+            soon.
+          </p>
+        </div>
       </div>
     </div>
   </section>
