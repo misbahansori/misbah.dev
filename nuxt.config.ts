@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/fonts",
     "@nuxt/image",
+    "nuxt-umami",
   ],
 
   tailwindcss: {
@@ -53,21 +54,25 @@ export default defineNuxtConfig({
   },
 
   content: {
-    highlight: {
-      langs: [
-        "php",
-        "html",
-        "vue",
-        "vue-html",
-        "bash",
-        "json",
-        "javascript",
-        "css",
-        "markdown",
-      ],
-      theme: {
-        default: "github-light",
-        dark: "github-dark",
+    build: {
+      markdown: {
+        highlight: {
+          langs: [
+            "php",
+            "html",
+            "vue",
+            "vue-html",
+            "bash",
+            "json",
+            "javascript",
+            "css",
+            "markdown",
+          ],
+          theme: {
+            default: "github-light",
+            dark: "github-dark",
+          },
+        },
       },
     },
   },
@@ -88,6 +93,12 @@ export default defineNuxtConfig({
   fonts: {
     defaults: {
       weights: [400, 500, 600, 700, 800],
+    },
+  },
+
+  $production: {
+    umami: {
+      id: "e4e76e7e-3f0f-4d3d-82dd-c9177d7a907b",
     },
   },
 
