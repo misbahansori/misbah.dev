@@ -21,7 +21,7 @@ const { article } = defineProps<{
     </div>
     <NuxtLink
       class="flex items-center text-sm font-medium text-sky-500"
-      :to="article._path"
+      :to="article.path"
     >
       <span
         class="absolute -inset-x-4 -inset-y-2.5 sm:rounded-2xl md:-inset-x-6 md:-inset-y-4"
