@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ExternalLinkIcon } from "@radix-icons/vue";
-
 useHead({
   title: "My portfolios",
 });
@@ -68,7 +66,8 @@ watch(colorMode, () => {
               {{ portfolio.link }}
             </NuxtLink>
             <NuxtLink :to="portfolio.link" target="_blank" external>
-              <ExternalLinkIcon
+              <Icon
+                name="tabler:external-link"
                 class="absolute right-2 top-2 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
               />
             </NuxtLink>

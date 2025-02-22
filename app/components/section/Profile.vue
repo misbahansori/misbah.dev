@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { EnvelopeOpenIcon } from "@radix-icons/vue";
 import {
   TooltipContent,
   TooltipPortal,
@@ -127,13 +126,17 @@ const showTooltip = ref(false);
             target="_blank"
             :class="cn(buttonVariants({ variant: 'default' }), 'h-auto p-2')"
           >
-            <Icon name="my-icon:x" class="h-5 w-5" :font-controlled="false" />
+            <Icon
+              name="tabler:brand-x"
+              class="h-5 w-5"
+              :font-controlled="false"
+            />
           </NuxtLink>
           <NuxtLink
             to="mailto:misbah.ansori24@gmail.com"
             :class="cn(buttonVariants(), 'flex gap-3')"
           >
-            <EnvelopeOpenIcon class="h-5 w-5" />
+            <Icon name="tabler:mail" class="h-5 w-5" />
             <span>Get in touch</span>
           </NuxtLink>
         </div>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { HamburgerMenuIcon } from "@radix-icons/vue";
 import { DialogClose } from "radix-vue";
 import { buttonVariants } from "~/components/ui/button";
 
@@ -24,7 +23,7 @@ const { links } = useNavigation();
       <Sheet>
         <SheetTrigger as-child>
           <Button variant="ghost" class="flex p-2 sm:hidden">
-            <HamburgerMenuIcon class="h-5 w-5" />
+            <Icon name="tabler:menu-2" class="h-5 w-5" />
           </Button>
         </SheetTrigger>
         <SheetContent class="p-4">

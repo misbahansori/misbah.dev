@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { MoonIcon, SunIcon } from "@radix-icons/vue";
-
 const colorMode = useColorMode();
 const { links } = useNavigation();
 
@@ -23,9 +21,13 @@ const footerLinks = computed(() => [{ name: "Home", path: "/" }, ...links]);
           class="h-auto p-2"
         >
           <ColorScheme>
-            <SunIcon v-if="colorMode.preference === 'dark'" class="h-5 w-5" />
+            <Icon
+              name="tabler:moon"
+              v-if="colorMode.preference === 'dark'"
+              class="h-5 w-5"
+            />
 
-            <MoonIcon v-else class="h-5 w-5" />
+            <Icon name="tabler:sun" v-else class="h-5 w-5" />
           </ColorScheme>
         </Button>
       </div>

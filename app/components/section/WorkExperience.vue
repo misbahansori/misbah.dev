@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { diffMonths, format } from "@formkit/tempo";
-import { DrawingPinIcon } from "@radix-icons/vue";
 
 const experiences = [
   {
@@ -122,7 +121,7 @@ const diffForHumans = (startDate: string, endDate: string) => {
                     {{ experience.company }}
                   </span>
                   <div class="flex items-center gap-1">
-                    <DrawingPinIcon class="inline-block h-4 w-4" />
+                    <Icon name="tabler:pin" class="inline-block h-4 w-4" />
                     <span class="text-sm text-muted-foreground">
                       {{ experience.location }}
                     </span>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ExternalLinkIcon } from "@radix-icons/vue";
-
 useHead({
   title: "My Bookmarks",
 });
@@ -94,7 +92,8 @@ const bookmarks = [
         <p class="text-sm text-muted-foreground">
           {{ bookmark.description }}
         </p>
-        <ExternalLinkIcon
+        <Icon
+          name="tabler:external-link"
           class="absolute right-4 top-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
         />
       </NuxtLink>
