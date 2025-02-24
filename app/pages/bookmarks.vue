@@ -1,13 +1,16 @@
 <script setup lang="ts">
-useHead({
-  title: "My Bookmarks",
-});
+defineOgImageComponent("HomePage");
+
 useSeoMeta({
   title: "My Bookmarks",
   description: "Useful links that I often visit and use",
   ogTitle: "My Bookmarks",
   ogDescription: "Useful links that I often visit and use",
+  twitterTitle: "My Bookmarks",
+  twitterDescription: "Useful links that I often visit and use",
+  twitterCard: "summary_large_image",
 });
+
 const bookmarks = [
   {
     url: "https://gif.ski",

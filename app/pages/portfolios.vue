@@ -1,12 +1,14 @@
 <script setup lang="ts">
-useHead({
-  title: "My portfolios",
-});
+defineOgImageComponent("HomePage");
+
 useSeoMeta({
   title: "My portfolios",
   description: "Useful links that I often visit and use",
   ogTitle: "My portfolios",
   ogDescription: "Useful links that I often visit and use",
+  twitterTitle: "My portfolios",
+  twitterDescription: "Useful links that I often visit and use",
+  twitterCard: "summary_large_image",
 });
 
 const portfolios = ref([

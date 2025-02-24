@@ -1,7 +1,4 @@
 <script setup lang="ts">
-useHead({
-  title: "My Blog",
-});
 useSeoMeta({
   title: "My Blog",
   description:
@@ -9,10 +6,16 @@ useSeoMeta({
   ogTitle: "My Blog",
   ogDescription:
     "Just some random thoughts of mine. A place where I share my thoughts and experiences",
+  twitterTitle: "My Blog",
+  twitterDescription:
+    "Just some random thoughts of mine. A place where I share my thoughts and experiences",
+  twitterCard: "summary_large_image",
 });
 
+defineOgImageComponent("HomePage");
+
 const { data: blog } = await useAsyncData("blog", () =>
-  queryCollection("blog").all(),
+  queryCollection("blog").order("createdAt", "DESC").all(),
 );
 </script>
 

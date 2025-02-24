@@ -7,13 +7,6 @@ defineOgImageComponent("HomePage", {
   image: "/img/misbah.jpg",
 });
 
-useHead({
-  title: "Hi, I'm Misbah Ansori - Fullstack Developer",
-  htmlAttrs: {
-    lang: "en",
-  },
-});
-
 useSeoMeta({
   title: "Hi, I'm Misbah Ansori - Fullstack Developer",
   description:

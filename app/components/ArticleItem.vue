@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { BlogCollectionItem } from "@nuxt/content";
+
 const { article } = defineProps<{
-  article: any;
+  article: BlogCollectionItem;
 }>();
 </script>
 
