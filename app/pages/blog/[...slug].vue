@@ -12,6 +12,8 @@ if (!article.value) {
   });
 }
 
+defineOgImage(article.value.ogImage);
+
 useSeoMeta({
   title: article.value.title,
   description: article.value.description,

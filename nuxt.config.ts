@@ -96,6 +96,12 @@ export default defineNuxtConfig({
     },
   },
 
+  ogImage: {
+    defaults: {
+      component: "HomePage",
+    },
+  },
+
   $production: {
     umami: {
       host: "https://cloud.umami.is",
