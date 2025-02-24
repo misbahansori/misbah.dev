@@ -27,13 +27,8 @@ const { data: blog } = await useAsyncData("blog", () =>
         A place where I share my thoughts and experiences
       </p>
 
-      <div class="pt-8">
-        <div
-          v-if="blog?.length"
-          v-for="article in blog"
-          :key="article.path"
-          class="md:py-6"
-        >
+      <div>
+        <div v-if="blog?.length" v-for="article in blog" :key="article.path">
           <ArticleItem :article="article" />
         </div>
 

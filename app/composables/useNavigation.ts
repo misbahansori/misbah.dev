@@ -11,10 +11,10 @@ const links = [
     name: "Portfolios",
     path: "/portfolios",
   },
-  // {
-  //   name: "About me",
-  //   path: "/about",
-  // },
+  {
+    name: "About me",
+    path: "/about",
+  },
 ];
 
 export const useNavigation = () => {
