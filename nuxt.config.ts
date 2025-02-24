@@ -69,8 +69,8 @@ export default defineNuxtConfig({
             "markdown",
           ],
           theme: {
-            default: "github-light",
-            dark: "github-dark",
+            default: "andromeeda",
+            dark: "andromeeda",
           },
         },
       },

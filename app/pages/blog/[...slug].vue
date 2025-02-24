@@ -11,6 +11,17 @@ if (!article.value) {
     statusMessage: "Article not found",
   });
 }
+
+useSeoMeta({
+  title: article.value.title,
+  description: article.value.description,
+  ogTitle: article.value.title,
+  ogDescription: article.value.description,
+  ogUrl: route.fullPath,
+  ogType: "article",
+  twitterTitle: article.value.title,
+  twitterDescription: article.value.description,
+});
 </script>
 <template>
   <section class="mx-auto max-w-3xl px-4">
