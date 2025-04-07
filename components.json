@@ -3,14 +3,18 @@
   "style": "new-york",
   "typescript": true,
   "tailwind": {
-    "config": "tailwind.config.js",
+    "config": "",
     "css": "app/assets/css/tailwind.css",
-    "baseColor": "slate",
-    "cssVariables": true
+    "baseColor": "gray",
+    "cssVariables": true,
+    "prefix": ""
   },
-  "framework": "nuxt",
   "aliases": {
     "components": "@/components",
-    "utils": "@/utils/cn"
-  }
+    "composables": "@/composables",
+    "utils": "@/utils/cn",
+    "ui": "@/components/ui",
+    "lib": "@/utils"
+  },
+  "iconLibrary": "lucide"
 }
