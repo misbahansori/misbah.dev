@@ -10,26 +10,33 @@ useSeoMeta({
   twitterDescription: "Useful links that I often visit and use",
   twitterCard: "summary_large_image",
 });
+const colorMode = useColorMode();
 
-const portfolios = ref([
+const portfolios = [
   {
     title: "ShareShooter",
     image: {
       light: "/img/shareshooter-light.webp",
       dark: "/img/shareshooter-dark.webp",
-      width: 914,
-      height: 839,
+      width: 1280,
+      height: 630,
     },
     description: "Easily share screenshots with your friends",
     link: "https://www.shareshooter.com",
   },
-]);
-
-const colorMode = useColorMode();
-
-watch(colorMode, () => {
-  console.log("Color mode changed to", colorMode.value);
-});
+  {
+    title: "Originui Vue",
+    image: {
+      light: "/img/originui-vue-light.webp",
+      dark: "/img/originui-vue-dark.webp",
+      width: 1280,
+      height: 630,
+    },
+    description:
+      "An open-source collection of copy-and-paste components for quickly build application UIs.",
+    link: "https://www.originui-vue.com",
+  },
+];
 </script>
 
 <template>
@@ -37,7 +44,7 @@ watch(colorMode, () => {
     <div class="flex flex-col gap-4 py-6 lg:py-8">
       <h1 class="text-xl font-bold">My Portfolios</h1>
       <p class="text-muted-foreground">Here are some of my portfolios</p>
-      <div class="grid grid-cols-1 pt-8 sm:grid-cols-2">
+      <div class="grid grid-cols-1 gap-4 pt-8 sm:grid-cols-2">
         <div
           v-for="portfolio in portfolios"
           :key="portfolio.title"
@@ -51,7 +58,7 @@ watch(colorMode, () => {
               :width="portfolio.image.width"
               :height="portfolio.image.height"
               alt="Portfolio image"
-              class="aspect-video w-full rounded-lg object-cover object-top"
+              class="aspect-[1.91/1] w-full rounded-lg object-cover object-top"
             />
           </div>
           <div class="relative flex flex-col gap-1">
