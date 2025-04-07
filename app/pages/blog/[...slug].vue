@@ -12,7 +12,7 @@ if (!article.value) {
   });
 }
 
-defineOgImage(article.value.ogImage);
+// defineOgImage(article.value.ogImage);
 
 useSeoMeta({
   title: article.value.title,

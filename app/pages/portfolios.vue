@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineOgImageComponent("HomePage");
+// defineOgImageComponent("HomePage");
 
 useSeoMeta({
   title: "My portfolios",
@@ -41,7 +41,7 @@ watch(colorMode, () => {
         <div
           v-for="portfolio in portfolios"
           :key="portfolio.title"
-          class="group relative flex flex-col gap-4 rounded-xl border bg-background p-5 shadow-sm"
+          class="group bg-background relative flex flex-col gap-4 rounded-xl border p-5 shadow-sm"
         >
           <div>
             <img
@@ -56,7 +56,7 @@ watch(colorMode, () => {
           </div>
           <div class="relative flex flex-col gap-1">
             <h2 class="text-lg font-bold">{{ portfolio.title }}</h2>
-            <p class="text-sm text-muted-foreground">
+            <p class="text-muted-foreground text-sm">
               {{ portfolio.description }}
             </p>
             <NuxtLink
@@ -70,7 +70,7 @@ watch(colorMode, () => {
             <NuxtLink :to="portfolio.link" target="_blank" external>
               <Icon
                 name="tabler:external-link"
-                class="absolute right-2 top-2 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
+                class="absolute top-2 right-2 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
               />
             </NuxtLink>
           </div>

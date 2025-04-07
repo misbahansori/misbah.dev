@@ -28,14 +28,14 @@ const toggleMenu = (e: any) => {
         '--size': size + 'px',
         '--position': position + 'px',
       }"
-      class="absolute inset-y-0 left-0 h-full w-[--size] translate-x-[--position] rounded-lg bg-accent text-accent-foreground opacity-0 transition-[width,transform,opacity] duration-200 ease-in-out group-hover:opacity-100"
+      class="bg-accent text-accent-foreground absolute inset-y-0 left-0 h-full w-(--size) translate-x-(--position) rounded-lg opacity-0 transition duration-200 ease-in-out group-hover:opacity-100"
     ></span>
     <NuxtLink
       @mouseover="toggleMenu"
       v-for="link in props.links"
       :key="link.name"
       :to="link.path"
-      class="group relative inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+      class="group focus-visible:ring-ring relative inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
     >
       {{ link.name }}
     </NuxtLink>

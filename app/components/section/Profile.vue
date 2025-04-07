@@ -65,13 +65,13 @@ const showTooltip = ref(false);
                   >
                     <div class="-translate-x-1/2 -translate-y-full">
                       <div
-                        class="flex flex-col items-center justify-center rounded-2xl bg-background px-6 py-2 shadow-xl"
+                        class="bg-background flex flex-col items-center justify-center rounded-2xl px-6 py-2 shadow-xl"
                       >
-                        <span class="whitespace-nowrap font-semibold">
+                        <span class="font-semibold whitespace-nowrap">
                           Misbah Ansori
                         </span>
                         <span
-                          class="whitespace-nowrap text-sm text-muted-foreground"
+                          class="text-muted-foreground text-sm whitespace-nowrap"
                         >
                           Fullstack Developer
                         </span>
@@ -114,7 +114,7 @@ const showTooltip = ref(false);
         <div>
           <h1 class="text-3xl font-bold">Hi, I'm Misbah Ansori</h1>
           <span class="text-base font-medium">Fullstack Developer</span>
-          <p class="pt-2.5 text-muted-foreground">
+          <p class="text-muted-foreground pt-2.5">
             A passionate developer who has a strong interest in web development
             and other technologies. Proficient and experienced in both frontend
             and backend.
@@ -126,17 +126,13 @@ const showTooltip = ref(false);
             target="_blank"
             :class="cn(buttonVariants({ variant: 'default' }), 'h-auto p-2')"
           >
-            <Icon
-              name="tabler:brand-x"
-              class="h-5 w-5"
-              :font-controlled="false"
-            />
+            <Icon name="tabler:brand-x" size="20" />
           </NuxtLink>
           <NuxtLink
             to="mailto:misbah.ansori24@gmail.com"
             :class="cn(buttonVariants(), 'flex gap-3')"
           >
-            <Icon name="tabler:mail" class="h-5 w-5" />
+            <Icon name="tabler:mail" size="20" />
             <span>Get in touch</span>
           </NuxtLink>
         </div>
