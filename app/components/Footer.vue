@@ -18,17 +18,15 @@ const footerLinks = computed(() => [{ name: "Home", path: "/" }, ...links]);
             colorMode.preference =
               colorMode.preference === 'dark' ? 'light' : 'dark'
           "
-          class="h-auto p-2"
+          class="h-auto px-2 py-2"
         >
-          <ColorScheme>
-            <Icon
-              name="tabler:moon"
-              v-if="colorMode.preference === 'dark'"
-              class="h-5 w-5"
-            />
+          <Icon
+            name="tabler:moon"
+            v-if="colorMode.preference === 'dark'"
+            class="size-5"
+          />
 
-            <Icon name="tabler:sun" v-else class="h-5 w-5" />
-          </ColorScheme>
+          <Icon name="tabler:sun" v-else class="size-5" />
         </Button>
       </div>
     </footer>

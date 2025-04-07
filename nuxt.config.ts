@@ -92,6 +92,11 @@ export default defineNuxtConfig({
         dir: "./app/assets/icons",
       },
     ],
+    cssLayer: "icon",
+    mode: "svg",
+    clientBundle: {
+      scan: true,
+    },
   },
 
   fonts: {
