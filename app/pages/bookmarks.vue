@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineOgImageComponent("HomePage");
+// defineOgImageComponent("HomePage");
 
 useSeoMeta({
   title: "My Bookmarks",
@@ -89,15 +89,15 @@ const bookmarks = [
         :key="bookmark.url"
         :to="bookmark.url"
         target="_blank"
-        class="group relative flex flex-col items-start justify-center gap-2 rounded-lg bg-background px-4 py-3 shadow-md transition hover:bg-accent hover:shadow-lg"
+        class="group bg-background hover:bg-accent relative flex flex-col items-start justify-center gap-2 rounded-lg px-4 py-3 shadow-md transition hover:shadow-lg"
       >
         <span class="text-base font-bold">{{ bookmark.name }}</span>
-        <p class="text-sm text-muted-foreground">
+        <p class="text-muted-foreground text-sm">
           {{ bookmark.description }}
         </p>
         <Icon
           name="tabler:external-link"
-          class="absolute right-4 top-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
+          class="absolute top-4 right-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
         />
       </NuxtLink>
     </div>

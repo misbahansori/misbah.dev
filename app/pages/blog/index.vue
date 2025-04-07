@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// defineOgImageComponent("HomePage");
+
 useSeoMeta({
   title: "My Blog",
   description:
@@ -11,8 +13,6 @@ useSeoMeta({
     "Just some random thoughts of mine. A place where I share my thoughts and experiences",
   twitterCard: "summary_large_image",
 });
-
-defineOgImageComponent("HomePage");
 
 const { data: blog } = await useAsyncData("blog", () =>
   queryCollection("blog").order("createdAt", "DESC").all(),
@@ -37,19 +37,19 @@ const { data: blog } = await useAsyncData("blog", () =>
             <Icon
               name="my-icon:task-empty"
               mode="svg"
-              class="mx-auto mt-8 size-40 animate-hover text-muted-foreground"
+              class="animate-hover text-muted-foreground mx-auto mt-8 size-40"
               :font-controlled="false"
             />
 
             <Icon
               name="my-icon:empty-shadow"
               mode="svg"
-              class="mx-auto h-12 w-40 animate-hover-shadow text-muted-foreground"
+              class="animate-hover-shadow text-muted-foreground mx-auto h-12 w-40"
               :font-controlled="false"
             />
           </div>
 
-          <p class="max-w-sm text-center italic leading-loose">
+          <p class="max-w-sm text-center leading-loose italic">
             Just an empty page for now. Hopefully I can write something here
             soon.
           </p>

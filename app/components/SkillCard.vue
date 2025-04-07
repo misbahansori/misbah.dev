@@ -14,15 +14,15 @@ const { skill } = defineProps<{
       :to="skill.url"
       target="_blank"
       :key="skill.name"
-      class="group relative flex flex-col gap-1 rounded-[calc(var(--radius)-1px)] px-4 py-4 transition duration-200 ease-in-out sm:px-6"
+      class="group relative flex flex-col gap-1 rounded-lg px-4 py-4 transition duration-200 ease-in-out sm:px-6"
     >
       <span class="text-sm font-semibold">{{ skill.name }}</span>
-      <p class="text-sm text-muted-foreground">
+      <p class="text-muted-foreground text-sm">
         {{ skill.description }}
       </p>
       <Icon
         name="tabler:external-link"
-        class="absolute right-4 top-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
+        class="absolute top-4 right-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
       />
     </NuxtLink>
   </SpotlightCard>

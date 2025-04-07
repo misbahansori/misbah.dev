@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -15,18 +17,18 @@ export default defineNuxtConfig({
     },
   },
 
-  site: {
-    url: "https://misbah.dev",
-  },
+  // site: {
+  //   url: "https://misbah.dev",
+  //   name: "Misbah Ansori",
+  // },
 
   devtools: { enabled: true },
 
   modules: [
-    "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
-    "nuxt-og-image",
+    // "nuxt-og-image",
     "@nuxt/content",
     "@vueuse/motion/nuxt",
     "@nuxt/icon",
@@ -35,8 +37,10 @@ export default defineNuxtConfig({
     "nuxt-umami",
   ],
 
-  tailwindcss: {
-    viewer: false,
+  css: ["~/assets/css/tailwind.css"],
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 
   vue: {
@@ -91,16 +95,23 @@ export default defineNuxtConfig({
   },
 
   fonts: {
-    defaults: {
-      weights: [400, 500, 600, 700, 800],
-    },
+    families: [
+      {
+        name: "Satoshi",
+        weights: [400, 500, 600],
+      },
+      {
+        name: "Playfair Display",
+        weights: [400, 500, 600],
+      },
+    ],
   },
 
-  ogImage: {
-    defaults: {
-      component: "HomePage",
-    },
-  },
+  // ogImage: {
+  //   defaults: {
+  //     component: "HomePage",
+  //   },
+  // },
 
   $production: {
     umami: {
