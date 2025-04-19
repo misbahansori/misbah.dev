@@ -14,5 +14,5 @@ const colorMode = useColorMode();
 </script>
 
 <template>
-  <SectionPortfolio />
+  <SectionPortfolio class="min-h-screen-min" />
 </template>

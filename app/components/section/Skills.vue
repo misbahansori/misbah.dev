@@ -29,17 +29,20 @@ const skills = [
 </script>
 
 <template>
-  <section class="mx-auto max-w-3xl px-4">
-    <div class="flex flex-col py-6 lg:py-8">
-      <div>
-        <h2 class="text-xl font-bold">My Skills</h2>
-        <p class="text-muted-foreground">
-          I have a strong experience in building web applications using these
-          technologies
-        </p>
-      </div>
-      <div class="grid grid-cols-1 gap-4 pt-6 sm:grid-cols-2 md:grid-cols-3">
-        <SkillCard v-for="skill in skills" :skill="skill" :key="skill.name" />
+  <section>
+    <div class="relative mx-auto max-w-3xl px-4">
+      <BorderX />
+      <div class="flex flex-col py-6 lg:py-8">
+        <div class="flex flex-col gap-2">
+          <h2 class="text-2xl/snug">My Skills</h2>
+          <p class="text-muted-foreground">
+            I have a strong experience in building web applications using these
+            technologies
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-4 py-12 sm:grid-cols-2 md:grid-cols-3">
+          <SkillCard v-for="skill in skills" :skill="skill" :key="skill.name" />
+        </div>
       </div>
     </div>
   </section>

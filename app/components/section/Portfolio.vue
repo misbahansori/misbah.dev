@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import type { HTMLAttributes } from "vue";
+
+const props = defineProps<{
+  class?: HTMLAttributes["class"];
+}>();
+
 const portfolios = [
   {
     title: "OriginUi Vue",
     description: "Beautiful UI components built with Tailwind CSS and Vue",
     image: {
-      dark: "/img/www.originui-vue.com_dark.png",
-      light: "/img/www.originui-vue.com_light.png",
+      light: "/img/www.originui-vue.com_dark.png",
+      dark: "/img/www.originui-vue.com_light.png",
     },
     link: "https://originui-vue.com",
   },
@@ -13,8 +19,8 @@ const portfolios = [
     title: "Shareshooter",
     description: "Easily share your screenshots",
     image: {
-      dark: "/img/www.shareshooter.com_dark.png",
-      light: "/img/www.shareshooter.com_light.png",
+      light: "/img/www.shareshooter.com_dark.png",
+      dark: "/img/www.shareshooter.com_light.png",
     },
     link: "https://shareshooter.com",
   },
@@ -23,19 +29,19 @@ const portfolios = [
 
 <template>
   <section>
-    <div class="relative mx-auto max-w-3xl px-4 py-24">
+    <div :class="cn('relative mx-auto max-w-3xl px-4 py-24', props.class)">
       <BorderX />
       <div class="relative">
-        <div class="flex flex-col gap-4">
-          <h2 class="text-2xl/snug">My Projects</h2>
-        </div>
+        <h2 class="text-2xl/snug">My Projects</h2>
         <div class="grid grid-cols-2 gap-8 py-12">
           <div
             v-for="portfolio in portfolios"
             :key="portfolio.title"
             class="flex flex-col gap-4"
           >
-            <div
+            <NuxtLink
+              :to="portfolio.link"
+              target="_blank"
               class="bg-muted dark:border-border group relative flex overflow-hidden rounded-3xl border border-zinc-300 px-6 pt-6 shadow-sm ring-0 inset-shadow-2xs shadow-zinc-950/10 inset-shadow-white duration-150 dark:inset-shadow-transparent"
             >
               <div
@@ -52,10 +58,16 @@ const portfolios = [
                   class="h-full w-full object-cover dark:hidden"
                 />
               </div>
-            </div>
+            </NuxtLink>
             <div class="flex flex-col gap-2">
-              <h3 class="text-lg font-medium">{{ portfolio.title }}</h3>
-              <p class="text-sm text-zinc-500">{{ portfolio.description }}</p>
+              <NuxtLink :to="portfolio.link" target="_blank">
+                <h3 class="text-lg font-semibold hover:underline">
+                  {{ portfolio.title }}
+                </h3>
+              </NuxtLink>
+              <p class="text-muted-foreground text-base/relaxed">
+                {{ portfolio.description }}
+              </p>
             </div>
           </div>
         </div>

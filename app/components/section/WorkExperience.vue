@@ -51,90 +51,93 @@ const diffForHumans = (startDate: string, endDate: string) => {
 </script>
 
 <template>
-  <section class="mx-auto max-w-3xl px-4">
-    <div class="flex flex-col py-6 lg:py-8">
-      <div>
-        <h2 class="text-xl font-bold">Work Experience</h2>
-        <p class="text-muted-foreground">
-          Here are some of the companies I've worked with
-        </p>
-      </div>
-      <div class="flex flex-col items-stretch pt-6">
-        <div
-          v-for="experience in experiences"
-          class="flex flex-col items-baseline gap-6 md:flex-row md:gap-12"
-        >
-          <div class="flex w-40 flex-wrap items-center gap-1 pt-4 sm:pt-0">
-            <div class="flex flex-col gap-1" data-allow-mismatch>
-              <span class="text-sm font-medium text-foreground">
-                {{ format(experience.startDate, "MMM YYYY") }} -
-                {{
-                  experience.endDate
-                    ? format(experience.endDate, "MMM YYYY")
-                    : "Present"
-                }}
-              </span>
-              <span class="text-sm text-muted-foreground">
-                {{
-                  diffForHumans(
-                    experience.startDate,
-                    experience.endDate || new Date().toISOString(),
-                  )
-                }}
-              </span>
+  <section>
+    <div class="relative mx-auto max-w-3xl px-4">
+      <BorderX />
+      <div class="flex flex-col py-6 lg:py-8">
+        <div class="flex flex-col gap-2">
+          <h2 class="text-2xl/snug">Work Experience</h2>
+          <p class="text-muted-foreground">
+            Here are some of the companies I've worked with
+          </p>
+        </div>
+        <div class="flex flex-col items-stretch pt-6">
+          <div
+            v-for="experience in experiences"
+            class="flex flex-col items-baseline gap-6 md:flex-row md:gap-12"
+          >
+            <div class="flex w-40 flex-wrap items-center gap-1 pt-4 sm:pt-0">
+              <div class="flex flex-col gap-1" data-allow-mismatch>
+                <span class="text-foreground text-sm font-medium">
+                  {{ format(experience.startDate, "MMM YYYY") }} -
+                  {{
+                    experience.endDate
+                      ? format(experience.endDate, "MMM YYYY")
+                      : "Present"
+                  }}
+                </span>
+                <span class="text-muted-foreground text-sm">
+                  {{
+                    diffForHumans(
+                      experience.startDate,
+                      experience.endDate || new Date().toISOString(),
+                    )
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div>
-            <div class="relative flex pb-8 last:pb-0">
-              <div
-                class="absolute inset-0 flex w-6 items-center justify-center"
-              >
+            <div>
+              <div class="relative flex pb-8 last:pb-0">
                 <div
-                  class="pointer-events-none h-full w-px border-l-[1px]"
-                ></div>
-              </div>
-              <div
-                class="z-0 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent align-middle text-foreground"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-plus"
+                  class="absolute inset-0 flex w-6 items-center justify-center"
                 >
-                  <path d="M5 12h14"></path>
-                  <path d="M12 5v14"></path>
-                </svg>
-              </div>
-              <div class="flex-grow pb-8 pl-8 sm:pb-12">
-                <div class="word-break-word flex flex-col gap-2">
-                  <span class="font-semibold tracking-tight">
-                    {{ experience.title }}
-                  </span>
-                  <span class="text-sm text-muted-foreground">
-                    {{ experience.company }}
-                  </span>
-                  <div class="flex items-center gap-1">
-                    <Icon name="tabler:pin" class="inline-block h-4 w-4" />
-                    <span class="text-sm text-muted-foreground">
-                      {{ experience.location }}
-                    </span>
-                  </div>
+                  <div
+                    class="pointer-events-none h-full w-px border-l-[1px]"
+                  ></div>
                 </div>
-                <div class="flex flex-wrap gap-2 pt-3">
-                  <Badge
-                    v-for="tech in experience.techStack"
-                    :key="tech"
-                    variant="secondary"
+                <div
+                  class="bg-accent text-foreground z-0 flex h-6 w-6 shrink-0 items-center justify-center rounded-full align-middle"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-plus"
                   >
-                    {{ tech }}
-                  </Badge>
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5v14"></path>
+                  </svg>
+                </div>
+                <div class="flex-grow pb-8 pl-8 sm:pb-12">
+                  <div class="word-break-word flex flex-col gap-2">
+                    <span class="font-semibold tracking-tight">
+                      {{ experience.title }}
+                    </span>
+                    <span class="text-muted-foreground text-sm">
+                      {{ experience.company }}
+                    </span>
+                    <div class="flex items-center gap-1">
+                      <Icon name="tabler:pin" class="inline-block h-4 w-4" />
+                      <span class="text-muted-foreground text-sm">
+                        {{ experience.location }}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-2 pt-3">
+                    <Badge
+                      v-for="tech in experience.techStack"
+                      :key="tech"
+                      variant="secondary"
+                    >
+                      {{ tech }}
+                    </Badge>
+                  </div>
                 </div>
               </div>
             </div>
