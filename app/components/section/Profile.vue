@@ -25,9 +25,7 @@ const showTooltip = ref(false);
         </p>
       </div>
     </div>
-    <div
-      class="border-y bg-[image:repeating-linear-gradient(315deg,_var(--accent)_0,_var(--accent)_1px,_transparent_0,_transparent_50%)] bg-[size:15px_15px] bg-fixed"
-    >
+    <div class="bg-pattern border-y">
       <div class="relative mx-auto max-w-3xl px-4">
         <BorderX />
 

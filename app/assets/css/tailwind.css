@@ -127,3 +127,15 @@
 @utility min-h-screen-min {
   min-height: calc(100vh - var(--navbar-height) * 2 - 2px);
 }
+
+@utility bg-pattern {
+  background-image: repeating-linear-gradient(
+    315deg,
+    var(--accent) 0,
+    var(--accent) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 15px 15px;
+  background-fixed: fixed;
+}

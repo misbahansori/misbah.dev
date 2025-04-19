@@ -133,7 +133,7 @@ const diffForHumans = (startDate: string, endDate: string) => {
                     <Badge
                       v-for="tech in experience.techStack"
                       :key="tech"
-                      variant="secondary"
+                      variant="default"
                     >
                       {{ tech }}
                     </Badge>
