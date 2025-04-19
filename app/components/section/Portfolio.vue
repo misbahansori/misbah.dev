@@ -10,8 +10,8 @@ const portfolios = [
     title: "OriginUi Vue",
     description: "Beautiful UI components built with Tailwind CSS and Vue",
     image: {
-      light: "/img/www.originui-vue.com_dark.png",
-      dark: "/img/www.originui-vue.com_light.png",
+      light: "/img/www.originui-vue.com_light.png",
+      dark: "/img/www.originui-vue.com_dark.png",
     },
     link: "https://originui-vue.com",
   },
@@ -19,8 +19,8 @@ const portfolios = [
     title: "Shareshooter",
     description: "Easily share your screenshots",
     image: {
-      light: "/img/www.shareshooter.com_dark.png",
-      dark: "/img/www.shareshooter.com_light.png",
+      light: "/img/www.shareshooter.com_light.png",
+      dark: "/img/www.shareshooter.com_dark.png",
     },
     link: "https://shareshooter.com",
   },
@@ -48,12 +48,12 @@ const portfolios = [
                 class="border-border -mb-1 aspect-[4/3] origin-bottom overflow-hidden rounded-t-xl border shadow-xl transition group-hover:scale-105"
               >
                 <img
-                  :src="portfolio.image.dark"
+                  :src="portfolio.image.light"
                   alt="OriginUi Vue"
                   class="hidden h-full w-full object-cover dark:block"
                 />
                 <img
-                  :src="portfolio.image.light"
+                  :src="portfolio.image.dark"
                   alt="OriginUi Vue"
                   class="h-full w-full object-cover dark:hidden"
                 />

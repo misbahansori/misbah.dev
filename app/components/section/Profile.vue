@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { buttonVariants } from "~/components/ui/button";
+
+const props = defineProps<{
+  shouldShowButton?: boolean;
+}>();
+</script>
+
 <template>
   <section>
     <div class="relative mx-auto max-w-3xl px-4 py-24">
@@ -22,7 +30,7 @@
         </p>
       </div>
     </div>
-    <div class="bg-pattern border-y">
+    <div v-if="props.shouldShowButton" class="bg-pattern border-y">
       <div class="relative mx-auto max-w-3xl px-4">
         <BorderX />
 
@@ -32,13 +40,21 @@
               class="bg-background absolute -inset-x-2 inset-y-0 border-x lg:-inset-x-4"
             />
             <div class="relative py-4">
-              <Button size="lg" class="group rounded-full">
+              <NuxtLink
+                to="/about"
+                :class="
+                  cn(
+                    buttonVariants({ variant: 'default', size: 'lg' }),
+                    'group rounded-full',
+                  )
+                "
+              >
                 <span>View profile</span>
                 <Icon
                   name="lucide:arrow-right"
                   class="size-4 transition group-hover:translate-x-1"
                 />
-              </Button>
+              </NuxtLink>
             </div>
             <div class="bg-border relative h-full w-px" />
             <div class="relative py-4">
@@ -58,5 +74,6 @@
         </div>
       </div>
     </div>
+    <PatternSeparator v-else />
   </section>
 </template>
