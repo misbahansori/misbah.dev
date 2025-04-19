@@ -12,7 +12,9 @@ useHead({
 </script>
 
 <template>
-  <div class="relative flex min-h-screen min-w-0 flex-col">
+  <div
+    class="relative flex min-h-screen min-w-0 flex-col font-sans antialiased"
+  >
     <div>
       <Navbar />
     </div>
