@@ -7,7 +7,7 @@ const props = defineProps<{
 </script>
 <template>
   <section>
-    <div :class="cn('relative mx-auto max-w-3xl px-4 py-24', props.class)">
+    <div :class="cn('relative mx-auto max-w-3xl px-4 pt-16', props.class)">
       <BorderX />
       <div class="relative">
         <GithubActivityGraph />
