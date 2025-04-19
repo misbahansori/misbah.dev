@@ -9,7 +9,9 @@ const { links } = useNavigation();
   <section class="border-b">
     <div class="relative mx-auto max-w-3xl px-4">
       <BorderX />
-      <nav class="relative flex items-center justify-between gap-8 py-4">
+      <nav
+        class="relative flex h-(--navbar-height) items-center justify-between gap-8"
+      >
         <NuxtLink
           to="/"
           :class="

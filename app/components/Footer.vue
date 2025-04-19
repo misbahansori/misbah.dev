@@ -10,7 +10,7 @@ const footerLinks = computed(() => [{ name: "Home", path: "/" }, ...links]);
     <div class="relative mx-auto max-w-3xl px-4">
       <BorderX />
       <footer
-        class="relative flex flex-col items-center justify-between gap-8 py-4 sm:flex-row md:py-8"
+        class="relative flex h-(--navbar-height) flex-col items-center justify-between gap-8 sm:flex-row"
       >
         <AnimatedTabs :links="footerLinks" />
         <div>

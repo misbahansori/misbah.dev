@@ -32,7 +32,7 @@ const showTooltip = ref(false);
         <BorderX />
 
         <div class="flex">
-          <div class="bg-background relative flex gap-2">
+          <div class="bg-background relative flex gap-4">
             <div class="bg-background absolute -inset-x-4 inset-y-0 border-x" />
             <div class="relative py-4">
               <Button size="lg" class="group rounded-full">

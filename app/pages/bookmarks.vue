@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// defineOgImageComponent("HomePage");
-
 useSeoMeta({
   title: "My Bookmarks",
   description: "Useful links that I often visit and use",
@@ -76,30 +74,37 @@ const bookmarks = [
 </script>
 
 <template>
-  <section class="mx-auto max-w-3xl px-4">
-    <div class="flex flex-col gap-4 py-6 lg:py-8">
-      <h1 class="text-xl font-bold">My Bookmark</h1>
-      <p class="text-muted-foreground">
-        Useful links that I often visit and use
-      </p>
-    </div>
-    <div class="grid grid-cols-1 gap-4 pt-8 sm:grid-cols-2 md:grid-cols-3">
-      <NuxtLink
-        v-for="bookmark in bookmarks.reverse()"
-        :key="bookmark.url"
-        :to="bookmark.url"
-        target="_blank"
-        class="group bg-background hover:bg-accent relative flex flex-col items-start justify-center gap-2 rounded-lg px-4 py-3 shadow-md transition hover:shadow-lg"
-      >
-        <span class="text-base font-bold">{{ bookmark.name }}</span>
-        <p class="text-muted-foreground text-sm">
-          {{ bookmark.description }}
-        </p>
-        <Icon
-          name="tabler:external-link"
-          class="absolute top-4 right-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
-        />
-      </NuxtLink>
+  <section>
+    <div class="min-h-screen-min relative mx-auto max-w-3xl px-4">
+      <BorderX />
+      <div class="relative">
+        <div class="flex flex-col gap-4 py-6 lg:py-8">
+          <h1 class="text-xl font-bold">My Bookmark</h1>
+          <p class="text-muted-foreground">
+            Useful links that I often visit and use
+          </p>
+        </div>
+        <div
+          class="mt-8 grid grid-cols-1 overflow-hidden sm:grid-cols-2 md:grid-cols-3"
+        >
+          <NuxtLink
+            v-for="bookmark in bookmarks.reverse()"
+            :key="bookmark.url"
+            :to="bookmark.url"
+            target="_blank"
+            class="group bg-background hover:bg-accent relative -mt-px -ml-px flex flex-col items-start justify-center gap-2 border-t border-l px-4 py-5 transition"
+          >
+            <span class="text-base font-bold">{{ bookmark.name }}</span>
+            <p class="text-muted-foreground text-sm">
+              {{ bookmark.description }}
+            </p>
+            <Icon
+              name="tabler:external-link"
+              class="absolute top-4 right-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
+            />
+          </NuxtLink>
+        </div>
+      </div>
     </div>
   </section>
 </template>

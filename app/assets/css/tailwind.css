@@ -123,3 +123,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+@utility min-h-screen-min {
+  min-height: calc(100vh - var(--navbar-height) * 2 - 2px);
+}
