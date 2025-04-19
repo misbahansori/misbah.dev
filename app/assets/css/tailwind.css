@@ -4,7 +4,7 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --font-sans: "Satoshi", sans-serif;
+  --font-sans: "Instrument Sans", sans-serif;
   --font-serif: "Playfair Display", serif;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);

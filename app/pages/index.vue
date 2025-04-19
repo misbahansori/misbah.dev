@@ -31,7 +31,7 @@ const { data: blog } = await useAsyncData("blog", () =>
   <SectionProfile />
   <!-- <SectionSkills />
   <SectionWorkExperience /> -->
-  <section class="mx-auto max-w-3xl px-4">
+  <!-- <section class="mx-auto max-w-3xl px-4">
     <div class="flex flex-col py-6 lg:py-8">
       <h1 class="text-xl font-bold">My Blog</h1>
 
@@ -64,5 +64,5 @@ const { data: blog } = await useAsyncData("blog", () =>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
