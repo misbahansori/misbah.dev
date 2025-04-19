@@ -34,7 +34,9 @@ const skills = [
       <BorderX />
       <div class="flex flex-col py-6 lg:py-8">
         <div class="flex flex-col gap-2">
-          <h2 class="text-2xl/snug">My Skills</h2>
+          <h2 class="font-serif text-3xl/snug tracking-wide italic">
+            My Skills
+          </h2>
           <p class="text-muted-foreground">
             I have a strong experience in building web applications using these
             technologies

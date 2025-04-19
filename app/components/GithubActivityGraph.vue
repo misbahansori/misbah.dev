@@ -55,7 +55,7 @@ const formatDate = (dateString: string) => {
 <template>
   <TooltipProvider>
     <div class="w-full overflow-x-auto">
-      <div class="flex gap-1 p-4">
+      <div class="flex justify-end gap-1">
         <div
           v-for="(week, weekIndex) in activityData?.data.weeks"
           :key="weekIndex"

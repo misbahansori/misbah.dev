@@ -56,7 +56,9 @@ const diffForHumans = (startDate: string, endDate: string) => {
       <BorderX />
       <div class="flex flex-col py-6 lg:py-8">
         <div class="flex flex-col gap-2">
-          <h2 class="text-2xl/snug">Work Experience</h2>
+          <h2 class="font-serif text-3xl/snug tracking-wide italic">
+            Work Experience
+          </h2>
           <p class="text-muted-foreground">
             Here are some of the companies I've worked with
           </p>
