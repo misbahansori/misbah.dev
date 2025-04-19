@@ -8,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <section>
-    <div class="relative mx-auto max-w-3xl px-4 py-24">
+    <div class="relative mx-auto max-w-3xl px-4 py-16 lg:py-24">
       <BorderX />
       <div class="flex flex-col gap-4">
         <img
@@ -58,7 +58,15 @@ const props = defineProps<{
             </div>
             <div class="bg-border relative h-full w-px" />
             <div class="relative py-4">
-              <Button size="lg" variant="secondary" class="rounded-full">
+              <a
+                href="mailto:misbah.ansori24@gmail.com"
+                :class="
+                  cn(
+                    buttonVariants({ variant: 'secondary', size: 'lg' }),
+                    'rounded-full',
+                  )
+                "
+              >
                 <span class="relative flex size-3">
                   <span
                     class="bg-secondary-foreground/80 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
@@ -67,8 +75,8 @@ const props = defineProps<{
                     class="bg-secondary-foreground relative inline-flex size-3 rounded-full"
                   ></span>
                 </span>
-                Available for hire
-              </Button>
+                Available for Projects
+              </a>
             </div>
           </div>
         </div>
