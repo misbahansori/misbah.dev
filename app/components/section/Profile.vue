@@ -1,8 +1,3 @@
-<script setup lang="ts">
-const { sourceType } = useMouse();
-const showTooltip = ref(false);
-</script>
-
 <template>
   <section>
     <div class="relative mx-auto max-w-3xl px-4 py-24">
@@ -13,12 +8,14 @@ const showTooltip = ref(false);
           alt="Misbah Ansori Profile Picture"
           class="border-border h-24 w-24 rounded-full border-1 shadow-sm"
         />
-        <h1 class="text-4xl/snug">
+        <h1 class="text-3xl/snug md:text-4xl/snug">
           Hey, I'm Misbah Ansori.
           <br />
           Full Stack Developer
         </h1>
-        <p class="text-muted-foreground/80 text-lg/loose">
+        <p
+          class="text-muted-foreground/80 max-w-md text-base/loose md:max-w-xl md:text-lg/loose"
+        >
           A passionate developer who has a strong interest in web development
           and other technologies. Proficient and experienced in both frontend
           and backend.
@@ -31,7 +28,9 @@ const showTooltip = ref(false);
 
         <div class="flex">
           <div class="bg-background relative flex gap-4">
-            <div class="bg-background absolute -inset-x-4 inset-y-0 border-x" />
+            <div
+              class="bg-background absolute -inset-x-2 inset-y-0 border-x lg:-inset-x-4"
+            />
             <div class="relative py-4">
               <Button size="lg" class="group rounded-full">
                 <span>View profile</span>

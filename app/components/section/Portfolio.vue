@@ -33,7 +33,7 @@ const portfolios = [
       <BorderX />
       <div class="relative">
         <h2 class="text-2xl/snug">My Projects</h2>
-        <div class="grid grid-cols-2 gap-8 py-12">
+        <div class="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2">
           <div
             v-for="portfolio in portfolios"
             :key="portfolio.title"

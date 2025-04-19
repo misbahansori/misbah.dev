@@ -10,26 +10,9 @@ const footerLinks = computed(() => [{ name: "Home", path: "/" }, ...links]);
     <div class="relative mx-auto max-w-3xl px-4">
       <BorderX />
       <footer
-        class="relative flex h-(--navbar-height) flex-col items-center justify-between gap-8 sm:flex-row"
+        class="relative flex h-(--navbar-height) flex-col items-center justify-center gap-4 sm:flex-row sm:justify-between"
       >
         <AnimatedTabs :links="footerLinks" />
-        <div>
-          <Button
-            variant="ghost"
-            @click="
-              colorMode.preference =
-                colorMode.preference === 'dark' ? 'light' : 'dark'
-            "
-            class="h-auto px-2 py-2"
-          >
-            <Icon
-              name="tabler:moon"
-              v-if="colorMode.preference === 'dark'"
-              class="size-5"
-            />
-            <Icon name="tabler:sun" v-else class="size-5" />
-          </Button>
-        </div>
       </footer>
     </div>
   </section>
