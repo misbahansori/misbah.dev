@@ -32,9 +32,11 @@ const portfolios = [
         <div
           v-for="portfolio in portfolios"
           :key="portfolio.title"
-          class="bg-accent border-border/50 rounded-3xl border p-6"
+          class="bg-muted dark:border-border relative flex rounded-3xl border border-zinc-300 p-6 shadow-sm ring-0 inset-shadow-2xs shadow-zinc-950/10 inset-shadow-white duration-150 dark:inset-shadow-transparent"
         >
-          <div class="aspect-[4/3] overflow-hidden rounded-xl shadow-xl">
+          <div
+            class="border-border aspect-[4/3] overflow-hidden rounded-xl border shadow-xl"
+          >
             <img
               :src="portfolio.image.dark"
               alt="OriginUi Vue"
