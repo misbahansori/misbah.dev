@@ -10,8 +10,8 @@ const portfolios = [
     title: "OriginUi Vue",
     description: "Beautiful UI components built with Tailwind CSS and Vue",
     image: {
-      light: "/img/www.originui-vue.com_light.png",
-      dark: "/img/www.originui-vue.com_dark.png",
+      light: "/img/originui-vue_light.png",
+      dark: "/img/originui-vue_dark.png",
     },
     link: "https://originui-vue.com",
   },
@@ -19,8 +19,8 @@ const portfolios = [
     title: "Shareshooter",
     description: "Easily share your screenshots",
     image: {
-      light: "/img/www.shareshooter.com_light.png",
-      dark: "/img/www.shareshooter.com_dark.png",
+      light: "/img/shareshooter_light.png",
+      dark: "/img/shareshooter_dark.png",
     },
     link: "https://shareshooter.com",
   },

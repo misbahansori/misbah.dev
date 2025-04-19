@@ -3,6 +3,7 @@ import { DialogClose } from "radix-vue";
 import { buttonVariants } from "~/components/ui/button";
 
 const { links } = useNavigation();
+const colorMode = useColorMode();
 </script>
 
 <template>
@@ -23,7 +24,23 @@ const { links } = useNavigation();
         >
           <span class="font-bold">./</span>
         </NuxtLink>
-        <AnimatedTabs :links="links" class="hidden sm:flex" />
+        <div class="hidden sm:flex sm:items-center sm:gap-4">
+          <AnimatedTabs :links="links" />
+          <div>
+            <Button
+              variant="ghost"
+              @click="
+                colorMode.preference =
+                  colorMode.preference === 'dark' ? 'light' : 'dark'
+              "
+              size="icon"
+            >
+              <Icon name="tabler:moon" class="hidden size-5 dark:block" />
+              <Icon name="tabler:sun" class="block size-5 dark:hidden" />
+            </Button>
+          </div>
+        </div>
+
         <Sheet>
           <SheetTrigger as-child>
             <Button variant="ghost" class="flex p-2 sm:hidden">
@@ -51,6 +68,19 @@ const { links } = useNavigation();
                   {{ link.name }}
                 </NuxtLink>
               </DialogClose>
+              <div class="flex justify-center">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  @click="
+                    colorMode.preference =
+                      colorMode.preference === 'dark' ? 'light' : 'dark'
+                  "
+                >
+                  <Icon name="tabler:moon" class="hidden size-5 dark:block" />
+                  <Icon name="tabler:sun" class="block size-5 dark:hidden" />
+                </Button>
+              </div>
             </div>
           </SheetContent>
         </Sheet>
