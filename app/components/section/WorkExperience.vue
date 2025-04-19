@@ -54,8 +54,8 @@ const diffForHumans = (startDate: string, endDate: string) => {
   <section>
     <div class="relative mx-auto max-w-3xl px-4">
       <BorderX />
-      <div class="flex flex-col py-6 lg:py-8">
-        <div class="flex flex-col gap-2">
+      <div class="flex flex-col">
+        <div class="flex flex-col gap-2 py-6 lg:py-12">
           <h2 class="font-serif text-3xl/snug tracking-wide italic">
             Work Experience
           </h2>
@@ -63,7 +63,7 @@ const diffForHumans = (startDate: string, endDate: string) => {
             Here are some of the companies I've worked with
           </p>
         </div>
-        <div class="flex flex-col items-stretch pt-6">
+        <div class="flex flex-col items-stretch">
           <div
             v-for="experience in experiences"
             class="flex flex-col items-baseline gap-6 md:flex-row md:gap-12"
