@@ -12,12 +12,9 @@ useHead({
 </script>
 
 <template>
-  <div class="relative flex min-h-screen min-w-0 flex-col">
-    <div
-      aria-hidden="true"
-      class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,theme(colors.foreground/3%)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.foreground/3%)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:linear-gradient(to_bottom,white_15%,transparent_50%)]"
-    />
-
+  <div
+    class="relative flex min-h-screen min-w-0 flex-col font-sans antialiased [--navbar-height:3rem] md:[--navbar-height:5rem]"
+  >
     <div>
       <Navbar />
     </div>
@@ -28,4 +25,18 @@ useHead({
       <Footer />
     </div>
   </div>
+  <DevOnly>
+    <div class="fixed bottom-0 left-0 z-50">
+      <div
+        class="bg-primary text-primary-foreground tesm rounded-tr-sm p-2 font-medium"
+      >
+        <div class="sm:hidden">BASE</div>
+        <div class="hidden sm:block md:hidden">SM</div>
+        <div class="hidden md:block lg:hidden">MD</div>
+        <div class="hidden lg:block xl:hidden">LG</div>
+        <div class="hidden xl:block 2xl:hidden">XL</div>
+        <div class="hidden 2xl:block">2XL</div>
+      </div>
+    </div>
+  </DevOnly>
 </template>

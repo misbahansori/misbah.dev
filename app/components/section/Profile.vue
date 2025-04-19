@@ -1,140 +1,60 @@
-<script setup lang="ts">
-import {
-  TooltipContent,
-  TooltipPortal,
-  TooltipProvider,
-  TooltipRoot,
-  TooltipTrigger,
-} from "radix-vue";
-import { buttonVariants } from "~/components/ui/button";
-
-const { sourceType } = useMouse();
-const showTooltip = ref(false);
-</script>
-
 <template>
-  <section class="mx-auto max-w-3xl px-4">
-    <div class="flex flex-col gap-8 py-6 lg:py-8">
-      <div class="flex justify-center sm:justify-start">
-        <div class="relative">
-          <TooltipProvider :delayDuration="0">
-            <TooltipRoot :open="showTooltip">
-              <TooltipTrigger
-                @mouseover="showTooltip = true"
-                @mouseleave="sourceType === 'mouse' && (showTooltip = false)"
-                @click="showTooltip = !showTooltip"
-                as-child
-              >
-                <img
-                  src="/img/misbah.jpg"
-                  alt=""
-                  class="h-24 w-24 rounded-3xl border-2 border-white shadow-lg"
-                />
-              </TooltipTrigger>
-              <TooltipPortal>
-                <TooltipContent>
-                  <div
-                    v-motion="{
-                      initial: { opacity: 0, y: 20, scale: 0.6, rotate: -20 },
-                      enter: {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        rotate: 0,
-                        transition: {
-                          duration: 0.9,
-                          type: 'spring',
-                          stiffness: 260,
-                          damping: 10,
-                        },
-                      },
-                      exit: {
-                        opacity: 0,
-                        y: 20,
-                        scale: 0.6,
-                        rotate: 20,
-                        transition: {
-                          duration: 0.9,
-                          type: 'spring',
-                          stiffness: 260,
-                          damping: 10,
-                        },
-                      },
-                    }"
-                    class="pointer-events-none absolute -translate-x-1/2 -translate-y-full"
-                  >
-                    <div class="-translate-x-1/2 -translate-y-full">
-                      <div
-                        class="bg-background flex flex-col items-center justify-center rounded-2xl px-6 py-2 shadow-xl"
-                      >
-                        <span class="font-semibold whitespace-nowrap">
-                          Misbah Ansori
-                        </span>
-                        <span
-                          class="text-muted-foreground text-sm whitespace-nowrap"
-                        >
-                          Fullstack Developer
-                        </span>
-                      </div>
-                      <div
-                        class="relative hidden h-5 w-full overflow-hidden dark:block"
-                      >
-                        <div
-                          class="absolute inset-x-1/2 top-0 h-[2px] w-full -translate-x-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm"
-                        ></div>
-                        <div
-                          class="absolute inset-x-1/2 top-0 h-px w-full -translate-x-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"
-                        ></div>
-                        <div
-                          class="absolute inset-x-1/2 top-0 h-[4px] w-1/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm"
-                        ></div>
-                        <div
-                          class="absolute inset-x-1/2 top-0 h-px w-1/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-sky-500 to-transparent"
-                        ></div>
-                        <div
-                          class="h-full w-full opacity-0"
-                          style="opacity: 1"
-                        ></div>
-                        <div
-                          class="absolute inset-0 h-full w-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </TooltipContent>
-              </TooltipPortal>
-            </TooltipRoot>
-          </TooltipProvider>
-        </div>
+  <section>
+    <div class="relative mx-auto max-w-3xl px-4 py-24">
+      <BorderX />
+      <div class="flex flex-col gap-4">
+        <img
+          :src="`/img/misbah.jpg`"
+          alt="Misbah Ansori Profile Picture"
+          class="border-border h-24 w-24 rounded-full border-1 shadow-sm"
+        />
+        <h1 class="text-3xl/snug md:text-4xl/snug">
+          Hey, I'm Misbah Ansori.
+          <br />
+          Full Stack Developer
+        </h1>
+        <p
+          class="text-muted-foreground/80 max-w-md text-base/loose md:max-w-xl md:text-lg/loose"
+        >
+          A passionate developer who has a strong interest in web development
+          and other technologies. Proficient and experienced in both frontend
+          and backend.
+        </p>
       </div>
+    </div>
+    <div class="bg-pattern border-y">
+      <div class="relative mx-auto max-w-3xl px-4">
+        <BorderX />
 
-      <div
-        class="flex flex-col justify-between gap-8 text-center sm:flex-row sm:items-start sm:text-left"
-      >
-        <div>
-          <h1 class="text-3xl font-bold">Hi, I'm Misbah Ansori</h1>
-          <span class="text-base font-medium">Fullstack Developer</span>
-          <p class="text-muted-foreground pt-2.5">
-            A passionate developer who has a strong interest in web development
-            and other technologies. Proficient and experienced in both frontend
-            and backend.
-          </p>
-        </div>
-        <div class="flex items-center justify-center gap-3 sm:justify-start">
-          <NuxtLink
-            to="https://twitter.com/MisbahAnsori24"
-            target="_blank"
-            :class="cn(buttonVariants({ variant: 'default' }), 'h-auto p-2')"
-          >
-            <Icon name="tabler:brand-x" size="20" />
-          </NuxtLink>
-          <NuxtLink
-            to="mailto:misbah.ansori24@gmail.com"
-            :class="cn(buttonVariants(), 'flex gap-3')"
-          >
-            <Icon name="tabler:mail" size="20" />
-            <span>Get in touch</span>
-          </NuxtLink>
+        <div class="flex">
+          <div class="bg-background relative flex gap-4">
+            <div
+              class="bg-background absolute -inset-x-2 inset-y-0 border-x lg:-inset-x-4"
+            />
+            <div class="relative py-4">
+              <Button size="lg" class="group rounded-full">
+                <span>View profile</span>
+                <Icon
+                  name="lucide:arrow-right"
+                  class="size-4 transition group-hover:translate-x-1"
+                />
+              </Button>
+            </div>
+            <div class="bg-border relative h-full w-px" />
+            <div class="relative py-4">
+              <Button size="lg" variant="secondary" class="rounded-full">
+                <span class="relative flex size-3">
+                  <span
+                    class="bg-secondary-foreground/80 absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+                  ></span>
+                  <span
+                    class="bg-secondary-foreground relative inline-flex size-3 rounded-full"
+                  ></span>
+                </span>
+                Available for hire
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
