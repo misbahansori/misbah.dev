@@ -10,7 +10,7 @@ const props = defineProps<{
   <section>
     <div class="relative mx-auto max-w-3xl px-4 py-16 lg:py-24">
       <BorderX />
-      <div class="flex flex-col gap-4">
+      <div class="relative flex flex-col gap-4">
         <img
           :src="`/img/misbah.jpg`"
           alt="Misbah Ansori Profile Picture"
@@ -19,7 +19,9 @@ const props = defineProps<{
         <h1 class="text-3xl/snug md:text-4xl/snug">
           Hey, I'm Misbah Ansori.
           <br />
-          Full Stack Developer
+          <span class="font-serif tracking-wide italic">
+            Full Stack Developer
+          </span>
         </h1>
         <p
           class="text-muted-foreground/80 max-w-md text-base/loose md:max-w-xl md:text-lg/loose"
@@ -30,7 +32,7 @@ const props = defineProps<{
         </p>
       </div>
     </div>
-    <div v-if="props.shouldShowButton" class="bg-pattern border-y">
+    <div v-if="props.shouldShowButton" class="bg-pattern relative border-y">
       <div class="relative mx-auto max-w-3xl px-4">
         <BorderX />
 

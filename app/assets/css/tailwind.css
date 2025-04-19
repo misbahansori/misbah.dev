@@ -6,7 +6,7 @@
 
 :root {
   --font-sans: "Instrument Sans", sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --font-serif: "Instrument Serif", serif;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);

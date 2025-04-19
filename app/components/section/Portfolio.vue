@@ -32,7 +32,9 @@ const portfolios = [
     <div :class="cn('relative mx-auto max-w-3xl px-4 py-24', props.class)">
       <BorderX />
       <div class="relative">
-        <h2 class="text-2xl/snug">My Projects</h2>
+        <h2 class="font-serif text-3xl/snug tracking-wide italic">
+          My Projects
+        </h2>
         <div class="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2">
           <div
             v-for="portfolio in portfolios"
