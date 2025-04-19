@@ -40,7 +40,6 @@ export default defineCachedEventHandler(
   async (event) => {
     const runtimeConfig = useRuntimeConfig(event);
     const TOKEN = runtimeConfig.GITHUB_TOKEN;
-    console.log(TOKEN);
     try {
       const data = await $fetch<Activity>(`https://api.github.com/graphql`, {
         method: "POST",
