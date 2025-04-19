@@ -1,4 +1,3 @@
-const TOKEN = process.env.GITHUB_TOKEN;
 const username = "misbahansori";
 
 const query = `
@@ -37,23 +36,34 @@ interface Activity {
   };
 }
 
-export default defineEventHandler(async (event) => {
-  try {
-    const data = await $fetch<Activity>(`https://api.github.com/graphql`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query, variables: { userName: username } }),
-    });
+export default defineCachedEventHandler(
+  async (event) => {
+    const runtimeConfig = useRuntimeConfig(event);
+    const TOKEN = runtimeConfig.GITHUB_TOKEN;
+    console.log(TOKEN);
+    try {
+      const data = await $fetch<Activity>(`https://api.github.com/graphql`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query, variables: { userName: username } }),
+      });
 
-    return {
-      data: data.data.user.contributionsCollection.contributionCalendar,
-    };
-  } catch (error) {
-    return {
-      error: "Failed to fetch GitHub activity",
-    };
-  }
-});
+      return {
+        data: data.data.user.contributionsCollection.contributionCalendar,
+      };
+    } catch (error) {
+      throw createError({
+        statusCode: 500,
+        statusMessage: "Failed to fetch GitHub activity",
+      });
+    }
+  },
+  {
+    // calculate max age to end of day
+    maxAge:
+      new Date(new Date().setHours(23, 59, 59, 999)).getTime() - Date.now(),
+  },
+);

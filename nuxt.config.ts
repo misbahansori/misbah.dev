@@ -17,6 +17,10 @@ export default defineNuxtConfig({
     },
   },
 
+  runtimeConfig: {
+    GITHUB_TOKEN: "",
+  },
+
   // site: {
   //   url: "https://misbah.dev",
   //   name: "Misbah Ansori",
