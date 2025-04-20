@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { bookmarks } from "~/data/bookmarks";
+
+defineOgImageComponent("BookmarksPage", {
+  title: "My Bookmarks",
+  description: "Useful links that I often visit and use",
+  image: "/img/misbah.jpg",
+});
+
 useSeoMeta({
   title: "My Bookmarks",
   description: "Useful links that I often visit and use",

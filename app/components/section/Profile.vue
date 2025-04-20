@@ -61,9 +61,9 @@ const transition = {
           <p
             class="text-muted-foreground/80 max-w-md text-base/loose md:max-w-xl md:text-lg/loose"
           >
-            A passionate developer who has a strong interest in web development
-            and other technologies. Proficient and experienced in both frontend
-            and backend.
+            A passionate developer with a strong interest in web development and
+            other technologies. Proficient and experienced in both frontend and
+            backend.
           </p>
         </Motion>
       </div>

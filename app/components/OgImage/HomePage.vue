@@ -11,10 +11,10 @@ const { title, description, image } = defineProps<{
   <div class="flex h-full w-full flex-col justify-center bg-[#020420]">
     <div
       aria-hidden="true"
-      class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#ffffff40_1px,transparent_1px),linear-gradient(to_bottom,#ffffff40_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,white_15%,transparent_50%)]"
+      class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#ffffff40_1px,transparent_1px),linear-gradient(to_bottom,#ffffff40_1px,transparent_1px)] [mask-image:linear-gradient(to_bottom,white_15%,transparent_50%)] bg-[size:64px_64px]"
     />
     <svg
-      class="absolute right-0 top-0"
+      class="absolute top-0 right-0"
       width="629"
       height="593"
       viewBox="0 0 629 593"
@@ -55,12 +55,12 @@ const { title, description, image } = defineProps<{
     <div class="w-[600px] pl-[100px]">
       <p
         v-if="headline"
-        class="mb-4 text-[24px] font-semibold uppercase text-[#00DC82]"
+        class="mb-4 text-[24px] font-semibold text-[#00DC82] uppercase"
       >
         {{ headline }}
       </p>
       <h1
-        class="m-0 mb-4 flex w-[600px] items-center text-[75px] font-semibold text-white"
+        class="m-0 mb-4 flex w-[600px] items-center font-serif text-[75px] font-light text-white"
       >
         <span>{{ title }}</span>
       </h1>
@@ -70,7 +70,7 @@ const { title, description, image } = defineProps<{
     </div>
     <div
       v-if="image"
-      class="absolute right-[90px] top-[160px] rounded-[2rem] bg-white p-2"
+      class="absolute top-[160px] right-[90px] rounded-[2rem] bg-white p-2"
     >
       <img
         :src="image"

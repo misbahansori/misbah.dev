@@ -1,4 +1,11 @@
 <script setup lang="ts">
+defineOgImageComponent("BlogPage", {
+  title: "My Blog",
+  description:
+    "Just some random thoughts of mine. A place where I share my thoughts and experiences",
+  image: "/img/misbah.jpg",
+});
+
 useSeoMeta({
   title: "My Blog",
   description:

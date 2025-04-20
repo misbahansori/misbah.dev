@@ -21,10 +21,10 @@ export default defineNuxtConfig({
     GITHUB_TOKEN: "",
   },
 
-  // site: {
-  //   url: "https://misbah.dev",
-  //   name: "Misbah Ansori",
-  // },
+  site: {
+    url: "https://misbah.dev",
+    name: "Misbah Ansori",
+  },
 
   devtools: { enabled: true },
 
@@ -32,7 +32,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
-    // "nuxt-og-image",
+    "nuxt-og-image",
     "@nuxt/content",
     "@vueuse/motion/nuxt",
     "@nuxt/icon",

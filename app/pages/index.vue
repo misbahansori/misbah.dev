@@ -1,31 +1,31 @@
 <script setup lang="ts">
-// defineOgImageComponent("HomePage", {
-//   title: "Hi, I'm Misbah Ansori",
-//   headline: "Fullstack Developer",
-//   description:
-//     "I love to build something that can help people and make life easier",
-//   image: "/img/misbah.jpg",
-// });
+defineOgImageComponent("HomePage", {
+  title: "Hi, I'm Misbah Ansori",
+  headline: "Fullstack Developer",
+  description:
+    "A passionate developer with a strong interest in web development.",
+  image: "/img/misbah.jpg",
+});
 
 useSeoMeta({
   title: "Hi, I'm Misbah Ansori - Fullstack Developer",
   description:
-    "I love to build something that can help people and make life easier",
+    "A passionate developer with a strong interest in web development.",
   ogTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
   ogDescription:
-    "I love to build something that can help people and make life easier",
+    "A passionate developer with a strong interest in web development.",
   ogUrl: "https://misbah.dev",
   twitterTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
   twitterDescription:
-    "I love to build something that can help people and make life easier",
+    "A passionate developer with a strong interest in web development.",
   twitterCard: "summary_large_image",
   twitterSite: "@MisbahAnsori24",
   twitterCreator: "@MisbahAnsori24",
 });
 
-const { data: blog } = await useAsyncData("blog", () =>
-  queryCollection("blog").order("createdAt", "DESC").all(),
-);
+// const { data: blog } = await useAsyncData("blog", () =>
+//   queryCollection("blog").order("createdAt", "DESC").all(),
+// );
 </script>
 <template>
   <SectionProfile />

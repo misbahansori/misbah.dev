@@ -1,13 +1,21 @@
 <script setup lang="ts">
-// defineOgImageComponent("HomePage");
+defineOgImageComponent("PortfoliosPage", {
+  title: "My Portfolios",
+  description:
+    "Check out some of my projects. Here's what I've been working on lately.",
+  image: "/img/misbah.jpg",
+});
 
 useSeoMeta({
   title: "My portfolios",
-  description: "Useful links that I often visit and use",
+  description:
+    "Check out some of my projects. Here's what I've been working on lately.",
   ogTitle: "My portfolios",
-  ogDescription: "Useful links that I often visit and use",
+  ogDescription:
+    "Check out some of my projects. Here's what I've been working on lately.",
   twitterTitle: "My portfolios",
-  twitterDescription: "Useful links that I often visit and use",
+  twitterDescription:
+    "Check out some of my projects. Here's what I've been working on lately.",
   twitterCard: "summary_large_image",
 });
 const colorMode = useColorMode();
