@@ -31,5 +31,6 @@ useSeoMeta({
   <SectionProfile />
   <SectionCta />
   <SectionGithubActivity />
-  <SectionPortfolio class="pt-24" />
+  <PatternSeparator />
+  <SectionPortfolio class="pt-8" />
 </template>
