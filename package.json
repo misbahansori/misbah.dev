@@ -41,6 +41,7 @@
     "@tailwindcss/vite": "^4.1.3",
     "@vueuse/core": "^13.0.0",
     "lucide-vue-next": "^0.487.0",
+    "motion-v": "1.0.0-beta.2",
     "reka-ui": "^2.2.0",
     "tailwindcss": "^4.1.3",
     "tw-animate-css": "^1.2.5",

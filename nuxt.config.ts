@@ -39,6 +39,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/image",
     "nuxt-umami",
+    "motion-v/nuxt",
   ],
 
   css: ["~/assets/css/tailwind.css"],
@@ -121,6 +122,10 @@ export default defineNuxtConfig({
   //     component: "HomePage",
   //   },
   // },
+
+  umami: {
+    ignoreLocalhost: true,
+  },
 
   $production: {
     umami: {
