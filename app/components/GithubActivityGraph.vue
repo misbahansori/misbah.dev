@@ -132,7 +132,7 @@ const formatDate = (dateString: string) => {
           <span>More</span>
         </div>
         <NuxtLink
-          to="https://github.com/misbahdev"
+          to="https://github.com/misbahansori"
           external
           target="_blank"
           class="text-muted-foreground flex items-center gap-1 font-medium"
