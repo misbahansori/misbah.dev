@@ -29,12 +29,17 @@ const portfolios = [
 
 <template>
   <section>
-    <div :class="cn('relative mx-auto max-w-3xl px-4 py-24', props.class)">
+    <div :class="cn('relative mx-auto max-w-3xl px-4', props.class)">
       <BorderX />
       <div class="relative">
-        <h2 class="font-serif text-3xl/snug tracking-wide italic">
-          My Projects
-        </h2>
+        <div class="flex max-w-xl flex-col gap-4 py-6 lg:py-8">
+          <h2 class="font-serif text-3xl/snug tracking-wide italic">
+            My Projects
+          </h2>
+          <p class="text-muted-foreground">
+            A collection of my projects. I build them with my own hands.
+          </p>
+        </div>
         <div class="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2">
           <div
             v-for="portfolio in portfolios"

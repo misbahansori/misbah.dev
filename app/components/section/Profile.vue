@@ -19,7 +19,7 @@ const props = defineProps<{
         <h1 class="text-3xl/snug md:text-4xl/snug">
           Hey, I'm Misbah Ansori.
           <br />
-          <span class="font-serif tracking-wide italic">
+          <span class="font-serif font-medium tracking-wide italic">
             Full Stack Developer
           </span>
         </h1>

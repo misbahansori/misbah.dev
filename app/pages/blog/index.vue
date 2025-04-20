@@ -21,11 +21,14 @@ const { data: blog } = await useAsyncData("blog", () =>
   <section>
     <div class="min-h-screen-min relative mx-auto max-w-3xl px-4">
       <BorderX />
-      <div class="flex flex-col gap-4 py-6 lg:py-8">
-        <h1 class="text-xl font-bold">My Blog</h1>
-        <p class="text-muted-foreground">
-          A place where I share my thoughts and experiences
-        </p>
+      <div class="flex flex-col">
+        <div class="flex max-w-xl flex-col gap-4 py-6 lg:py-8">
+          <h1 class="font-serif text-3xl/snug tracking-wide italic">My Blog</h1>
+          <p class="text-muted-foreground">
+            Just some random thoughts of mine. A place where I share my thoughts
+            and experiences
+          </p>
+        </div>
         <div>
           <div v-if="blog?.length" v-for="article in blog" :key="article.path">
             <ArticleItem :article="article" />

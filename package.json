@@ -1,12 +1,14 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "download-favicons": "node --loader ts-node/esm scripts/download-favicons.ts"
   },
   "devDependencies": {
     "@nuxt/content": "^3.4.0",
@@ -17,6 +19,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "@tailwindcss/typography": "^0.5.16",
+    "@types/node": "^22.14.1",
     "@vueuse/motion": "^3.0.3",
     "@vueuse/nuxt": "^13.0.0",
     "class-variance-authority": "^0.7.1",
@@ -30,6 +33,7 @@
     "shadcn-nuxt": "^2.0.0",
     "tailwind-merge": "^3.2.0",
     "tailwindcss-animate": "^1.0.7",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {

@@ -30,5 +30,5 @@ const { data: blog } = await useAsyncData("blog", () =>
 <template>
   <SectionProfile shouldShowButton />
   <SectionGithubActivity />
-  <SectionPortfolio />
+  <SectionPortfolio class="pt-24" />
 </template>
