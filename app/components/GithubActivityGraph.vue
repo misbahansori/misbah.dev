@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Motion } from "motion-v";
+
 interface ContributionDay {
   contributionCount: number;
   date: string;
@@ -31,6 +33,19 @@ const colorClasses = [
   "bg-green-500 dark:bg-green-700", // Level 3
   "bg-green-600 dark:bg-green-600", // Level 4
 ];
+
+const fadeInVariant = {
+  initial: {
+    scale: 0,
+  },
+  animate: {
+    scale: 1,
+  },
+};
+
+const transition = {
+  duration: 1,
+};
 
 const getContributionColor = (count: number) => {
   if (count === 0) return "bg-gray-100 dark:bg-gray-800";
@@ -66,7 +81,15 @@ const formatDate = (dateString: string) => {
             :key="dayIndex"
           >
             <TooltipTrigger>
-              <div
+              <Motion
+                :variants="fadeInVariant"
+                :initial="'initial'"
+                :whileInView="'animate'"
+                :inViewOptions="{ once: true }"
+                :transition="{
+                  ...transition,
+                  delay: weekIndex * 0.05 + dayIndex * 0.02,
+                }"
                 :class="[
                   'h-3 w-3 rounded-sm',
                   getContributionColor(day.contributionCount),
@@ -84,29 +107,40 @@ const formatDate = (dateString: string) => {
         </div>
       </div>
     </div>
-    <div
-      class="mt-4 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+    <Motion
+      :initial="{
+        opacity: 0,
+      }"
+      :whileInView="{
+        opacity: 1,
+      }"
+      :inViewOptions="{ once: true }"
+      :transition="{ ...transition, delay: 1 }"
     >
-      <div class="flex items-center gap-2">
-        <span>Less</span>
-        <div class="flex gap-1">
-          <div
-            v-for="(color, index) in colorClasses"
-            :key="index"
-            :class="['h-3 w-3 rounded-sm', color]"
-          />
-        </div>
-        <span>More</span>
-      </div>
-      <NuxtLink
-        to="https://github.com/misbahdev"
-        external
-        target="_blank"
-        class="text-muted-foreground flex items-center gap-1 font-medium"
+      <div
+        class="mt-4 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
       >
-        <Icon name="mdi:github" class="h-4 w-4" />
-        <span>View on GitHub</span>
-      </NuxtLink>
-    </div>
+        <div class="flex items-center gap-2">
+          <span>Less</span>
+          <div class="flex gap-1">
+            <div
+              v-for="(color, index) in colorClasses"
+              :key="index"
+              :class="['h-3 w-3 rounded-sm', color]"
+            />
+          </div>
+          <span>More</span>
+        </div>
+        <NuxtLink
+          to="https://github.com/misbahdev"
+          external
+          target="_blank"
+          class="text-muted-foreground flex items-center gap-1 font-medium"
+        >
+          <Icon name="mdi:github" class="h-4 w-4" />
+          <span>View on GitHub</span>
+        </NuxtLink>
+      </div>
+    </Motion>
   </TooltipProvider>
 </template>
