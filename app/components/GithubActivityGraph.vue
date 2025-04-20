@@ -84,5 +84,29 @@ const formatDate = (dateString: string) => {
         </div>
       </div>
     </div>
+    <div
+      class="mt-4 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+    >
+      <div class="flex items-center gap-2">
+        <span>Less</span>
+        <div class="flex gap-1">
+          <div
+            v-for="(color, index) in colorClasses"
+            :key="index"
+            :class="['h-3 w-3 rounded-sm', color]"
+          />
+        </div>
+        <span>More</span>
+      </div>
+      <NuxtLink
+        to="https://github.com/misbahdev"
+        external
+        target="_blank"
+        class="text-muted-foreground flex items-center gap-1 font-medium"
+      >
+        <Icon name="mdi:github" class="h-4 w-4" />
+        <span>View on GitHub</span>
+      </NuxtLink>
+    </div>
   </TooltipProvider>
 </template>
