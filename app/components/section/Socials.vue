@@ -10,7 +10,7 @@ import { socials } from "~/data/socials";
         <BorderX />
 
         <div class="flex">
-          <div class="bg-background relative flex gap-4">
+          <div class="bg-background relative flex flex-wrap gap-4">
             <div
               class="bg-background absolute -inset-x-2 inset-y-0 border-x lg:-inset-x-4"
             />
@@ -18,16 +18,17 @@ import { socials } from "~/data/socials";
               <div class="relative py-4">
                 <NuxtLink
                   :to="social.url"
+                  external
                   target="_blank"
                   :class="
                     cn(
                       buttonVariants({ variant: 'default', size: 'lg' }),
-                      'group rounded-full',
+                      'group h-10 w-10 rounded-full md:h-11 md:w-auto',
                     )
                   "
                 >
                   <Icon :name="social.icon" class="size-4" />
-                  <span>{{ social.name }}</span>
+                  <span class="hidden md:inline">{{ social.name }}</span>
                 </NuxtLink>
               </div>
               <div
