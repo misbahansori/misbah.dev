@@ -1,4 +1,4 @@
-const links = [
+export const navigationLinks = [
   {
     name: "Blog",
     path: "/blog",
@@ -16,9 +16,3 @@ const links = [
     path: "/about",
   },
 ];
-
-export const useNavigation = () => {
-  return {
-    links,
-  };
-};

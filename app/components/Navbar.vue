@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { DialogClose } from "radix-vue";
 import { buttonVariants } from "~/components/ui/button";
+import { navigationLinks } from "~/data/navigationLinks";
 
-const { links } = useNavigation();
 const colorMode = useColorMode();
 </script>
 
@@ -25,7 +25,7 @@ const colorMode = useColorMode();
           <span class="font-bold">./</span>
         </NuxtLink>
         <div class="hidden sm:flex sm:items-center sm:gap-4">
-          <AnimatedTabs :links="links" />
+          <AnimatedTabs :links="navigationLinks" />
           <div>
             <Button
               variant="ghost"
@@ -34,6 +34,7 @@ const colorMode = useColorMode();
                   colorMode.preference === 'dark' ? 'light' : 'dark'
               "
               size="icon"
+              class="text-muted-foreground"
             >
               <Icon name="tabler:moon" class="hidden size-5 dark:block" />
               <Icon name="tabler:sun" class="block size-5 dark:hidden" />
@@ -60,7 +61,11 @@ const colorMode = useColorMode();
               </SheetDescription>
             </SheetHeader>
             <div class="flex flex-col gap-4 py-8">
-              <DialogClose as-child v-for="link in links" :key="link.name">
+              <DialogClose
+                as-child
+                v-for="link in navigationLinks"
+                :key="link.name"
+              >
                 <NuxtLink
                   :to="link.path"
                   :class="buttonVariants({ variant: 'ghost' })"

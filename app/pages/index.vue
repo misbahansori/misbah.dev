@@ -28,7 +28,8 @@ const { data: blog } = await useAsyncData("blog", () =>
 );
 </script>
 <template>
-  <SectionProfile shouldShowButton />
+  <SectionProfile />
+  <SectionCta />
   <SectionGithubActivity />
   <SectionPortfolio class="pt-24" />
 </template>

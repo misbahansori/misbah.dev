@@ -61,7 +61,7 @@ const skills = [
             :to="skill.url"
             target="_blank"
             :key="skill.name"
-            class="bg-muted/30 dark:border-border group relative flex justify-between overflow-hidden rounded-2xl border border-zinc-300 px-6 py-6 shadow-sm ring-0 inset-shadow-2xs shadow-zinc-950/10 inset-shadow-white duration-150 dark:inset-shadow-transparent"
+            class="bg-muted/30 hover:bg-muted/10 dark:border-border group relative flex justify-between overflow-hidden rounded-2xl border border-zinc-300 px-6 py-6 shadow-sm ring-0 inset-shadow-2xs shadow-zinc-950/10 inset-shadow-white transition duration-150 hover:shadow-md dark:inset-shadow-transparent"
           >
             <div class="flex flex-col gap-1">
               <span class="text-base font-semibold">{{ skill.name }}</span>

@@ -44,7 +44,7 @@ useSeoMeta({
               />
             </div>
             <div class="flex flex-col gap-1">
-              <span class="text-base font-bold md:text-lg">
+              <span class="text-foreground/90 text-base font-bold md:text-lg">
                 {{ bookmark.name }}
               </span>
               <p class="text-muted-foreground text-sm/relaxed">

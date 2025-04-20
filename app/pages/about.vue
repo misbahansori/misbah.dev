@@ -25,6 +25,7 @@ useSeoMeta({
 </script>
 <template>
   <SectionProfile />
+  <SectionSocials />
   <SectionSkills />
   <PatternSeparator />
   <SectionWorkExperience />

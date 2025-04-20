@@ -37,7 +37,8 @@ const portfolios = [
             My Projects
           </h2>
           <p class="text-muted-foreground">
-            A collection of my projects. I build them with my own hands.
+            Check out some of my projects. Here's what I've been working on
+            lately.
           </p>
         </div>
         <div class="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2">

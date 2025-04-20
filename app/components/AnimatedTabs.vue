@@ -35,7 +35,7 @@ const toggleMenu = (e: any) => {
       v-for="link in props.links"
       :key="link.name"
       :to="link.path"
-      class="group focus-visible:ring-ring relative inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+      class="group focus-visible:ring-ring hover:text-foreground text-muted-foreground relative inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
     >
       {{ link.name }}
     </NuxtLink>

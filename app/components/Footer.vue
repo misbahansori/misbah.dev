@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { navigationLinks } from "~/data/navigationLinks";
 const colorMode = useColorMode();
-const { links } = useNavigation();
 
-const footerLinks = computed(() => [{ name: "Home", path: "/" }, ...links]);
+const footerLinks = computed(() => [
+  { name: "Home", path: "/" },
+  ...navigationLinks,
+]);
 </script>
 
 <template>
@@ -10,17 +13,17 @@ const footerLinks = computed(() => [{ name: "Home", path: "/" }, ...links]);
     <div class="relative mx-auto max-w-3xl px-4">
       <BorderX />
       <nav class="relative flex h-16 items-center justify-between gap-8">
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 lg:gap-8">
           <NuxtLink
             v-for="link in footerLinks"
             :key="link.name"
             :to="link.path"
-            class="text-muted-foreground hover:text-foreground shrink-0 text-sm transition-colors"
+            class="text-muted-foreground hover:text-foreground shrink-0 text-sm font-medium transition-colors"
           >
             {{ link.name }}
           </NuxtLink>
         </div>
-        <div>
+        <div class="block sm:hidden">
           <Button
             variant="ghost"
             @click="
