@@ -9,11 +9,31 @@ const footerLinks = computed(() => [{ name: "Home", path: "/" }, ...links]);
   <section class="border-t">
     <div class="relative mx-auto max-w-3xl px-4">
       <BorderX />
-      <footer
-        class="relative flex h-(--navbar-height) flex-col items-center justify-center gap-4 sm:flex-row sm:justify-between"
-      >
-        <AnimatedTabs :links="footerLinks" />
-      </footer>
+      <nav class="relative flex h-16 items-center justify-between gap-8">
+        <div class="flex items-center gap-4">
+          <NuxtLink
+            v-for="link in footerLinks"
+            :key="link.name"
+            :to="link.path"
+            class="text-muted-foreground hover:text-foreground shrink-0 text-sm transition-colors"
+          >
+            {{ link.name }}
+          </NuxtLink>
+        </div>
+        <div>
+          <Button
+            variant="ghost"
+            @click="
+              colorMode.preference =
+                colorMode.preference === 'dark' ? 'light' : 'dark'
+            "
+            size="icon"
+          >
+            <Icon name="tabler:moon" class="hidden size-5 dark:block" />
+            <Icon name="tabler:sun" class="block size-5 dark:hidden" />
+          </Button>
+        </div>
+      </nav>
     </div>
   </section>
 </template>

@@ -25,7 +25,7 @@ useSeoMeta({
           </p>
         </div>
         <div
-          class="-mx-6 mt-8 grid grid-cols-1 overflow-hidden sm:grid-cols-2 md:grid-cols-3"
+          class="mt-8 grid grid-cols-1 overflow-hidden sm:grid-cols-2 md:-mx-6 md:grid-cols-3"
         >
           <NuxtLink
             v-for="bookmark in bookmarks.reverse()"
