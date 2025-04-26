@@ -1,5 +1,11 @@
 export const bookmarks = [
   {
+    url: "https://shots.so",
+    name: "Shots",
+    description: "Create amazing mockups",
+    favicon: "/img/favicons/shots.so.png",
+  },
+  {
     url: "https://gif.ski",
     name: "Gifski",
     description: "Convert videos to high-quality GIFs",
