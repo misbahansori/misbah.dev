@@ -44,11 +44,12 @@ const transition = {
           :transition="{ ...transition, delay: 0.5 }"
         >
           <h1 class="text-3xl/snug md:text-4xl/snug">
-            Hey, I'm Misbah Ansori.
-            <br />
-            <span class="font-serif font-medium tracking-wide italic">
-              Full Stack Developer
-            </span>
+            <AnimatedText text="Hey, I'm Misbah Ansori." />
+            <AnimatedText
+              text="Full Stack Developer"
+              :delay="0.8"
+              class="font-serif font-medium tracking-wide italic"
+            />
           </h1>
         </Motion>
         <Motion
