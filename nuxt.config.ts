@@ -135,5 +135,16 @@ export default defineNuxtConfig({
     },
   },
 
+  routeRules: {
+    "/blog/**": {
+      isr: 60 * 60 * 24,
+    },
+    "/about": { static: true },
+    "/bookmarks": { static: true },
+    "/": { static: true },
+    "/blog": { static: true },
+    "/portfolios": { static: true },
+  },
+
   compatibilityDate: "2024-09-27",
 });
