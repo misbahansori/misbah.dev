@@ -58,12 +58,12 @@ const portfolios = [
                 <img
                   :src="portfolio.image.light"
                   alt="OriginUi Vue"
-                  class="hidden h-full w-full object-cover dark:block"
+                  class="h-full w-full object-cover dark:hidden"
                 />
                 <img
                   :src="portfolio.image.dark"
                   alt="OriginUi Vue"
-                  class="h-full w-full object-cover dark:hidden"
+                  class="hidden h-full w-full object-cover dark:block"
                 />
               </div>
             </NuxtLink>
