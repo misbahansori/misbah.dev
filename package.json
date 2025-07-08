@@ -11,42 +11,42 @@
     "download-favicons": "node --loader ts-node/esm scripts/download-favicons.ts"
   },
   "devDependencies": {
-    "@nuxt/content": "^3.4.0",
-    "@nuxt/fonts": "^0.11.1",
-    "@nuxt/icon": "^1.12.0",
+    "@nuxt/content": "^3.6.3",
+    "@nuxt/fonts": "^0.11.4",
+    "@nuxt/icon": "^1.15.0",
     "@nuxt/image": "1.9.0",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/tailwindcss": "^6.13.2",
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.16.0",
     "@vueuse/motion": "^3.0.3",
-    "@vueuse/nuxt": "^13.1.0",
+    "@vueuse/nuxt": "^13.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "nuxt": "^3.16.2",
+    "nuxt": "^3.17.6",
     "nuxt-og-image": "5.1.2",
     "nuxt-umami": "^3.2.0",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "radix-vue": "^1.9.17",
-    "shadcn-nuxt": "^2.1.0",
-    "tailwind-merge": "^3.2.0",
+    "shadcn-nuxt": "^2.2.0",
+    "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@formkit/tempo": "^0.1.2",
-    "@tailwindcss/vite": "^4.1.4",
-    "@vueuse/core": "^13.1.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@vueuse/core": "^13.5.0",
     "lucide-vue-next": "^0.487.0",
-    "motion-plus": "^0.1.6",
-    "motion-v": "1.0.0-beta.2",
-    "reka-ui": "^2.2.0",
-    "tailwindcss": "^4.1.4",
-    "tw-animate-css": "^1.2.6",
-    "vue": "^3.5.13"
+    "motion-plus": "^0.1.9",
+    "motion-v": "1.5.0",
+    "reka-ui": "^2.3.2",
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.5",
+    "vue": "^3.5.17"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -57,5 +57,5 @@
       "vue-demi"
     ]
   },
-  "packageManager": "pnpm@10.8.1"
+  "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184"
 }
