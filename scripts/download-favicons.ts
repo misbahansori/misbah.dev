@@ -2,9 +2,13 @@ import fs from "fs";
 import https from "https";
 import path from "path";
 import { bookmarks } from "../app/data/bookmarks.js";
+import { otherProjects } from "../app/data/projects.js";
 
 const size = 32;
-const urls = bookmarks.map((bookmark: { url: string }) => bookmark.url);
+const urls = [
+  ...bookmarks.map((bookmark: { url: string }) => bookmark.url),
+  ...otherProjects.map((project: { link: string }) => project.link),
+];
 
 const domainRegex = /^(?:https?:\/\/)(?:[^@\/\n]+@)?(?:www\.)?([^:\/\n]+)/i;
 
