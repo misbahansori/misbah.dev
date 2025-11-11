@@ -13,8 +13,11 @@ useHead({
 
 <template>
   <div
-    class="relative flex min-h-screen min-w-0 flex-col font-sans antialiased [--navbar-height:3rem] md:[--navbar-height:5rem]"
+    class="relative flex min-h-screen min-w-0 flex-col bg-white font-sans antialiased [--navbar-height:3rem] md:[--navbar-height:5rem] dark:bg-[#020617]"
   >
+    <div
+      class="absolute inset-0 z-0 bg-[radial-gradient(circle_600px_at_0%_200px,#faf5ff,transparent),radial-gradient(circle_600px_at_100%_200px,#faf5ff,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,rgba(139,92,246,0.1),transparent)]"
+    />
     <div>
       <Navbar />
     </div>
