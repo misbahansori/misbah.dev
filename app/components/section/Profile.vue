@@ -21,21 +21,23 @@ const transition = {
   <section>
     <div class="relative mx-auto max-w-3xl px-4 py-16 lg:py-24">
       <BorderX />
-      <div class="relative flex flex-col gap-4">
-        <Motion
-          asChild
-          :variants="fadeUpVariant"
-          :initial="'initial'"
-          :whileInView="'animate'"
-          :inViewOptions="{ once: true }"
-          :transition="{ ...transition, delay: 0.3 }"
-        >
-          <img
-            :src="`/img/misbah.jpg`"
-            alt="Misbah Ansori Profile Picture"
-            class="border-border h-24 w-24 rounded-full border shadow-sm"
+      <div class="relative flex flex-col items-start gap-4">
+        <div class="relative inline-flex">
+          <CircularText
+            text="✦ MISBAH ANSORI ✦ FULL STACK DEVELOPER "
+            :spin-duration="20"
+            class="border border-black bg-emerald-300 text-black dark:bg-teal-300"
           />
-        </Motion>
+          <div
+            class="absolute top-1/2 left-1/2 size-30 -translate-x-1/2 -translate-y-1/2"
+          >
+            <img
+              :src="`/img/misbah.jpg`"
+              alt="Misbah Ansori Profile Picture"
+              class="h-full w-full rounded-full border border-black"
+            />
+          </div>
+        </div>
         <Motion
           :variants="fadeUpVariant"
           :initial="'initial'"
