@@ -11,7 +11,7 @@
     "download-favicons": "node --loader ts-node/esm scripts/download-favicons.ts"
   },
   "devDependencies": {
-    "@nuxt/content": "^3.8.0",
+    "@nuxt/content": "^3.8.2",
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^2.1.0",
     "@nuxt/image": "1.9.0",
@@ -19,7 +19,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@tailwindcss/typography": "^0.5.19",
-    "@types/node": "^22.19.0",
+    "@types/node": "^22.19.1",
     "@vueuse/nuxt": "^13.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -29,7 +29,7 @@
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "radix-vue": "^1.9.17",
-    "shadcn-nuxt": "^2.3.2",
+    "shadcn-nuxt": "^2.3.3",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "ts-node": "^10.9.2",
@@ -55,5 +55,5 @@
       "vue-demi"
     ]
   },
-  "packageManager": "pnpm@10.21.0"
+  "packageManager": "pnpm@10.23.0"
 }
