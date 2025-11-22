@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { LucideArrowRight } from "lucide-vue-next";
 import { buttonVariants } from "~/components/ui/button";
 
 const fadeInVariant = {
@@ -45,8 +46,7 @@ const transition = {
                   "
                 >
                   <span>View profile</span>
-                  <Icon
-                    name="lucide:arrow-right"
+                  <LucideArrowRight
                     class="size-4 transition group-hover:translate-x-1"
                   />
                 </NuxtLink>

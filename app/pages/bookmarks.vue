@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { LucideExternalLink } from "lucide-vue-next";
 import { bookmarks } from "~/data/bookmarks";
 
 defineOgImageComponent("BookmarksPage", {
@@ -58,8 +59,7 @@ useSeoMeta({
                 {{ bookmark.description }}
               </p>
             </div>
-            <Icon
-              name="tabler:external-link"
+            <LucideExternalLink
               class="absolute top-4 right-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
             />
           </NuxtLink>

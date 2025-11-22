@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import { LucideMenu } from "lucide-vue-next";
 import { DialogClose } from "radix-vue";
 import { buttonVariants } from "~/components/ui/button";
 import { navigationLinks } from "~/data/navigationLinks";
-
-const colorMode = useColorMode();
 </script>
 
 <template>
@@ -26,26 +25,13 @@ const colorMode = useColorMode();
         </NuxtLink>
         <div class="hidden sm:flex sm:items-center sm:gap-4">
           <AnimatedTabs :links="navigationLinks" />
-          <div>
-            <Button
-              variant="ghost"
-              @click="
-                colorMode.preference =
-                  colorMode.preference === 'dark' ? 'light' : 'dark'
-              "
-              size="icon"
-              class="text-muted-foreground"
-            >
-              <Icon name="tabler:moon" class="hidden size-5 dark:block" />
-              <Icon name="tabler:sun" class="block size-5 dark:hidden" />
-            </Button>
-          </div>
+          <ThemeToggle />
         </div>
 
         <Sheet>
           <SheetTrigger as-child>
             <Button variant="ghost" class="flex p-2 sm:hidden">
-              <Icon name="tabler:menu-2" class="h-5 w-5" />
+              <LucideMenu class="size-5" />
             </Button>
           </SheetTrigger>
           <SheetContent class="p-4">
@@ -73,19 +59,7 @@ const colorMode = useColorMode();
                   {{ link.name }}
                 </NuxtLink>
               </DialogClose>
-              <div class="flex justify-center">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  @click="
-                    colorMode.preference =
-                      colorMode.preference === 'dark' ? 'light' : 'dark'
-                  "
-                >
-                  <Icon name="tabler:moon" class="hidden size-5 dark:block" />
-                  <Icon name="tabler:sun" class="block size-5 dark:hidden" />
-                </Button>
-              </div>
+              <ThemeToggle />
             </div>
           </SheetContent>
         </Sheet>

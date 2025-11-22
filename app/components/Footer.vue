@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { navigationLinks } from "~/data/navigationLinks";
-const colorMode = useColorMode();
 
 const footerLinks = computed(() => [
   { name: "Home", path: "/" },
@@ -26,17 +25,7 @@ const footerLinks = computed(() => [
           </NuxtLink>
         </div>
         <div class="block sm:hidden">
-          <Button
-            variant="ghost"
-            @click="
-              colorMode.preference =
-                colorMode.preference === 'dark' ? 'light' : 'dark'
-            "
-            size="icon"
-          >
-            <Icon name="tabler:moon" class="hidden size-5 dark:block" />
-            <Icon name="tabler:sun" class="block size-5 dark:hidden" />
-          </Button>
+          <ThemeToggle />
         </div>
       </nav>
     </div>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { diffMonths, format } from "@formkit/tempo";
+import { LucidePin } from "lucide-vue-next";
 
 const experiences = [
   {
@@ -116,7 +117,7 @@ const diffForHumans = (startDate: string, endDate: string) => {
                     <path d="M12 5v14"></path>
                   </svg>
                 </div>
-                <div class="flex-grow pb-8 pl-8 sm:pb-12">
+                <div class="grow pb-8 pl-8 sm:pb-12">
                   <div class="word-break-word flex flex-col gap-2">
                     <span class="font-semibold tracking-tight">
                       {{ experience.title }}
@@ -125,7 +126,7 @@ const diffForHumans = (startDate: string, endDate: string) => {
                       {{ experience.company }}
                     </span>
                     <div class="flex items-center gap-1">
-                      <Icon name="tabler:pin" class="inline-block h-4 w-4" />
+                      <LucidePin class="inline-block h-4 w-4" />
                       <span class="text-muted-foreground text-sm">
                         {{ experience.location }}
                       </span>
