@@ -1,3 +1,13 @@
+export interface Project {
+  title: string;
+  description: string;
+  image: {
+    light: string;
+    dark: string;
+  };
+  link: string;
+}
+
 export const featuredProjects = [
   {
     title: "OriginUi Vue",
@@ -17,47 +27,4 @@ export const featuredProjects = [
     },
     link: "https://shareshooter.com",
   },
-] as const;
-
-export const otherProjects = [
-  {
-    title: "Tripzilla Indonesia",
-    link: "https://tripzilla.id",
-    image: "/img/favicons/tripzilla.id.png",
-  },
-  {
-    title: "Tripzilla India",
-    link: "https://tripzilla.in",
-    image: "/img/favicons/tripzilla.in.png",
-  },
-  {
-    title: "Tripzilla Malaysia",
-    link: "https://tripzilla.my",
-    image: "/img/favicons/tripzilla.my.png",
-  },
-  {
-    title: "Tripzilla Singapore",
-    link: "https://tripzilla.sg",
-    image: "/img/favicons/tripzilla.sg.png",
-  },
-  {
-    title: "Tripzilla Philippines",
-    link: "https://tripzilla.ph",
-    image: "/img/favicons/tripzilla.ph.png",
-  },
-  {
-    title: "Halalzilla",
-    link: "https://halalzilla.com",
-    image: "/img/favicons/halalzilla.com.png",
-  },
-  {
-    title: "Travelogy",
-    link: "https://travelogy.com",
-    image: "/img/favicons/travelogy.com.png",
-  },
-  {
-    title: "Travel Excellence Award",
-    link: "https://www.travelexcellenceaward.com",
-    image: "/img/favicons/travelexcellenceaward.com.png",
-  },
-] as const;
+] satisfies Project[];

@@ -33,7 +33,7 @@ const transition = {
           <img
             :src="`/img/misbah.jpg`"
             alt="Misbah Ansori Profile Picture"
-            class="border-border h-24 w-24 rounded-full border-1 shadow-sm"
+            class="border-border h-24 w-24 rounded-full border shadow-sm"
           />
         </Motion>
         <Motion
