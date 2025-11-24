@@ -40,7 +40,7 @@ useSeoMeta({
             :key="bookmark.url"
             :to="bookmark.url"
             target="_blank"
-            class="group bg-background hover:bg-accent relative -mt-px -ml-px flex flex-col items-start justify-start gap-2 border-t border-l px-6 py-8 transition"
+            class="group hover:bg-accent relative -mt-px -ml-px flex flex-col items-start justify-start gap-2 border-t border-l px-6 py-8 transition"
           >
             <div
               class="flex items-center justify-center overflow-hidden rounded-full border"
