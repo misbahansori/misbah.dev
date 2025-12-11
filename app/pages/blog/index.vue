@@ -6,10 +6,12 @@ useSeoMeta({
   ogTitle: "My Blog",
   ogDescription:
     "Just some random thoughts of mine. A place where I share my thoughts and experiences",
+  ogImage: "https://misbah.dev/img/og.jpg",
   twitterTitle: "My Blog",
   twitterDescription:
     "Just some random thoughts of mine. A place where I share my thoughts and experiences",
   twitterCard: "summary_large_image",
+  twitterImage: "https://misbah.dev/img/og.jpg",
 });
 
 const { data: blog } = await useAsyncData("blog", () =>

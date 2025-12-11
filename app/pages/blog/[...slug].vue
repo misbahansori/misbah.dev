@@ -17,10 +17,13 @@ useSeoMeta({
   description: article.value.description,
   ogTitle: article.value.title,
   ogDescription: article.value.description,
+  ogImage: "https://misbah.dev/img/og.jpg",
   ogUrl: route.fullPath,
   ogType: "article",
   twitterTitle: article.value.title,
   twitterDescription: article.value.description,
+  twitterCard: "summary_large_image",
+  twitterImage: "https://misbah.dev/img/og.jpg",
 });
 </script>
 <template>

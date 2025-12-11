@@ -7,9 +7,11 @@ useSeoMeta({
   description: "Useful links that I often visit and use",
   ogTitle: "My Bookmarks",
   ogDescription: "Useful links that I often visit and use",
+  ogImage: "https://misbah.dev/img/og.jpg",
   twitterTitle: "My Bookmarks",
   twitterDescription: "Useful links that I often visit and use",
   twitterCard: "summary_large_image",
+  twitterImage: "https://misbah.dev/img/og.jpg",
 });
 </script>
 

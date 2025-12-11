@@ -6,11 +6,13 @@ useSeoMeta({
   ogTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
   ogDescription:
     "A passionate developer with a strong interest in web development.",
+  ogImage: "https://misbah.dev/img/og.jpg",
   ogUrl: "https://misbah.dev",
   twitterTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
   twitterDescription:
     "A passionate developer with a strong interest in web development.",
   twitterCard: "summary_large_image",
+  twitterImage: "https://misbah.dev/img/og.jpg",
   twitterSite: "@MisbahAnsori24",
   twitterCreator: "@MisbahAnsori24",
 });
