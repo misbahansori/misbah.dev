@@ -1,57 +1,20 @@
-const username = "misbahansori";
-
-const query = `
-query($userName:String!) {
-  user(login: $userName){
-    contributionsCollection {
-      contributionCalendar {
-        totalContributions
-        weeks {
-          contributionDays {
-            contributionCount
-            date
-          }
-        }
-      }
-    }
-  }
+interface Contribution {
+  date: string;
+  intensity: string;
+  count: number;
 }
-`;
 
 interface Activity {
-  data: {
-    user: {
-      contributionsCollection: {
-        contributionCalendar: {
-          totalContributions: number;
-          weeks: {
-            contributionDays: {
-              contributionCount: number;
-              date: string;
-            }[];
-          }[];
-        };
-      };
-    };
-  };
+  total: number;
+  contributions: Contribution[][];
 }
 
 export default defineCachedEventHandler(
-  async (event) => {
-    const runtimeConfig = useRuntimeConfig(event);
-    const TOKEN = runtimeConfig.GITHUB_TOKEN;
-
-    const data = await $fetch<Activity>(`https://api.github.com/graphql`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query, variables: { userName: username } }),
-    });
-    return {
-      data: data.data.user.contributionsCollection.contributionCalendar,
-    };
+  async () => {
+    const data = await $fetch<Activity>(
+      `https://gh-calendar.rschristian.dev/user/misbahansori`,
+    );
+    return data;
   },
   {
     // calculate max age to end of day
