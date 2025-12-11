@@ -40,25 +40,19 @@ export default defineCachedEventHandler(
   async (event) => {
     const runtimeConfig = useRuntimeConfig(event);
     const TOKEN = runtimeConfig.GITHUB_TOKEN;
-    try {
-      const data = await $fetch<Activity>(`https://api.github.com/graphql`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${TOKEN}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ query, variables: { userName: username } }),
-      });
 
-      return {
-        data: data.data.user.contributionsCollection.contributionCalendar,
-      };
-    } catch (error) {
-      throw createError({
-        statusCode: 500,
-        statusMessage: "Failed to fetch GitHub activity",
-      });
-    }
+    const data = await $fetch<Activity>(`https://api.github.com/graphql`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query, variables: { userName: username } }),
+    });
+
+    return {
+      data: data.data.user.contributionsCollection.contributionCalendar,
+    };
   },
   {
     // calculate max age to end of day
