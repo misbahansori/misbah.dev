@@ -49,7 +49,6 @@ export default defineCachedEventHandler(
       },
       body: JSON.stringify({ query, variables: { userName: username } }),
     });
-
     return {
       data: data.data.user.contributionsCollection.contributionCalendar,
     };
