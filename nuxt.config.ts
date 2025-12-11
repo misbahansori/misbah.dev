@@ -40,6 +40,7 @@ export default defineNuxtConfig({
     "nuxt-umami",
     "motion-v/nuxt",
     "@nuxt/hints",
+    "@nuxthub/core",
   ],
 
   css: ["~/assets/css/tailwind.css"],
