@@ -1,11 +1,4 @@
 <script setup lang="ts">
-defineOgImageComponent("PortfoliosPage", {
-  title: "My Portfolios",
-  description:
-    "Check out some of my projects. Here's what I've been working on lately.",
-  image: "/img/misbah.jpg",
-});
-
 useSeoMeta({
   title: "My portfolios",
   description:

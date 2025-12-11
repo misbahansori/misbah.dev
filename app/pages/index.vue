@@ -1,12 +1,4 @@
 <script setup lang="ts">
-defineOgImageComponent("HomePage", {
-  title: "Hi, I'm Misbah Ansori",
-  headline: "Fullstack Developer",
-  description:
-    "A passionate developer with a strong interest in web development.",
-  image: "/img/misbah.jpg",
-});
-
 useSeoMeta({
   title: "Hi, I'm Misbah Ansori - Fullstack Developer",
   description:

@@ -32,7 +32,6 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
-    "nuxt-og-image",
     "@nuxt/content",
     "@nuxt/icon",
     "@nuxt/fonts",
@@ -117,12 +116,6 @@ export default defineNuxtConfig({
       },
     ],
   },
-
-  // ogImage: {
-  //   defaults: {
-  //     component: "HomePage",
-  //   },
-  // },
 
   umami: {
     ignoreLocalhost: true,
