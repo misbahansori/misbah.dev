@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
+import { preset } from "node:process";
 
 export default defineNuxtConfig({
   app: {
@@ -19,11 +20,6 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     GITHUB_TOKEN: "",
-  },
-
-  site: {
-    url: "https://misbah.dev",
-    name: "Misbah Ansori",
   },
 
   devtools: { enabled: true },
@@ -141,4 +137,20 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: "2024-09-27",
+
+  nitro: {
+    preset: "cloudflare_module",
+    cloudflare: {
+      deployConfig: true,
+      wrangler: {
+        d1_databases: [
+          {
+            binding: "DATABASE",
+            database_name: "misbah-dev",
+            database_id: "c6fc8a6f-0aa0-4f84-9d7a-5874bc936815",
+          },
+        ],
+      },
+    },
+  },
 });
