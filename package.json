@@ -11,7 +11,7 @@
     "download-favicons": "node --loader ts-node/esm scripts/download-favicons.ts"
   },
   "devDependencies": {
-    "@nuxt/content": "^3.10.0",
+    "@nuxt/content": "https://pkg.pr.new/@nuxt/content@bb3627b",
     "@nuxt/fonts": "^0.12.1",
     "@nuxt/hints": "1.0.0-alpha.2",
     "@nuxt/icon": "^2.2.0",
