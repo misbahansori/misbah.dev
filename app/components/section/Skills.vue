@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-  LogoFilament,
-  LogoLaravel,
-  LogoNuxt,
-  LogoTailwindCSS,
-  LogoVue,
-} from "#components";
+import { LogoFilament, LogoLaravel, LogoNuxt, LogoTailwindCSS, LogoVue } from "#components";
 
 const skills = [
   {
@@ -47,12 +41,9 @@ const skills = [
       <BorderX />
       <div class="flex flex-col py-6 lg:py-8">
         <div class="flex flex-col gap-2">
-          <h2 class="font-serif text-3xl/snug tracking-wide italic">
-            My Skills
-          </h2>
+          <h2 class="font-serif text-3xl/snug tracking-wide italic">My Skills</h2>
           <p class="text-muted-foreground">
-            I have a strong experience in building web applications using these
-            technologies
+            I have a strong experience in building web applications using these technologies
           </p>
         </div>
         <div class="grid grid-cols-1 gap-4 py-12 sm:grid-cols-2">
@@ -69,10 +60,7 @@ const skills = [
                 {{ skill.description }}
               </p>
             </div>
-            <component
-              :is="skill.icon"
-              class="absolute top-4 right-4 h-8 w-8"
-            />
+            <component :is="skill.icon" class="absolute top-4 right-4 h-8 w-8" />
           </NuxtLink>
         </div>
       </div>

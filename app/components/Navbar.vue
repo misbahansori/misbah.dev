@@ -9,9 +9,7 @@ import { navigationLinks } from "~/data/navigationLinks";
   <section class="border-b">
     <div class="relative mx-auto max-w-3xl px-4">
       <BorderX />
-      <nav
-        class="relative flex h-(--navbar-height) items-center justify-between gap-8"
-      >
+      <nav class="relative flex h-(--navbar-height) items-center justify-between gap-8">
         <NuxtLink
           to="/"
           :class="
@@ -42,20 +40,13 @@ import { navigationLinks } from "~/data/navigationLinks";
                 </DialogClose>
               </SheetTitle>
               <SheetDescription class="sr-only">
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
+                This action cannot be undone. This will permanently delete your account and remove
+                your data from our servers.
               </SheetDescription>
             </SheetHeader>
             <div class="flex flex-col gap-4 py-8">
-              <DialogClose
-                as-child
-                v-for="link in navigationLinks"
-                :key="link.name"
-              >
-                <NuxtLink
-                  :to="link.path"
-                  :class="buttonVariants({ variant: 'ghost' })"
-                >
+              <DialogClose as-child v-for="link in navigationLinks" :key="link.name">
+                <NuxtLink :to="link.path" :class="buttonVariants({ variant: 'ghost' })">
                   {{ link.name }}
                 </NuxtLink>
               </DialogClose>

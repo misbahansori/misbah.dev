@@ -48,12 +48,7 @@ const chars = computed(() => {
 
 <template>
   <Motion :variants="container" initial="hidden" animate="show">
-    <Motion
-      as="span"
-      v-for="(char, index) in chars"
-      :key="index"
-      :variants="item"
-    >
+    <Motion as="span" v-for="(char, index) in chars" :key="index" :variants="item">
       {{ char }}{{ splitBy === "word" ? " " : "" }}
     </Motion>
   </Motion>

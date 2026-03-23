@@ -22,9 +22,7 @@
         <div
           class="absolute -bottom-px left-10 z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent"
         ></div>
-        <div class="relative z-30 text-base font-bold text-white">
-          Misbah Ansori
-        </div>
+        <div class="relative z-30 text-base font-bold text-white">Misbah Ansori</div>
         <div class="text-xs text-white">Fullstack Developer</div>
       </div>
     </AnimatePresence>

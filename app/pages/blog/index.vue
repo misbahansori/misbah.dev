@@ -27,8 +27,7 @@ const { data: blog } = await useAsyncData("blog", () =>
         <div class="flex max-w-xl flex-col gap-4 py-6 lg:py-8">
           <h1 class="font-serif text-3xl/snug tracking-wide italic">My Blog</h1>
           <p class="text-muted-foreground">
-            Just some random thoughts of mine. A place where I share my thoughts
-            and experiences
+            Just some random thoughts of mine. A place where I share my thoughts and experiences
           </p>
         </div>
         <div>
@@ -51,8 +50,7 @@ const { data: blog } = await useAsyncData("blog", () =>
               />
             </div>
             <p class="max-w-sm text-center leading-loose italic">
-              Just an empty page for now. Hopefully I can write something here
-              soon.
+              Just an empty page for now. Hopefully I can write something here soon.
             </p>
           </div>
         </div>

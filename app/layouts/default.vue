@@ -30,9 +30,7 @@ useHead({
   </div>
   <DevOnly>
     <div class="fixed bottom-0 left-0 z-50">
-      <div
-        class="bg-primary text-primary-foreground tesm rounded-tr-sm p-2 font-medium"
-      >
+      <div class="bg-primary text-primary-foreground tesm rounded-tr-sm p-2 font-medium">
         <div class="sm:hidden">BASE</div>
         <div class="hidden sm:block md:hidden">SM</div>
         <div class="hidden md:block lg:hidden">MD</div>

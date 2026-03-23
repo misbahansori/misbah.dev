@@ -9,13 +9,7 @@ const experiences = [
     title: "Fullstack Developer",
     company: "Gilgamesh Pte. Ltd, Singapore",
     location: "Remote",
-    techStack: [
-      "Laravel",
-      "Vue.js",
-      "Tailwind CSS",
-      "Laravel Filament",
-      "Nuxt JS",
-    ],
+    techStack: ["Laravel", "Vue.js", "Tailwind CSS", "Laravel Filament", "Nuxt JS"],
   },
   {
     startDate: "2021-11-01",
@@ -57,12 +51,8 @@ const diffForHumans = (startDate: string, endDate: string) => {
       <BorderX />
       <div class="flex flex-col">
         <div class="flex flex-col gap-2 py-6 lg:py-12">
-          <h2 class="font-serif text-3xl/snug tracking-wide italic">
-            Work Experience
-          </h2>
-          <p class="text-muted-foreground">
-            Here are some of the companies I've worked with
-          </p>
+          <h2 class="font-serif text-3xl/snug tracking-wide italic">Work Experience</h2>
+          <p class="text-muted-foreground">Here are some of the companies I've worked with</p>
         </div>
         <div class="flex flex-col items-stretch">
           <div
@@ -73,11 +63,7 @@ const diffForHumans = (startDate: string, endDate: string) => {
               <div class="flex flex-col gap-1" data-allow-mismatch>
                 <span class="text-foreground text-sm font-medium">
                   {{ format(experience.startDate, "MMM YYYY") }} -
-                  {{
-                    experience.endDate
-                      ? format(experience.endDate, "MMM YYYY")
-                      : "Present"
-                  }}
+                  {{ experience.endDate ? format(experience.endDate, "MMM YYYY") : "Present" }}
                 </span>
                 <span class="text-muted-foreground text-sm">
                   {{
@@ -91,12 +77,8 @@ const diffForHumans = (startDate: string, endDate: string) => {
             </div>
             <div>
               <div class="relative flex pb-8 last:pb-0">
-                <div
-                  class="absolute inset-0 flex w-6 items-center justify-center"
-                >
-                  <div
-                    class="pointer-events-none h-full w-px border-l-[1px]"
-                  ></div>
+                <div class="absolute inset-0 flex w-6 items-center justify-center">
+                  <div class="pointer-events-none h-full w-px border-l-[1px]"></div>
                 </div>
                 <div
                   class="bg-accent text-foreground z-0 flex h-6 w-6 shrink-0 items-center justify-center rounded-full align-middle"
@@ -133,11 +115,7 @@ const diffForHumans = (startDate: string, endDate: string) => {
                     </div>
                   </div>
                   <div class="flex flex-wrap gap-2 pt-3">
-                    <Badge
-                      v-for="tech in experience.techStack"
-                      :key="tech"
-                      variant="default"
-                    >
+                    <Badge v-for="tech in experience.techStack" :key="tech" variant="default">
                       {{ tech }}
                     </Badge>
                   </div>

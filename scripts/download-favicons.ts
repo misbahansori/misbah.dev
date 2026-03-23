@@ -10,7 +10,7 @@ const urls = [
   ...otherProjects.map((project: { link: string }) => project.link),
 ];
 
-const domainRegex = /^(?:https?:\/\/)(?:[^@\/\n]+@)?(?:www\.)?([^:\/\n]+)/i;
+const domainRegex = /^(?:https?:\/\/)(?:[^@/\n]+@)?(?:www\.)?([^:/\n]+)/i;
 
 // Create directories if they don't exist
 const faviconDir = path.join(process.cwd(), "public", "img", "favicons");

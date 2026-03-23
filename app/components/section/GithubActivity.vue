@@ -10,9 +10,7 @@ const props = defineProps<{
     <div :class="cn('relative mx-auto max-w-3xl px-4 py-16', props.class)">
       <BorderX />
       <div class="relative">
-        <h2 class="font-serif text-3xl/snug tracking-wide italic">
-          Github Activity
-        </h2>
+        <h2 class="font-serif text-3xl/snug tracking-wide italic">Github Activity</h2>
         <div class="pt-12">
           <GithubActivityGraph />
         </div>

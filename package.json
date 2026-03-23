@@ -8,7 +8,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "download-favicons": "node --loader ts-node/esm scripts/download-favicons.ts"
+    "download-favicons": "node --loader ts-node/esm scripts/download-favicons.ts",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
   },
   "devDependencies": {
     "@nuxt/content": "https://pkg.pr.new/@nuxt/content@bb3627b",
@@ -27,8 +31,8 @@
     "clsx": "^2.1.1",
     "nuxt": "^4.4.2",
     "nuxt-umami": "^3.2.1",
-    "prettier": "^3.8.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
+    "oxfmt": "^0.41.0",
+    "oxlint": "^1.56.0",
     "radix-vue": "^1.9.17",
     "shadcn-nuxt": "^2.4.3",
     "tailwind-merge": "^3.5.0",

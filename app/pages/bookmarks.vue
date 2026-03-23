@@ -21,16 +21,10 @@ useSeoMeta({
       <BorderX />
       <div class="relative">
         <div class="flex max-w-xl flex-col gap-4 py-6 lg:py-8">
-          <h1 class="font-serif text-3xl/snug tracking-wide italic">
-            My Bookmarks
-          </h1>
-          <p class="text-muted-foreground">
-            Useful links that I often visit and use
-          </p>
+          <h1 class="font-serif text-3xl/snug tracking-wide italic">My Bookmarks</h1>
+          <p class="text-muted-foreground">Useful links that I often visit and use</p>
         </div>
-        <div
-          class="mt-8 grid grid-cols-1 overflow-hidden sm:grid-cols-2 md:-mx-6 md:grid-cols-3"
-        >
+        <div class="mt-8 grid grid-cols-1 overflow-hidden sm:grid-cols-2 md:-mx-6 md:grid-cols-3">
           <NuxtLink
             v-for="bookmark in bookmarks"
             :key="bookmark.url"
@@ -38,14 +32,8 @@ useSeoMeta({
             target="_blank"
             class="group hover:bg-accent relative -mt-px -ml-px flex flex-col items-start justify-start gap-2 border-t border-l px-6 py-8 transition"
           >
-            <div
-              class="flex items-center justify-center overflow-hidden rounded-full border"
-            >
-              <img
-                :src="bookmark.favicon"
-                class="h-8 w-8 rounded-full"
-                :alt="bookmark.name"
-              />
+            <div class="flex items-center justify-center overflow-hidden rounded-full border">
+              <img :src="bookmark.favicon" class="h-8 w-8 rounded-full" :alt="bookmark.name" />
             </div>
             <div class="flex flex-col gap-1">
               <span class="text-foreground/90 text-base font-bold md:text-lg">
