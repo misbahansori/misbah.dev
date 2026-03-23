@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
-import { preset } from "node:process";
 
 export default defineNuxtConfig({
   app: {
