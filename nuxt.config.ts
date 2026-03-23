@@ -133,6 +133,7 @@ export default defineNuxtConfig({
     "/": { static: true },
     "/blog": { static: true },
     "/portfolios": { static: true },
+    "/cv": { static: true },
   },
 
   compatibilityDate: "2024-09-27",

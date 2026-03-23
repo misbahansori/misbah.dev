@@ -1,38 +1,20 @@
 <script setup lang="ts">
+import type { Component } from "vue";
 import { LogoFilament, LogoLaravel, LogoNuxt, LogoTailwindCSS, LogoVue } from "#components";
+import { skills as skillsFromData } from "~/data/skills";
 
-const skills = [
-  {
-    name: "Laravel",
-    description: "The full-stack PHP Framework",
-    icon: LogoLaravel,
-    url: "https://laravel.com",
-  },
-  {
-    name: "Vue.js",
-    description: "The Progressive JavaScript Framework",
-    icon: LogoVue,
-    url: "https://vuejs.org",
-  },
-  {
-    name: "Tailwind CSS",
-    description: "A utility-first CSS Framework",
-    icon: LogoTailwindCSS,
-    url: "https://tailwindcss.com",
-  },
-  {
-    name: "Laravel Filament",
-    description: "Quickly build modern admin panels",
-    icon: LogoFilament,
-    url: "https://filamentphp.com",
-  },
-  {
-    name: "Nuxt JS",
-    description: "A full-stack framework for Vue.js",
-    icon: LogoNuxt,
-    url: "https://nuxt.com",
-  },
-];
+const icons: Record<string, Component> = {
+  Laravel: LogoLaravel,
+  "Vue.js": LogoVue,
+  "Tailwind CSS": LogoTailwindCSS,
+  "Laravel Filament": LogoFilament,
+  "Nuxt JS": LogoNuxt,
+};
+
+const skills = skillsFromData.map((s) => ({
+  ...s,
+  icon: icons[s.name]!,
+}));
 </script>
 
 <template>

@@ -15,4 +15,8 @@ export const navigationLinks = [
     name: "About me",
     path: "/about",
   },
+  {
+    name: "CV",
+    path: "/cv",
+  },
 ];
