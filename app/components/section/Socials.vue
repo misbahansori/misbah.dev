@@ -11,9 +11,7 @@ import { socials } from "~/data/socials";
 
         <div class="flex">
           <div class="bg-background relative flex flex-wrap gap-4">
-            <div
-              class="bg-background absolute -inset-x-2 inset-y-0 border-x lg:-inset-x-4"
-            />
+            <div class="bg-background absolute -inset-x-2 inset-y-0 border-x lg:-inset-x-4" />
             <template v-for="(social, index) in socials" :key="social.name">
               <div class="relative py-4">
                 <NuxtLink
@@ -31,10 +29,7 @@ import { socials } from "~/data/socials";
                   <span class="hidden md:inline">{{ social.name }}</span>
                 </NuxtLink>
               </div>
-              <div
-                v-if="index !== socials.length - 1"
-                class="bg-border relative h-full w-px"
-              />
+              <div v-if="index !== socials.length - 1" class="bg-border relative h-full w-px" />
             </template>
           </div>
         </div>

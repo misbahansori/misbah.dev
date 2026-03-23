@@ -1,44 +1,20 @@
 <script setup lang="ts">
-import {
-  LogoFilament,
-  LogoLaravel,
-  LogoNuxt,
-  LogoTailwindCSS,
-  LogoVue,
-} from "#components";
+import type { Component } from "vue";
+import { LogoFilament, LogoLaravel, LogoNuxt, LogoTailwindCSS, LogoVue } from "#components";
+import { skills as skillsFromData } from "~/data/skills";
 
-const skills = [
-  {
-    name: "Laravel",
-    description: "The full-stack PHP Framework",
-    icon: LogoLaravel,
-    url: "https://laravel.com",
-  },
-  {
-    name: "Vue.js",
-    description: "The Progressive JavaScript Framework",
-    icon: LogoVue,
-    url: "https://vuejs.org",
-  },
-  {
-    name: "Tailwind CSS",
-    description: "A utility-first CSS Framework",
-    icon: LogoTailwindCSS,
-    url: "https://tailwindcss.com",
-  },
-  {
-    name: "Laravel Filament",
-    description: "Quickly build modern admin panels",
-    icon: LogoFilament,
-    url: "https://filamentphp.com",
-  },
-  {
-    name: "Nuxt JS",
-    description: "A full-stack framework for Vue.js",
-    icon: LogoNuxt,
-    url: "https://nuxt.com",
-  },
-];
+const icons: Record<string, Component> = {
+  Laravel: LogoLaravel,
+  "Vue.js": LogoVue,
+  "Tailwind CSS": LogoTailwindCSS,
+  "Laravel Filament": LogoFilament,
+  "Nuxt JS": LogoNuxt,
+};
+
+const skills = skillsFromData.map((s) => ({
+  ...s,
+  icon: icons[s.name]!,
+}));
 </script>
 
 <template>
@@ -47,12 +23,9 @@ const skills = [
       <BorderX />
       <div class="flex flex-col py-6 lg:py-8">
         <div class="flex flex-col gap-2">
-          <h2 class="font-serif text-3xl/snug tracking-wide italic">
-            My Skills
-          </h2>
+          <h2 class="font-serif text-3xl/snug tracking-wide italic">My Skills</h2>
           <p class="text-muted-foreground">
-            I have a strong experience in building web applications using these
-            technologies
+            I have a strong experience in building web applications using these technologies
           </p>
         </div>
         <div class="grid grid-cols-1 gap-4 py-12 sm:grid-cols-2">
@@ -69,10 +42,7 @@ const skills = [
                 {{ skill.description }}
               </p>
             </div>
-            <component
-              :is="skill.icon"
-              class="absolute top-4 right-4 h-8 w-8"
-            />
+            <component :is="skill.icon" class="absolute top-4 right-4 h-8 w-8" />
           </NuxtLink>
         </div>
       </div>

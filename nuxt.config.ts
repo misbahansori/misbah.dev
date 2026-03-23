@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
-import { preset } from "node:process";
 
 export default defineNuxtConfig({
   app: {
@@ -134,6 +133,7 @@ export default defineNuxtConfig({
     "/": { static: true },
     "/blog": { static: true },
     "/portfolios": { static: true },
+    "/cv": { static: true },
   },
 
   compatibilityDate: "2024-09-27",

@@ -15,8 +15,7 @@ export const buttonVariants = cva(
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         secondary:
           "bg-linear-to-b **:[text-shadow:0_1px_0_var(--color-secondary)] border-secondary from-secondary/80 to-secondary dark:from-secondary dark:to-secondary/80 text-secondary-foreground dark:border-secondary border shadow-md shadow-zinc-950/30 ring ring-inset ring-white/20 transition-[filter] duration-200 hover:brightness-110 active:brightness-95",
-        ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="absolute inset-x-2 inset-y-0 border-x md:-inset-x-4 lg:-inset-x-24"
-  ></div>
+  <div class="absolute inset-x-2 inset-y-0 border-x md:-inset-x-4 lg:-inset-x-24"></div>
   <div
     class="border-border bg-pattern bg-size:6px_6px absolute top-0 left-2 size-4 -translate-x-1/2 -translate-y-1/2 border md:-left-4 lg:-left-24"
   ></div>

@@ -59,8 +59,7 @@ const animate = () => {
   const smoothingFactor = Math.min(1, deltaTime * 5);
   rotationSpeed.value += speedDiff * smoothingFactor;
 
-  currentRotation.value =
-    (currentRotation.value + rotationSpeed.value * deltaTime) % 360;
+  currentRotation.value = (currentRotation.value + rotationSpeed.value * deltaTime) % 360;
 
   animationId.value = requestAnimationFrame(animate);
 };

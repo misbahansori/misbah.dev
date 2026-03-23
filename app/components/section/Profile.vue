@@ -28,9 +28,7 @@ const transition = {
             :spin-duration="20"
             class="border border-black bg-emerald-300 text-black dark:bg-teal-300"
           />
-          <div
-            class="absolute top-1/2 left-1/2 size-30 -translate-x-1/2 -translate-y-1/2"
-          >
+          <div class="absolute top-1/2 left-1/2 size-30 -translate-x-1/2 -translate-y-1/2">
             <img
               :src="`/img/misbah.jpg`"
               alt="Misbah Ansori Profile Picture"
@@ -61,12 +59,9 @@ const transition = {
           :inViewOptions="{ once: true }"
           :transition="{ ...transition, delay: 0.7 }"
         >
-          <p
-            class="text-muted-foreground/80 max-w-md text-base/loose md:max-w-xl md:text-lg/loose"
-          >
-            A passionate developer with a strong interest in web development and
-            other technologies. Proficient and experienced in both frontend and
-            backend.
+          <p class="text-muted-foreground/80 max-w-md text-base/loose md:max-w-xl md:text-lg/loose">
+            A passionate developer with a strong interest in web development and other technologies.
+            Proficient and experienced in both frontend and backend.
           </p>
         </Motion>
       </div>

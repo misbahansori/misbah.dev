@@ -15,11 +15,7 @@ const { project } = defineProps<{
       <div
         class="border-border -mb-1 aspect-4/3 origin-bottom overflow-hidden rounded-t-xl border shadow-xl transition group-hover:scale-105"
       >
-        <img
-          :src="project.image.light"
-          alt=""
-          class="h-full w-full object-cover dark:hidden"
-        />
+        <img :src="project.image.light" alt="" class="h-full w-full object-cover dark:hidden" />
         <img
           :src="project.image.dark"
           alt=""

@@ -12,8 +12,7 @@ interface ActivityResponse {
   contributions: Contribution[][];
 }
 
-const { data: activityData } =
-  await useFetch<ActivityResponse>("/api/activity");
+const { data: activityData } = await useFetch<ActivityResponse>("/api/activity");
 
 const colorClasses = [
   "bg-gray-100 dark:bg-gray-800", // Level 0 (no contributions)
@@ -93,9 +92,7 @@ const formatDate = (dateString: string) => {
       :inViewOptions="{ once: true }"
       :transition="{ ...transition, delay: 1 }"
     >
-      <div
-        class="mt-4 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
-      >
+      <div class="mt-4 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
         <div class="flex items-center gap-2">
           <span>Less</span>
           <div class="flex gap-1">

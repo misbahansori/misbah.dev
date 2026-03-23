@@ -25,9 +25,7 @@ const transition = {
 
         <div class="flex">
           <div class="bg-background relative flex gap-4">
-            <div
-              class="bg-background absolute -inset-x-2 inset-y-0 border-x lg:-inset-x-4"
-            />
+            <div class="bg-background absolute -inset-x-2 inset-y-0 border-x lg:-inset-x-4" />
             <div class="relative py-4">
               <Motion
                 :variants="fadeInVariant"
@@ -39,16 +37,11 @@ const transition = {
                 <NuxtLink
                   to="/about"
                   :class="
-                    cn(
-                      buttonVariants({ variant: 'default', size: 'lg' }),
-                      'group rounded-full',
-                    )
+                    cn(buttonVariants({ variant: 'default', size: 'lg' }), 'group rounded-full')
                   "
                 >
                   <span>View profile</span>
-                  <LucideArrowRight
-                    class="size-4 transition group-hover:translate-x-1"
-                  />
+                  <LucideArrowRight class="size-4 transition group-hover:translate-x-1" />
                 </NuxtLink>
               </Motion>
             </div>
@@ -63,12 +56,7 @@ const transition = {
               >
                 <a
                   href="mailto:misbah.ansori24@gmail.com"
-                  :class="
-                    cn(
-                      buttonVariants({ variant: 'secondary', size: 'lg' }),
-                      'rounded-full',
-                    )
-                  "
+                  :class="cn(buttonVariants({ variant: 'secondary', size: 'lg' }), 'rounded-full')"
                 >
                   <span class="relative flex size-3">
                     <span
