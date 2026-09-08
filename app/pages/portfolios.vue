@@ -1,18 +1,26 @@
 <script setup lang="ts">
+const description = "Check out some of my projects. Here's what I've been working on lately.";
+
 useSeoMeta({
-  title: "My portfolios",
-  description: "Check out some of my projects. Here's what I've been working on lately.",
-  ogTitle: "My portfolios",
-  ogDescription: "Check out some of my projects. Here's what I've been working on lately.",
-  ogImage: "https://misbah.dev/img/og.jpg",
-  twitterTitle: "My portfolios",
-  twitterDescription: "Check out some of my projects. Here's what I've been working on lately.",
-  twitterCard: "summary_large_image",
-  twitterImage: "https://misbah.dev/img/og.jpg",
+  title: "Work — Misbah Ansori",
+  description,
+  ogTitle: "Work — Misbah Ansori",
+  ogDescription: description,
 });
-const colorMode = useColorMode();
 </script>
 
 <template>
-  <SectionPortfolio class="min-h-screen-min" />
+  <div class="flex flex-col gap-16">
+    <section>
+      <Reveal>
+        <h1 class="font-mono text-2xl tracking-tight sm:text-3xl">Work</h1>
+        <p class="text-foreground/80 mt-6 max-w-[68ch] text-[0.95rem] leading-relaxed">
+          {{ description }}
+        </p>
+      </Reveal>
+    </section>
+
+    <SectionProjects />
+    <SectionContact />
+  </div>
 </template>

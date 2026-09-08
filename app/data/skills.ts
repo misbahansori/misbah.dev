@@ -5,19 +5,11 @@ export type SkillItem = {
 };
 
 export const skills: SkillItem[] = [
-  {
-    name: "Laravel",
-    description: "The full-stack PHP Framework",
-    url: "https://laravel.com",
-  },
-  {
-    name: "Vue.js",
-    description: "The Progressive JavaScript Framework",
-    url: "https://vuejs.org",
-  },
+  { name: "Laravel", description: "The full-stack PHP framework", url: "https://laravel.com" },
+  { name: "Vue.js", description: "The progressive JavaScript framework", url: "https://vuejs.org" },
   {
     name: "Tailwind CSS",
-    description: "A utility-first CSS Framework",
+    description: "A utility-first CSS framework",
     url: "https://tailwindcss.com",
   },
   {
@@ -25,9 +17,5 @@ export const skills: SkillItem[] = [
     description: "Quickly build modern admin panels",
     url: "https://filamentphp.com",
   },
-  {
-    name: "Nuxt JS",
-    description: "A full-stack framework for Vue.js",
-    url: "https://nuxt.com",
-  },
+  { name: "Nuxt JS", description: "A full-stack framework for Vue.js", url: "https://nuxt.com" },
 ];

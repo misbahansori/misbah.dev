@@ -27,7 +27,6 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "shadcn-nuxt",
     "@nuxtjs/color-mode",
-    "@nuxt/content",
     "@nuxt/icon",
     "@nuxt/fonts",
     "@nuxt/image",
@@ -57,28 +56,8 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
 
-  content: {
-    build: {
-      markdown: {
-        highlight: {
-          langs: [
-            "php",
-            "html",
-            "vue",
-            "vue-html",
-            "bash",
-            "json",
-            "javascript",
-            "css",
-            "markdown",
-          ],
-          theme: {
-            default: "github-light",
-            dark: "andromeeda",
-          },
-        },
-      },
-    },
+  hub: {
+    db: "sqlite",
   },
 
   future: {
@@ -101,14 +80,8 @@ export default defineNuxtConfig({
 
   fonts: {
     families: [
-      {
-        name: "Satoshi",
-        weights: [400, 500, 600],
-      },
-      {
-        name: "Playfair Display",
-        weights: [400, 500, 600],
-      },
+      { name: "Geist", provider: "google", weights: [400, 500] },
+      { name: "Geist Mono", provider: "google", weights: [400, 500] },
     ],
   },
 
@@ -125,13 +98,9 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/blog/**": {
-      isr: 60 * 60 * 24,
-    },
     "/about": { static: true },
     "/bookmarks": { static: true },
     "/": { static: true },
-    "/blog": { static: true },
     "/portfolios": { static: true },
     "/cv": { static: true },
   },

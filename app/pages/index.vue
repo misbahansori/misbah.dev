@@ -1,27 +1,23 @@
 <script setup lang="ts">
+import { profile } from "~/data/profile";
+
 useSeoMeta({
-  title: "Hi, I'm Misbah Ansori - Fullstack Developer",
-  description: "A passionate developer with a strong interest in web development.",
-  ogTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
-  ogDescription: "A passionate developer with a strong interest in web development.",
-  ogImage: "https://misbah.dev/img/og.jpg",
-  ogUrl: "https://misbah.dev",
-  twitterTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
-  twitterDescription: "A passionate developer with a strong interest in web development.",
+  title: `${profile.name} — ${profile.title}`,
+  description: profile.summary,
+  ogTitle: `${profile.name} — ${profile.title}`,
+  ogDescription: profile.summary,
+  ogType: "website",
   twitterCard: "summary_large_image",
-  twitterImage: "https://misbah.dev/img/og.jpg",
-  twitterSite: "@MisbahAnsori24",
   twitterCreator: "@MisbahAnsori24",
 });
-
-// const { data: blog } = await useAsyncData("blog", () =>
-//   queryCollection("blog").order("createdAt", "DESC").all(),
-// );
 </script>
+
 <template>
-  <SectionProfile />
-  <SectionCta />
-  <SectionGithubActivity />
-  <PatternSeparator />
-  <SectionPortfolio class="pt-8" />
+  <div class="flex flex-col gap-16">
+    <SectionProfile />
+    <SectionGlance />
+    <SectionActivity />
+    <SectionProjects />
+    <SectionContact />
+  </div>
 </template>

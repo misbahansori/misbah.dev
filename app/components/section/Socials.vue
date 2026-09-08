@@ -1,39 +1,38 @@
 <script setup lang="ts">
-import { buttonVariants } from "~/components/ui/button";
+import { profile } from "~/data/profile";
 import { socials } from "~/data/socials";
 </script>
 
 <template>
-  <section>
-    <div class="bg-pattern relative border-y">
-      <div class="relative mx-auto max-w-3xl px-4">
-        <BorderX />
+  <GraphFrame title="Where to find me" content-class="flex flex-col gap-3">
+    <Reveal
+      v-for="(social, index) in socials"
+      :key="social.name"
+      :index="index"
+      class="grid grid-cols-[minmax(0,7rem)_minmax(0,1fr)] items-baseline gap-x-4"
+    >
+      <span class="text-graph-muted tracking-wide uppercase">{{ social.name }}</span>
+      <a
+        :href="social.url"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="hover:text-graph-accent truncate transition-colors"
+      >
+        {{ social.handle }}
+      </a>
+    </Reveal>
 
-        <div class="flex">
-          <div class="bg-background relative flex flex-wrap gap-4">
-            <div class="bg-background absolute -inset-x-2 inset-y-0 border-x lg:-inset-x-4" />
-            <template v-for="(social, index) in socials" :key="social.name">
-              <div class="relative py-4">
-                <NuxtLink
-                  :to="social.url"
-                  external
-                  target="_blank"
-                  :class="
-                    cn(
-                      buttonVariants({ variant: 'default', size: 'lg' }),
-                      'group h-10 w-10 rounded-full md:h-11 md:w-auto',
-                    )
-                  "
-                >
-                  <Icon :name="social.icon" class="size-4" />
-                  <span class="hidden md:inline">{{ social.name }}</span>
-                </NuxtLink>
-              </div>
-              <div v-if="index !== socials.length - 1" class="bg-border relative h-full w-px" />
-            </template>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <Reveal
+      :index="socials.length"
+      class="grid grid-cols-[minmax(0,7rem)_minmax(0,1fr)] items-baseline gap-x-4"
+    >
+      <span class="text-graph-muted tracking-wide uppercase">Email</span>
+      <a
+        :href="`mailto:${profile.email}`"
+        class="hover:text-graph-accent truncate transition-colors"
+      >
+        {{ profile.email }}
+      </a>
+    </Reveal>
+  </GraphFrame>
 </template>

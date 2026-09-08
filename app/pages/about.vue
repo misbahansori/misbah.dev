@@ -1,24 +1,24 @@
 <script setup lang="ts">
+import { profile } from "~/data/profile";
+
 useSeoMeta({
-  title: "Hi, I'm Misbah Ansori - Fullstack Developer",
-  description:
-    "A passionate developer with a strong interest in web development and other technologies.",
-  ogTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
-  ogDescription: "A passionate developer with a strong interest in web development.",
-  ogImage: "https://misbah.dev/img/og.jpg",
-  ogUrl: "https://misbah.dev",
-  twitterTitle: "Hi, I'm Misbah Ansori - Fullstack Developer",
-  twitterDescription: "A passionate developer with a strong interest in web development.",
-  twitterCard: "summary_large_image",
-  twitterImage: "https://misbah.dev/img/og.jpg",
-  twitterSite: "@MisbahAnsori24",
-  twitterCreator: "@MisbahAnsori24",
+  title: `About — ${profile.name}`,
+  description: profile.summary,
+  ogTitle: `About — ${profile.name}`,
+  ogDescription: profile.summary,
 });
 </script>
+
 <template>
-  <SectionProfile />
-  <SectionSocials />
-  <SectionSkills />
-  <PatternSeparator />
-  <SectionWorkExperience />
+  <div class="flex flex-col gap-16">
+    <SectionProfile />
+    <SectionSocials />
+    <SectionStack />
+    <SectionExperience />
+
+    <section>
+      <h2 class="mb-10 font-mono text-base tracking-wide uppercase">Roles</h2>
+      <SectionRoles />
+    </section>
+  </div>
 </template>

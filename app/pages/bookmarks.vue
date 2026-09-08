@@ -1,54 +1,45 @@
 <script setup lang="ts">
-import { LucideExternalLink } from "lucide-vue-next";
 import { bookmarks } from "~/data/bookmarks";
 
+const description = "Useful links that I often visit and use.";
+
 useSeoMeta({
-  title: "My Bookmarks",
-  description: "Useful links that I often visit and use",
-  ogTitle: "My Bookmarks",
-  ogDescription: "Useful links that I often visit and use",
-  ogImage: "https://misbah.dev/img/og.jpg",
-  twitterTitle: "My Bookmarks",
-  twitterDescription: "Useful links that I often visit and use",
-  twitterCard: "summary_large_image",
-  twitterImage: "https://misbah.dev/img/og.jpg",
+  title: "Bookmarks — Misbah Ansori",
+  description,
+  ogTitle: "Bookmarks — Misbah Ansori",
+  ogDescription: description,
 });
 </script>
 
 <template>
-  <section>
-    <div class="min-h-screen-min relative mx-auto max-w-3xl px-4">
-      <BorderX />
-      <div class="relative">
-        <div class="flex max-w-xl flex-col gap-4 py-6 lg:py-8">
-          <h1 class="font-serif text-3xl/snug tracking-wide italic">My Bookmarks</h1>
-          <p class="text-muted-foreground">Useful links that I often visit and use</p>
-        </div>
-        <div class="mt-8 grid grid-cols-1 overflow-hidden sm:grid-cols-2 md:-mx-6 md:grid-cols-3">
-          <NuxtLink
-            v-for="bookmark in bookmarks"
-            :key="bookmark.url"
-            :to="bookmark.url"
-            target="_blank"
-            class="group hover:bg-accent relative -mt-px -ml-px flex flex-col items-start justify-start gap-2 border-t border-l px-6 py-8 transition"
-          >
-            <div class="flex items-center justify-center overflow-hidden rounded-full border">
-              <img :src="bookmark.favicon" class="h-8 w-8 rounded-full" :alt="bookmark.name" />
-            </div>
-            <div class="flex flex-col gap-1">
-              <span class="text-foreground/90 text-base font-bold md:text-lg">
-                {{ bookmark.name }}
-              </span>
-              <p class="text-muted-foreground text-sm/relaxed">
-                {{ bookmark.description }}
-              </p>
-            </div>
-            <LucideExternalLink
-              class="absolute top-4 right-4 h-4 w-4 origin-bottom-left scale-75 opacity-0 transition duration-150 group-hover:scale-100 group-hover:opacity-90"
-            />
-          </NuxtLink>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="flex flex-col gap-16">
+    <section>
+      <Reveal>
+        <h1 class="font-mono text-2xl tracking-tight sm:text-3xl">Bookmarks</h1>
+        <p class="text-foreground/80 mt-6 max-w-[68ch] text-[0.95rem] leading-relaxed">
+          {{ description }}
+        </p>
+      </Reveal>
+    </section>
+
+    <GraphFrame :title="`${bookmarks.length} links`" content-class="flex flex-col gap-3">
+      <Reveal
+        v-for="(bookmark, index) in bookmarks"
+        :key="bookmark.url"
+        :index="index"
+        class="grid grid-cols-[minmax(0,1fr)] gap-x-6 gap-y-1 sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)_minmax(0,10rem)]"
+      >
+        <a
+          :href="bookmark.url"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="hover:text-graph-accent truncate transition-colors"
+        >
+          {{ bookmark.name }}
+        </a>
+        <p class="text-graph-muted truncate">{{ bookmark.description }}</p>
+        <p class="text-graph-frame truncate sm:text-right">{{ hostname(bookmark.url) }}</p>
+      </Reveal>
+    </GraphFrame>
+  </div>
 </template>
