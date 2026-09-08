@@ -10,12 +10,18 @@ interface Activity {
   contributions: Contribution[][];
 }
 
-const { data } = await useFetch<Activity>("/api/activity", {
+const { data, refresh } = await useFetch<Activity>("/api/activity", {
   default: () => ({ total: 0, contributions: [] }),
 });
 
 const weeks = computed(() => data.value?.contributions ?? []);
 const hasData = computed(() => weeks.value.length > 0);
+
+// Prerender can bake an empty payload if the Worker cache was cold/poisoned.
+// Refetch on the client so a later healthy /api/activity still paints the graph.
+onMounted(() => {
+  if (!hasData.value) void refresh();
+});
 
 const range = computed(() => {
   const first = weeks.value[0]?.[0]?.date;

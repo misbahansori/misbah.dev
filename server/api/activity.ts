@@ -11,12 +11,10 @@ interface Activity {
 
 const GITHUB_HANDLE = "misbahansori";
 
-// Cached separately from the handler so a failed upstream call is never
-// written into the cache — only successful payloads are stored.
 const fetchActivity = defineCachedFunction(
   (handle: string) => $fetch<Activity>(`https://gh-calendar.rschristian.dev/user/${handle}`),
   {
-    name: "github-activity",
+    name: "github-activity-v1",
     maxAge: 60 * 60 * 6,
     getKey: (handle: string) => handle,
   },

@@ -97,7 +97,6 @@ export default defineNuxtConfig({
   routeRules: {
     "/about": { static: true },
     "/bookmarks": { static: true },
-    "/": { static: true },
     "/portfolios": { static: true },
     "/cv": { static: true },
   },
