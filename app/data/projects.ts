@@ -1,30 +1,24 @@
-export interface Project {
+export type Project = {
   title: string;
   description: string;
-  image: {
-    light: string;
-    dark: string;
-  };
-  link: string;
-}
+  url: string;
+  stack: string[];
+  year: string;
+};
 
-export const featuredProjects = [
+export const featuredProjects: Project[] = [
   {
-    title: "OriginUi Vue",
-    description: "Beautiful UI components built with Tailwind CSS and Vue",
-    image: {
-      light: "/img/originui-vue_light.png",
-      dark: "/img/originui-vue_dark.png",
-    },
-    link: "https://originui-vue.com",
+    title: "OriginUI Vue",
+    description: "Beautiful UI components built with Tailwind CSS and Vue.",
+    url: "https://originui-vue.com",
+    stack: ["Vue.js", "Nuxt JS", "Tailwind CSS"],
+    year: "2024",
   },
   {
     title: "Shareshooter",
-    description: "Easily share your screenshots",
-    image: {
-      light: "/img/shareshooter_light.png",
-      dark: "/img/shareshooter_dark.png",
-    },
-    link: "https://shareshooter.com",
+    description: "Easily share your screenshots.",
+    url: "https://shareshooter.com",
+    stack: ["Nuxt JS", "Tailwind CSS"],
+    year: "2024",
   },
-] satisfies Project[];
+];

@@ -1,70 +1,43 @@
 <script setup lang="ts">
-import { Motion } from "motion-v";
-
-const fadeUpVariant = {
-  initial: {
-    opacity: 0,
-    y: 20,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-  },
-};
-
-const transition = {
-  duration: 0.5,
-};
+import { profile } from "~/data/profile";
 </script>
 
 <template>
   <section>
-    <div class="relative mx-auto max-w-3xl px-4 py-16 lg:py-24">
-      <BorderX />
-      <div class="relative flex flex-col items-start gap-4">
-        <div class="relative inline-flex">
-          <CircularText
-            text="✦ MISBAH ANSORI ✦ FULL STACK DEVELOPER "
-            :spin-duration="20"
-            class="border border-black bg-emerald-300 text-black dark:bg-teal-300"
-          />
-          <div class="absolute top-1/2 left-1/2 size-30 -translate-x-1/2 -translate-y-1/2">
-            <img
-              :src="`/img/misbah.jpg`"
-              alt="Misbah Ansori Profile Picture"
-              class="h-full w-full rounded-full border border-black"
-            />
-          </div>
-        </div>
-        <Motion
-          :variants="fadeUpVariant"
-          :initial="'initial'"
-          :whileInView="'animate'"
-          :inViewOptions="{ once: true }"
-          :transition="{ ...transition, delay: 0.5 }"
-        >
-          <h1 class="text-3xl/snug md:text-4xl/snug">
-            <AnimatedText text="Hey, I'm Misbah Ansori." />
-            <AnimatedText
-              text="Full Stack Developer"
-              :delay="0.8"
-              class="font-serif font-medium tracking-wide italic"
-            />
-          </h1>
-        </Motion>
-        <Motion
-          :variants="fadeUpVariant"
-          :initial="'initial'"
-          :whileInView="'animate'"
-          :inViewOptions="{ once: true }"
-          :transition="{ ...transition, delay: 0.7 }"
-        >
-          <p class="text-muted-foreground/80 max-w-md text-base/loose md:max-w-xl md:text-lg/loose">
-            A passionate developer with a strong interest in web development and other technologies.
-            Proficient and experienced in both frontend and backend.
-          </p>
-        </Motion>
-      </div>
-    </div>
+    <Reveal v-if="profile.available" as="p" class="mb-8 font-mono text-xs tracking-wide uppercase">
+      <span class="text-graph-accent">[ Available for projects ]</span>
+    </Reveal>
+
+    <Reveal :index="1">
+      <h1 class="font-mono text-2xl tracking-tight sm:text-3xl">
+        {{ profile.name }}
+      </h1>
+      <p class="text-graph-accent mt-2 font-mono text-sm tracking-wide uppercase">
+        {{ profile.title }}
+      </p>
+    </Reveal>
+
+    <Reveal
+      :index="2"
+      as="p"
+      class="text-foreground/80 mt-8 max-w-[68ch] text-[0.95rem] leading-relaxed"
+    >
+      {{ profile.summary }}
+    </Reveal>
+
+    <Reveal
+      :index="3"
+      as="p"
+      class="text-graph-muted mt-6 font-mono text-xs tracking-wide uppercase"
+    >
+      {{ profile.location }}
+      <span class="text-graph-frame mx-2">·</span>
+      <a
+        :href="`mailto:${profile.email}`"
+        class="hover:text-graph-accent underline decoration-dotted underline-offset-4 transition-colors"
+      >
+        {{ profile.email }}
+      </a>
+    </Reveal>
   </section>
 </template>
