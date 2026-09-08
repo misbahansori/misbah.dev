@@ -41,7 +41,7 @@ function isActive(path: string) {
           aria-label="GitHub"
           class="text-graph-muted hover:text-graph-accent relative inline-flex size-4 items-center justify-center transition-[color,transform] before:absolute before:top-1/2 before:left-1/2 before:size-11 before:-translate-x-1/2 before:-translate-y-1/2 active:scale-[0.96]"
         >
-          <Icon name="my-icon:github" class="size-4" />
+          <Icon name="lucide:github" class="size-4" />
         </a>
       </nav>
     </div>

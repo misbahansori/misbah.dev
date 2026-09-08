@@ -65,14 +65,11 @@ export default defineNuxtConfig({
   },
 
   icon: {
-    customCollections: [
-      {
-        prefix: "my-icon",
-        dir: "./app/assets/icons",
-      },
-    ],
     cssLayer: "icon",
     mode: "svg",
+    serverBundle: {
+      collections: ["lucide"],
+    },
     clientBundle: {
       scan: true,
     },
