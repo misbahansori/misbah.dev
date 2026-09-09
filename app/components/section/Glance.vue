@@ -27,7 +27,7 @@ const stats = computed(() => [
   {
     value: String(featuredProjects.length),
     label: "Products shipped",
-    note: featuredProjects.map((project) => project.title).join(", "),
+    note: "side projects, live in production",
   },
   {
     value: String(skills.length),

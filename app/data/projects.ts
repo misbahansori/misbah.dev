@@ -21,4 +21,18 @@ export const featuredProjects: Project[] = [
     stack: ["Nuxt JS", "Tailwind CSS"],
     year: "2024",
   },
+  {
+    title: "Cabinet Builder",
+    description: "Design and configure cabinets in 3D.",
+    url: "https://cabinet.misbah.dev/",
+    stack: ["Nuxt JS", "Three.js", "Tailwind CSS"],
+    year: "2025",
+  },
+  {
+    title: "Swagger Viewer",
+    description: "View and explore OpenAPI specs in the browser.",
+    url: "https://swagger.misbah.dev/",
+    stack: ["Nuxt JS", "Tailwind CSS"],
+    year: "2025",
+  },
 ];
