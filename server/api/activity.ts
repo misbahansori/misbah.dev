@@ -16,7 +16,6 @@ const fetchActivity = defineCachedFunction(
   {
     name: "github-activity-v1",
     maxAge: 60 * 60 * 6,
-    getKey: (handle: string) => handle,
   },
 );
 
